@@ -1,0 +1,16 @@
+# Large cached downloads — reproducible via scripts, not committed
+data/*.xlsx
+data/*.sql
+data/*.tar.gz
+data/*.zip
+data/mcsa_entries.json
+data/metalpdb_sod.json
+
+# Original publisher PDFs and supplementary workbooks — not redistributable
+sources/
+
+# Extracted paper text — derived from copyrighted PDFs, kept local
+refs/*.txt
+
+.venv/
+__pycache__/

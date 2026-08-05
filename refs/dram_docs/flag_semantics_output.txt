@@ -1,0 +1,86 @@
+KEGG orthology entries loaded: 28,394
+
+F = 'gene within 5,000 bp of a contig end' — established from
+annotate_vgfs.py::get_metabolic_flags (length_from_end=5000), not assumed.
+
+==============================================================================
+CONSERVATIVE catalogue (post-curation)
+==============================================================================
+  AMG calls                : 88,729
+  with a KEGG KO           : 31,772 (35.8%)
+
+  --- Which flag letters actually occur -----------------------------------
+      V         0    0.0%   viral      — VOGDB replication/structure category  <-- ABSENT
+      M    88,723  100.0%   metabolic  — in DRAM's distillate (genes DRAM calls metabolic)
+      K    77,280   87.1%   known AMG  — identifier from a previously reported AMG
+      E     3,031    3.4%   verified   — previously reported AMG, experimentally verified
+      A         0    0.0%   attachment — CAZy identifier used for host attachment/entry  <-- ABSENT
+      P         0    0.0%   peptidase  — MEROPS identifier typical of viral peptidases (UNDOCUMENTED)  <-- ABSENT
+      T         0    0.0%   transposon — a transposon is present somewhere on the contig  <-- ABSENT
+      F    70,205   79.1%   near end   — gene within 5,000 bp of a contig end (POSITIONAL, not biological)
+      B         0    0.0%   3-in-a-row — three consecutive genes all carry M  <-- ABSENT
+      J         0    0.0%   (never assigned — the code that would set J is commented out)  <-- ABSENT
+      UNEXPECTED LETTERS: {' ': 1}
+
+  --- Auxiliary score distribution (reconstructs the filter they ran) -----
+      score 1          12,628   14.2%   of which F-flagged:   7,308
+      score 2          42,348   47.7%   of which F-flagged:  33,252
+      score 3          33,747   38.0%   of which F-flagged:  29,645
+      score (blank)         6    0.0%   of which F-flagged:       0
+
+  --- THE CHECK: is the F flag enriched in the suspect categories? --------
+      stratum                                             n      % F-flagged  [95% CI]
+      -------------------------------------------- --------   ------------------------
+      BASELINE — all AMG calls                       88,729    79.1%  [78.9%–79.4%]
+      BASELINE — KO-assigned calls only              31,772    75.8%  [75.3%–76.3%]
+      -------------------------------------------- --------   ------------------------
+      dcm — DNA cytosine methyltransferase            5,797    68.0%  [66.8%–69.2%]
+      queC/D/E/F — queuosine biosynthesis             2,156    74.8%  [72.9%–76.6%]
+      dsrC / tusE — sulfur relay                          9   100.0%  [70.1%–100.0%]
+      folate / one-carbon                                 3    66.7%  [20.8%–93.9%]
+      glycoside hydrolases                                2    50.0%  [9.5%–90.5%]
+      glycosyltransferases                                2    50.0%  [9.5%–90.5%]
+      -------------------------------------------- --------   ------------------------
+      ALL suspect categories combined                 7,969    69.9%  [68.8%–70.9%]
+
+      Suspect F-rate / KO-assigned baseline F-rate = 0.92x
+
+==============================================================================
+PERMISSIVE catalogue (pre-curation)
+==============================================================================
+  AMG calls                : 255,859
+  with a KEGG KO           : 99,822 (39.0%)
+
+  --- Which flag letters actually occur -----------------------------------
+      V         0    0.0%   viral      — VOGDB replication/structure category  <-- ABSENT
+      M   255,859  100.0%   metabolic  — in DRAM's distillate (genes DRAM calls metabolic)
+      K   217,825   85.1%   known AMG  — identifier from a previously reported AMG
+      E     5,779    2.3%   verified   — previously reported AMG, experimentally verified
+      A         0    0.0%   attachment — CAZy identifier used for host attachment/entry  <-- ABSENT
+      P         0    0.0%   peptidase  — MEROPS identifier typical of viral peptidases (UNDOCUMENTED)  <-- ABSENT
+      T       762    0.3%   transposon — a transposon is present somewhere on the contig
+      F   160,698   62.8%   near end   — gene within 5,000 bp of a contig end (POSITIONAL, not biological)
+      B         0    0.0%   3-in-a-row — three consecutive genes all carry M  <-- ABSENT
+      J         0    0.0%   (never assigned — the code that would set J is commented out)  <-- ABSENT
+
+  --- Auxiliary score distribution (reconstructs the filter they ran) -----
+      score 1          33,663   13.2%   of which F-flagged:  10,566
+      score 2         113,042   44.2%   of which F-flagged:  64,658
+      score 3         109,154   42.7%   of which F-flagged:  85,474
+
+  --- THE CHECK: is the F flag enriched in the suspect categories? --------
+      stratum                                             n      % F-flagged  [95% CI]
+      -------------------------------------------- --------   ------------------------
+      BASELINE — all AMG calls                      255,859    62.8%  [62.6%–63.0%]
+      BASELINE — KO-assigned calls only              99,822    59.3%  [59.0%–59.6%]
+      -------------------------------------------- --------   ------------------------
+      dcm — DNA cytosine methyltransferase            8,543    62.3%  [61.3%–63.3%]
+      queC/D/E/F — queuosine biosynthesis             4,673    62.6%  [61.2%–64.0%]
+      dsrC / tusE — sulfur relay                         13    76.9%  [49.7%–91.8%]
+      folate / one-carbon                                18    27.8%  [12.5%–50.9%]
+      glycoside hydrolases                                6    16.7%  [3.0%–56.4%]
+      glycosyltransferases                              105    65.7%  [56.2%–74.1%]
+      -------------------------------------------- --------   ------------------------
+      ALL suspect categories combined                13,358    62.4%  [61.6%–63.2%]
+
+      Suspect F-rate / KO-assigned baseline F-rate = 1.05x

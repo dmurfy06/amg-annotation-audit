@@ -1,0 +1,90 @@
+# Project Auxiliary
+
+**Are viral "auxiliary metabolic genes" auxiliary at all?**
+
+Bacteriophages carry genes resembling host metabolic enzymes. For twenty years the field has
+catalogued these as **auxiliary metabolic genes (AMGs)** and read them as evidence that viruses
+reprogram host metabolism. A 2025 *Nature Microbiology* Perspective argues that many of the
+most-counted categories are doing something **essential for the virus itself** — evading host
+restriction enzymes, modifying the viral chromosome, breaking into the cell — and called this
+"an epidemic of misannotation".
+
+**They named the suspect gene families. They counted none of them. Nobody has.**
+
+> **The question:** how much of the viral AMG record rests on gene categories the field's own
+> experts say should not count?
+
+## Established so far
+
+| Catalogue | Environment | Pipeline | Disputed share | Dominated by |
+|---|---|---|---|---|
+| Ocean, *Microbiome* 2024 | marine | DRAM-v | **25.1%** of KO-assigned calls | `dcm` 5,797 · queuosine 2,156 |
+| Wastewater, *ES&T* 2023 | activated sludge | custom hmmer/kofamscan | **19.8%** (20/101) | queuosine, `folE` |
+| Soil, *ISME J* 2022 | contaminated soil | VIBRANT + DRAM-v | **29.8%** (1,365/4,583) | glycosyltransferases 1,238 |
+
+Three environments, three independent pipelines, all 20–30%. Plus: **curation raises the
+disputed share** (13.4% → 25.1%), and **the composition is annotation-namespace dependent**.
+
+## Start here
+
+| File | What it is |
+|---|---|
+| **`06_project_brief.md`** | **The plan. Read this first.** Question, pre-registered rubric, hypotheses, analysis steps, limitations |
+| `07_flag_semantics.md` | Chunk 1 result. What DRAM-v's flags mean, and why the `F`-flag worry was backwards |
+| `05_redteam.md` | Every objection to the project and its answer. 7 attacks: 3 fail, 3 land, 1 standing risk |
+| `04_feasibility.md` | Compute, data, skills, timeline. The binding constraint is not compute |
+| `03_novelty_audit.md` | Why 15 other candidates died, with the citation that killed each |
+| `02b_candidates.md` | The second candidate round, from which this project came |
+| `01_landscape.md`, `02_candidates.md` | The original landscape scan and candidate list |
+
+## Layout
+
+```
+scripts/    analysis code — run with .venv/Scripts/python.exe
+data/       downloaded datasets (~152 MB), all cached so nothing re-downloads
+refs/       papers extracted to text, with page markers for citing
+sources/    original PDFs and supplementary workbooks as supplied
+.venv/      Python 3.13 + pypdf + openpyxl
+```
+
+### The scripts that matter
+
+| Script | Does |
+|---|---|
+| `amg_database_audit.py` | Audits VIBRANT and DRAM AMG definitions against the rubric |
+| `amg_record_composition.py` | Measures the disputed share in the ocean catalogue |
+| `dramv_flag_semantics.py` | Establishes DRAM-v flag meanings and tests `F` against a baseline |
+| `pdf_to_text.py` | PDF → text with page markers, so quotes can be cited by page |
+| `check_retraction_feasibility.py` | The pattern for testing whether data exists before designing anything |
+
+Run anything with:
+
+```bash
+.venv/Scripts/python.exe scripts/amg_database_audit.py
+```
+
+## Notes, learning and progress live in Obsidian
+
+This folder is the **work**. Understanding, decisions and progress live in the vault:
+
+```
+C:\Users\danie\OneDrive\Documente\Obsidian Vault\1 Projects\Research Project 2026\
+```
+
+Start at **Project Auxiliary MOC**. The split is deliberate — if something only makes sense
+while looking at code it belongs here; if it should still make sense in a year, it belongs there.
+
+## Next action
+
+**Chunk 2 — harmonise the three catalogues to one schema and deduplicate** (~1,800 duplicate
+rows in the ocean table). Chunk 1 is done: see `07_flag_semantics.md`.
+
+## House rules, each bought with a dead candidate
+
+1. Search the citing literature before ranking anything.
+2. Verify the data exists in the shape the question needs, before designing.
+3. If a short script answers the whole question in one sitting, that is a figure — the project is
+   the question the figure raises.
+4. Read the figures, not the abstract.
+5. **Suspect your own best result.** Two headline numbers here were artefacts — an "83-fold"
+   difference and a "47.5%" share. Both caught only because they looked too good.
