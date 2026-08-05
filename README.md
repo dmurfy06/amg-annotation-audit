@@ -31,6 +31,7 @@ disputed share** (13.4% → 25.1%), and **the composition is annotation-namespac
 |---|---|
 | **`06_project_brief.md`** | **The plan. Read this first.** Question, pre-registered rubric, hypotheses, analysis steps, limitations |
 | `07_flag_semantics.md` | Chunk 1 result. What DRAM-v's flags mean, and why the `F`-flag worry was backwards |
+| **`08_adjudication_protocol.md`** | **The rules for judging gene families, fixed before any was judged.** Read before Chunk 5 |
 | `05_redteam.md` | Every objection to the project and its answer. 7 attacks: 3 fail, 3 land, 1 standing risk |
 | `04_feasibility.md` | Compute, data, skills, timeline. The binding constraint is not compute |
 | `03_novelty_audit.md` | Why 15 other candidates died, with the citation that killed each |
@@ -77,7 +78,13 @@ while looking at code it belongs here; if it should still make sense in a year, 
 ## Next action
 
 **Chunk 2 — harmonise the three catalogues to one schema and deduplicate** (~1,800 duplicate
-rows in the ocean table). Chunk 1 is done: see `07_flag_semantics.md`.
+rows in the ocean table), and generate the frozen family list the adjudication will run on.
+
+Chunks 1 and 3 are done — `07_flag_semantics.md` and `08_adjudication_protocol.md`.
+
+> **Correction carried from Chunk 3:** the H1 pre-registration in `06_project_brief.md` is
+> **spent** — catalogues 2 and 3 had already been examined when it was written. All three
+> catalogue measurements are **exploratory** and must be reported as such.
 
 ## House rules, each bought with a dead candidate
 
