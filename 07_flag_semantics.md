@@ -1,8 +1,27 @@
 # 07 — DRAM-v flag semantics (Chunk 1)
 
 **Run 2026-08-05.** Closes the standing "do not guess what `F` means" item.
-Script: `scripts/dramv_flag_semantics.py` · Output: `refs/dram_docs/flag_semantics_output.txt`
-Sources: `refs/dram_docs/` (DRAM source + cloned wiki, so this is citable by line).
+Script: `scripts/dramv_flag_semantics.py` · Output: `results/chunk1_flag_semantics_output.txt`
+
+**Source provenance.** Every line number below refers to source **pinned to a specific commit**,
+so the citations cannot drift when either project next commits:
+
+| Project | Commit | Licence |
+|---|---|---|
+| `WrightonLabCSU/DRAM` | `fe61d759303f30db058d5d505c448b28e41b03f1` | GPL-3.0 |
+| `AnantharamanLab/VIBRANT` | `a718fba5b3b514d7999634ba5ba0a1e8652a9e51` | GPL-3.0 |
+
+The source is **not redistributed in this repository**. Reproduce it with:
+
+```bash
+.venv/Scripts/python.exe scripts/fetch_reference_data.py
+```
+
+**Reproducibility checked 2026-08-05.** The whole analysis was re-run from freshly fetched
+sources: every figure below is identical. The single difference across the entire output was the
+KEGG orthology count, 28,394 → 28,396 — KEGG is a living database and gained two entries. No
+result depends on it, but it is a reminder that **KEGG has no version number in its REST
+response**, so the retrieval date is the only provenance available and must be reported.
 
 ---
 

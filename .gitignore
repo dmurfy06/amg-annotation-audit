@@ -1,4 +1,21 @@
-# Large cached downloads — reproducible via scripts, not committed
+# ---------------------------------------------------------------------------
+# Third-party reference data — NOT redistributed. Run:
+#     .venv/Scripts/python.exe scripts/fetch_reference_data.py
+# ---------------------------------------------------------------------------
+
+# KEGG orthology: (c) Kanehisa Laboratories. Academic API use is free;
+# bulk redistribution is not permitted without a licence.
+data/kegg_ko_list.tsv
+
+# DRAM / VIBRANT source and docs: GPL-3.0, (c) their authors.
+# Cited by line number in 07_flag_semantics.md; fetch to reproduce.
+refs/dram_docs/
+
+# Tool AMG definition files (GPL-3.0, from the DRAM/VIBRANT repos)
+data/VIBRANT_AMGs.tsv
+data/DRAM_amg_database.tsv
+
+# Published catalogue supplements — large, publisher-hosted. DOIs in 06_project_brief.md
 data/*.xlsx
 data/*.sql
 data/*.tar.gz
@@ -6,11 +23,18 @@ data/*.zip
 data/mcsa_entries.json
 data/metalpdb_sod.json
 
-# Original publisher PDFs and supplementary workbooks — not redistributable
+# Data from candidates that died in Phases 2b/3 — not part of Project Auxiliary
+data/pubmed_retracted_pmids.json
+data/enzyme_dat_census.tsv
+
+# Publisher PDFs and supplementary workbooks as supplied — not redistributable
 sources/
 
-# Extracted paper text — derived from copyrighted PDFs, kept local
+# Paper text extracted from copyrighted PDFs — kept local
 refs/*.txt
 
 .venv/
 __pycache__/
+
+# Script outputs — results, kept in the repo
+!results/

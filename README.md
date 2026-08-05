@@ -38,13 +38,40 @@ disputed share** (13.4% → 25.1%), and **the composition is annotation-namespac
 | `02b_candidates.md` | The second candidate round, from which this project came |
 | `01_landscape.md`, `02_candidates.md` | The original landscape scan and candidate list |
 
+## Setup — start here if you have just cloned this
+
+No third-party data is committed to this repository. Fetch it:
+
+```bash
+python -m venv .venv && .venv/Scripts/python.exe -m pip install pypdf openpyxl
+```
+
+```bash
+.venv/Scripts/python.exe scripts/fetch_reference_data.py
+```
+
+That retrieves the KEGG orthology list, both tools' AMG definition files, and the DRAM/VIBRANT
+source and wiki — **pinned to the exact commits cited by line number in `07_flag_semantics.md`**,
+so those citations cannot drift.
+
+**What is deliberately not fetched:** the three published AMG catalogues. They are large
+publisher-hosted supplements; DOIs are in `06_project_brief.md`. The ocean one
+(`GlobalAMGs_SOM.xlsx`, 114 MB, Zenodo 10.5281/zenodo.12668289) is needed to reproduce the
+headline numbers.
+
+> **Why nothing is vendored.** KEGG data is © Kanehisa Laboratories — free to query
+> academically, **not** free to redistribute. DRAM and VIBRANT are GPL-3.0 and belong to their
+> authors. Fetching on demand keeps the analysis reproducible without republishing anyone
+> else's work.
+
 ## Layout
 
 ```
 scripts/    analysis code — run with .venv/Scripts/python.exe
-data/       downloaded datasets (~152 MB), all cached so nothing re-downloads
-refs/       papers extracted to text, with page markers for citing
-sources/    original PDFs and supplementary workbooks as supplied
+results/    script outputs, kept as the record of each chunk
+data/       fetched datasets — gitignored, see Setup
+refs/       fetched tool source + papers extracted to text — gitignored
+sources/    original PDFs and supplementary workbooks as supplied — gitignored
 .venv/      Python 3.13 + pypdf + openpyxl
 ```
 
@@ -55,6 +82,7 @@ sources/    original PDFs and supplementary workbooks as supplied
 | `amg_database_audit.py` | Audits VIBRANT and DRAM AMG definitions against the rubric |
 | `amg_record_composition.py` | Measures the disputed share in the ocean catalogue |
 | `dramv_flag_semantics.py` | Establishes DRAM-v flag meanings and tests `F` against a baseline |
+| `fetch_reference_data.py` | Re-downloads all third-party data, pinned to cited commits |
 | `pdf_to_text.py` | PDF → text with page markers, so quotes can be cited by page |
 | `check_retraction_feasibility.py` | The pattern for testing whether data exists before designing anything |
 
