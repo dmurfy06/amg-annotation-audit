@@ -212,4 +212,58 @@ This file is **append-only** once published. Any change is added below with a da
 and what it replaces. The original text is never edited or deleted. A protocol that can be
 quietly rewritten is not a protocol.
 
-*(No amendments yet.)*
+---
+
+### Amendment 1 — 2026-08-05. Family membership is defined by accession, not by text matching.
+
+**Approved by Daniel 2026-08-05. Committed before the affected numbers were recomputed.**
+
+**What this replaces.** Nothing in the *rubric*: the six gene families are unchanged, and no
+family is added or removed. What changes is **how a call is determined to belong to one** —
+previously by regular expressions over free-text gene descriptions, now by membership of an
+explicit list of KEGG KO and Pfam accessions.
+
+**Why.** Chunk 2 (`09_chunk2_harmonisation.md`) showed free-text matching failing three
+different ways in a single sitting, each silently:
+
+| Failure | Example | Effect |
+|---|---|---|
+| **Over-match** | bare `GT\d+`/`GH\d+` against the CAZy column caught "NAD dependent epimerase/dehydratase" | inflated soil to 47.5% |
+| **Under-match** | Pfam writes `Glycosyl transferases group 1` and `methylase`; the rubric looked for `glycosyltransferase` and `methyltransferase` | soil 3.4% against a true 30.3%; `dcm` found 0 of 5,277 |
+| **Cross-family leakage** | `pterin` in a folate pattern caught `queD`, a queuosine gene | thousands of calls attributed to the wrong family |
+
+None of these raise an error. A regex that matches nothing looks exactly like a category that
+is genuinely absent.
+
+**Why accessions fix it.** `K00558` and `PF00145` are stable, unambiguous, and mean the same
+thing in every catalogue and every paper. They cannot be misspelled, cannot leak between
+categories, and — decisively — **a reviewer can check the entire membership list by reading it**,
+without running any code. That is not possible for a regex applied to 349,171 rows.
+
+**Procedure, fixed now.**
+
+1. A candidate accession list is generated **by script** from the observed data and written to
+   `data/family_accessions.tsv`, with every accession carrying its official KEGG/Pfam
+   description and the number of calls it accounts for in each catalogue.
+2. The list is **reviewed accession by accession** and frozen before any disputed share is
+   recomputed. Generation is mechanical; inclusion is a judgement, and it is recorded as one.
+3. Any accession whose family assignment is genuinely ambiguous is marked **`AMBIGUOUS`** rather
+   than being forced into one family. The headline is then reported **both** with and without the
+   ambiguous set, and the gap between the two is a declared result.
+4. Accessions may **not** be added or removed after the disputed share has been recomputed. A
+   later change requires a further amendment here.
+
+**The known ambiguous case, named in advance.** `folE` / GTP cyclohydrolase I (KEGG `K01495`,
+Pfam `PF01227`) is the first committed step of **both** folate and queuosine biosynthesis. The
+*ES&T* wastewater paper counts it as a queuosine gene. Under text matching it was silently
+counted as folate in Pfam and as nothing at all in KEGG. It is marked `AMBIGUOUS` and its effect
+is reported separately. The same applies to `queD` / 6-pyruvoyl tetrahydropterin synthase.
+
+**What this does not do.** It does not decide whether a family *counts* as an AMG — that remains
+the Chunk 5 adjudication, governed by the two-part rule above and unchanged. This amendment only
+fixes which calls belong to which family, so that the adjudication's verdicts can be applied to
+a defined set rather than to whatever a regex happened to catch.
+
+**Direction of effect, declared.** Correcting the under-match **raises** the disputed share,
+which favours this project's own hypothesis. That is precisely why the defect, the correction,
+and both sets of numbers are reported together — see `09_chunk2_harmonisation.md`.
