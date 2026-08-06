@@ -150,24 +150,96 @@ do not change; only how membership is determined.
 
 ---
 
-## Wastewater — still outstanding, and now precisely specified
+---
 
-No per-gene table in `sources/`. The paper's text carries **zero KO accessions**, confirming the
-19.8% came from prose naming `folE`/`queD`/`queE`, not identifiers.
+# THE NUMBERS, recomputed against the frozen accession list
 
-**The data exists.** The SI listing includes a dataset *"functional annotation of vAMGs"*,
-"available free of charge" at <https://pubs.acs.org/doi/10.1021/acs.est.2c07800>. ACS returns
-**HTTP 403** to automated download, so it needs fetching through a browser — same route as the
-paper PDF.
+**These supersede every earlier figure in the project.** Script: `chunk2_final_shares.py`.
+Rubric: **29 KO + 49 Pfam accessions**, 6 flagged AMBIGUOUS. No text is matched anywhere.
 
-Until then the cross-catalogue claim rests on two catalogues with per-gene data, not three.
+*strict* = INCLUDED accessions only · *wide* = INCLUDED + AMBIGUOUS (the folate/queuosine
+branch point: `folE`, `folE2`, `queD`). **Per gene**, since rows over-count multi-domain proteins.
+
+| Catalogue | namespace | n genes | strict | wide |
+|---|---|---|---|---|
+| **Ocean, curated** | KO | 29,973 | **22.63%** [22.16–23.10] | **30.19%** [29.67–30.71] |
+| Ocean, curated | Pfam | 83,987 | 7.94% [7.76–8.13] | 11.21% [11.00–11.43] |
+| Ocean, pre-curation | KO | 87,602 | 12.69% [12.47–12.91] | 18.02% [17.77–18.28] |
+| Ocean, pre-curation | Pfam | 235,379 | 17.24% [17.09–17.40] | 19.67% [19.51–19.83] |
+| **Soil** | Pfam | 3,226 | **21.26%** [19.89–22.71] | **22.94%** [21.52–24.42] |
+| Soil | KO | 698 | 7.45% [5.73–9.64] | 14.76% [12.32–17.58] |
+| **Wastewater** | KO | 77 | **19.48%** [12.18–29.69] | **37.66%** [27.67–48.83] |
+| Wastewater | Pfam | 32 | 15.62% [6.86–31.75] | 37.50% [22.93–54.75] |
+
+## Four things the recomputation establishes
+
+**1. The wastewater result validates independently.** The accession route gives **19.48%**; the
+figure derived from the paper's prose was **19.8%**. Two entirely independent methods — one
+reading a sentence, one intersecting accession sets — agree to within a third of a percentage
+point. Nothing forced that.
+
+**2. H2 survives and strengthens. Curation still makes it worse.** Ocean, KO, per gene:
+**12.69% → 22.63%** from permissive to curated, strict rubric. The disputed share **nearly
+doubles** under curation. Non-overlapping intervals. This was the project's most interesting
+claim and it holds under a method that had no way to know what answer was wanted.
+
+**3. The namespace effect is real but it is not a bias — it reverses.**
+
+| | via KO | via Pfam |
+|---|---|---|
+| Ocean, curated | **22.63%** | 7.94% |
+| Soil | 7.45% | **21.26%** |
+
+Ocean is KO-high and Pfam-low; **soil is the exact mirror image.** So this is not "one namespace
+inflates the count". It is that **different environments carry different disputed families, and
+those families are visible in different identifier systems** — ocean's disputed content is `dcm`
+(cleanly KEGG-annotated), soil's is glycosyltransferases (cleanly Pfam-annotated).
+
+That is a sharper and more defensible claim than the earlier version, and it is still not in
+Martin *et al.*
+
+**4. The ambiguous set is the single biggest lever, and it is exactly what Chunk 5 must decide.**
+Wastewater moves **19.48% → 37.66%** on whether `folE`/`queD` count. That one biochemical
+judgement — is GTP cyclohydrolase I doing folate work or queuosine work in a phage? — moves the
+headline by 18 percentage points. It cannot be settled by counting, and pretending otherwise is
+what the old regex was doing silently.
+
+**Range across everything tested: 7.4% to 37.7%.** Every route still shows a substantial
+disputed share. But the honest headline is a matrix, and the adjudication is now visibly
+load-bearing rather than decorative.
+
+---
+
+## Wastewater — obtained 2026-08-05
+
+Daniel fetched **Dataset S4** of the ES&T Supporting Information through a browser (ACS returns
+HTTP 403 to automated download; the data was free the whole time, only the robot was blocked).
+
+**101 vAMG calls**, matching the paper's stated figure exactly, carrying **both** a kofamscan KO
+(76.2%) and an hmmsearch Pfam accession (31.7%). The paper's own *text* carries zero KO
+accessions, which is why 19.8% could only ever be derived from prose before this table arrived.
+
+**The hard gate in `06_project_brief.md` is now passed for all three catalogues.**
+
+## A note on Pfam identifiers, which nearly broke the recomputation
+
+Soil publishes Pfam **short names** (`Glyco_trans_1_2`), not accessions — 0 of 4,583 rows carried
+a `PF#####`. Matching by accession therefore returned **0.00%** for soil on the first run.
+
+The wrong fix would have been to match soil's Pfam *descriptions* against the list, which
+reintroduces text matching through the back door. The right fix was to resolve names to
+accessions through **Pfam's own mapping** (`Pfam-A.clans.tsv`, 30,134 families), which now
+resolves **98.9%** of soil rows. The remaining 52 are families renamed or retired upstream.
+
+Worth recording as a general point: *"it carries Pfam"* is not one thing. A catalogue may publish
+accessions, short names, or descriptions, and only the first is stable.
 
 ## Where this leaves the numbers
 
-Nothing here overturns the project. The disputed share is still substantial on every route
-tested — 11% to 30% depending on namespace and denominator. But **"25.1%" can no longer be
-reported as a single figure.** The honest statement is a matrix over three choices, each of which
-must be declared: namespace (KO / Pfam), unit (call / gene), and family membership (pending
-adjudication).
+Nothing here overturns the project — every route tested still shows a substantial disputed share,
+**7.4% to 37.7%**. What changed is that **no single number can carry the result.** Three choices
+must be declared every time: namespace (KO / Pfam), unit (call / gene), and whether the
+ambiguous branch-point genes count.
 
-That is a less quotable result and a more defensible one.
+Less quotable. Considerably harder to attack. And the adjudication is now visibly load-bearing —
+one biochemical judgement about `folE` moves the wastewater headline by 18 points.

@@ -1,0 +1,63 @@
+DISPUTED SHARE — recomputed against the frozen accession list
+==============================================================================
+Rubric: 29 KO + 49 Pfam accessions, 6 of them AMBIGUOUS.
+No text is matched in this script. Membership is by accession only.
+
+  strict = INCLUDED accessions only
+  wide   = INCLUDED + AMBIGUOUS (folE, folE2, queD — the folate/queuosine branch point)
+
+==============================================================================
+Ocean, curated (Microbiome 2024)   —   88,729 calls
+==============================================================================
+  namespace / unit                  n                 strict      wide (+ambiguous)
+  -------------------------- --------  ---------------------  ---------------------
+  KO, per call                 31,772   21.35% [20.90–21.80]   28.48% [27.98–28.98]
+  KO, per gene                 29,973   22.63% [22.16–23.10]   30.19% [29.67–30.71]
+      composition (KO): dcm 5,797 · queuosine  (AMBIGUOUS) 1,206 · folate  (AMBIGUOUS) 1,060 · queuosine 950 · glycoside_hydrolase 21 · dsrC_tusE 9 · folate 3 · glycosyltransferase 2
+  PFAM, per call               85,741    7.78% [ 7.60– 7.96]   10.99% [10.78–11.20]
+  PFAM, per gene               83,987    7.94% [ 7.76– 8.13]   11.21% [11.00–11.43]
+      composition (PFAM): dcm 5,381 · folate  (AMBIGUOUS) 1,411 · queuosine  (AMBIGUOUS) 1,337 · queuosine 1,250 · dsrC_tusE 24 · glycoside_hydrolase 11 · folate 5
+
+==============================================================================
+Ocean, pre-curation   —   255,859 calls
+==============================================================================
+  namespace / unit                  n                 strict      wide (+ambiguous)
+  -------------------------- --------  ---------------------  ---------------------
+  KO, per call                 99,822   11.15% [10.95–11.34]   15.83% [15.60–16.05]
+  KO, per gene                 87,602   12.69% [12.47–12.91]   18.02% [17.77–18.28]
+      composition (KO): dcm 8,543 · queuosine  (AMBIGUOUS) 2,594 · queuosine 2,079 · folate  (AMBIGUOUS) 2,077 · glycosyltransferase 408 · glycoside_hydrolase 65 · folate 19 · dsrC_tusE 13
+  PFAM, per call              247,975   16.63% [16.48–16.78]   18.93% [18.78–19.09]
+  PFAM, per gene              235,379   17.24% [17.09–17.40]   19.67% [19.51–19.83]
+      composition (PFAM): glycosyltransferase 30,441 · dcm 7,927 · queuosine  (AMBIGUOUS) 2,930 · folate  (AMBIGUOUS) 2,784 · queuosine 2,777 · dsrC_tusE 42 · folate 25 · glycoside_hydrolase 22
+
+==============================================================================
+Soil (ISME J 2022)   —   4,583 calls
+==============================================================================
+  namespace / unit                  n                 strict      wide (+ambiguous)
+  -------------------------- --------  ---------------------  ---------------------
+  KO, per call                  1,151    8.69% [ 7.20–10.46]   14.07% [12.18–16.20]
+  KO, per gene                    698    7.45% [ 5.73– 9.64]   14.76% [12.32–17.58]
+      composition (KO): queuosine 62 · folate  (AMBIGUOUS) 47 · glycosyltransferase 29 · queuosine  (AMBIGUOUS) 15 · glycoside_hydrolase 4 · folate 3 · dcm 2
+  PFAM, per call                4,531   29.13% [27.83–30.47]   30.55% [29.22–31.90]
+  PFAM, per gene                3,226   21.26% [19.89–22.71]   22.94% [21.52–24.42]
+      composition (PFAM): glycosyltransferase 1,238 · folate  (AMBIGUOUS) 46 · queuosine 39 · folate 35 · queuosine  (AMBIGUOUS) 18 · dsrC_tusE 8
+
+==============================================================================
+Wastewater (ES&T 2023)   —   101 calls
+==============================================================================
+  namespace / unit                  n                 strict      wide (+ambiguous)
+  -------------------------- --------  ---------------------  ---------------------
+  KO, per call                     77   19.48% [12.18–29.69]   37.66% [27.67–48.83]
+  KO, per gene                     77   19.48% [12.18–29.69]   37.66% [27.67–48.83]
+      composition (KO): queuosine 13 · queuosine  (AMBIGUOUS) 7 · folate  (AMBIGUOUS) 7 · folate 2
+  PFAM, per call                   32   15.62% [ 6.86–31.75]   37.50% [22.93–54.75]
+  PFAM, per gene                   32   15.62% [ 6.86–31.75]   37.50% [22.93–54.75]
+      composition (PFAM): folate  (AMBIGUOUS) 6 · queuosine 4 · folate 1 · queuosine  (AMBIGUOUS) 1
+
+==============================================================================
+WHAT SUPERSEDES WHAT
+==============================================================================
+  Every earlier figure — 25.1%, 13.4%, 11.0%, 29.8%, 22.7%, 19.8% — was produced by
+  free-text matching and is VOID under Amendment 1. The table above replaces them.
+  Nothing here is an adjudication: 'disputed' means 'in a family Martin et al. argue
+  should be reconsidered', not 'wrong'. Chunk 5 decides that.

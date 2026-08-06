@@ -7,12 +7,12 @@ queuosine	KO	K06879	queF; 7-cyano-7-deazaguanine reductase [EC:1.7.1.13]	279	639
 queuosine	KO	K06920	queC; 7-cyano-7-deazaguanine synthase [EC:6.3.4.20]	626	1301	54	5	1986	INCLUDED	
 queuosine	KO	K09457	queF; 7-cyano-7-deazaguanine reductase [EC:1.7.1.13]	45	139	7	1	192	INCLUDED	
 queuosine	KO	K10026	queE; 7-carboxy-7-deazaguanine synthase [EC:4.3.99.3]	0	0	0	7	7	INCLUDED	
-queuosine	PFAM	PF01242	6-pyruvoyl tetrahydropterin synthase	1337	2930	0	1	4268	AMBIGUOUS	6-pyruvoyl tetrahydropterin synthase — pterin shared with folate
-queuosine	PFAM	PF06508	Queuosine biosynthesis protein QueC	927	1984	0	3	2914	INCLUDED	
-queuosine	PFAM	PF14489	QueF-like protein	53	155	0	1	209	INCLUDED	
-queuosine	PFAM	PF14819	Nitrile reductase, 7-cyano-7-deazaguanine-reductase N-term	270	638	0	0	908	INCLUDED	
+queuosine	PFAM	PF01242	6-pyruvoyl tetrahydropterin synthase	1337	2930	18	1	4286	AMBIGUOUS	6-pyruvoyl tetrahydropterin synthase — pterin shared with folate
+queuosine	PFAM	PF06508	Queuosine biosynthesis protein QueC	927	1984	23	3	2937	INCLUDED	
+queuosine	PFAM	PF14489	QueF-like protein	53	155	13	1	222	INCLUDED	
+queuosine	PFAM	PF14819	Nitrile reductase, 7-cyano-7-deazaguanine-reductase N-term	270	638	3	0	911	INCLUDED	
 dsrC_tusE	KO	K11179	tusE, dsrC; tRNA 2-thiouridine synthesizing protein E [EC:2.8.1.-]	9	13	0	0	22	INCLUDED	
-dsrC_tusE	PFAM	PF04358	DsrC like protein	24	42	0	0	66	INCLUDED	
+dsrC_tusE	PFAM	PF04358	DsrC like protein	24	42	8	0	74	INCLUDED	
 folate	KO	K00287	DHFR, folA; dihydrofolate reductase [EC:1.5.1.3]	0	0	0	2	2	INCLUDED	
 folate	KO	K00548	metH, MTR; 5-methyltetrahydrofolate--homocysteine methyltransferase [EC:2.1.1.13]	0	4	0	0	4	INCLUDED	
 folate	KO	K01433	purU; formyltetrahydrofolate deformylase [EC:3.5.1.10]	0	2	0	0	2	INCLUDED	
@@ -25,12 +25,12 @@ folate	KO	K13998	DHFR-TS; dihydrofolate reductase / thymidylate synthase [EC:1.5
 folate	KO	K14652	ribBA; 3,4-dihydroxy 2-butanone 4-phosphate synthase / GTP cyclohydrolase II [EC:4.1.99.12 3.5.4.25]	0	49	1	0	50	EXCLUDED	WRONG PATHWAY. ribBA is GTP cyclohydrolase II — RIBOFLAVIN biosynthesis. Folate and queuosine use GTP cyclohydrolase I. Matched only on the shared string 'GTP cyclohydrolase'. Roman numerals distinguish two unrelated enzymes here.
 folate	KO	K19645	dfrB, dfr2; dihydrofolate reductase (trimethoprim resistance protein) [EC:1.5.1.3]	0	0	2	0	2	INCLUDED	
 folate	PFAM	PF00186	Dihydrofolate reductase	2	6	0	1	9	INCLUDED	
-folate	PFAM	PF01227	GTP cyclohydrolase I	1375	2604	0	6	3985	AMBIGUOUS	GTP cyclohydrolase I — first step of BOTH folate and queuosine
+folate	PFAM	PF01227	GTP cyclohydrolase I	1375	2604	42	6	4027	AMBIGUOUS	GTP cyclohydrolase I — first step of BOTH folate and queuosine
 folate	PFAM	PF01571	Aminomethyltransferase folate-binding domain	0	2	0	0	2	INCLUDED	
-folate	PFAM	PF02152	Dihydroneopterin aldolase	0	1	0	0	1	INCLUDED	
-folate	PFAM	PF02649	Type I GTP cyclohydrolase folE2	36	180	0	0	216	AMBIGUOUS	Type I GTP cyclohydrolase folE2 — same branch point as folE
-folate	PFAM	PF02882	Tetrahydrofolate dehydrogenase/cyclohydrolase, NAD(P)-binding domain	0	7	0	0	7	INCLUDED	
-folate	PFAM	PF06442	R67 dihydrofolate reductase	3	9	0	0	12	INCLUDED	
+folate	PFAM	PF02152	Dihydroneopterin aldolase	0	1	7	0	8	INCLUDED	
+folate	PFAM	PF02649	Type I GTP cyclohydrolase folE2	36	180	4	0	220	AMBIGUOUS	Type I GTP cyclohydrolase folE2 — same branch point as folE
+folate	PFAM	PF02882	Tetrahydrofolate dehydrogenase/cyclohydrolase, NAD(P)-binding domain	0	7	5	0	12	INCLUDED	
+folate	PFAM	PF06442	R67 dihydrofolate reductase	3	9	23	0	35	INCLUDED	
 glycoside_hydrolase	KO	K01179	E3.2.1.4; endoglucanase [EC:3.2.1.4]	19	59	0	0	78	INCLUDED	
 glycoside_hydrolase	KO	K01185	E3.2.1.17; lysozyme [EC:3.2.1.17]	1	1	3	0	5	INCLUDED	
 glycoside_hydrolase	KO	K01187	malZ; alpha-glucosidase [EC:3.2.1.20]	0	2	0	0	2	INCLUDED	
@@ -46,7 +46,7 @@ glycosyltransferase	KO	K03669	mdoH; membrane glycosyltransferase [EC:2.4.1.-]	0	
 glycosyltransferase	KO	K03814	mtgA; peptidoglycan glycosyltransferase [EC:2.4.99.28]	0	1	0	0	1	INCLUDED	
 glycosyltransferase	KO	K07270	K07270; glycosyl transferase, family 25	0	303	0	0	303	INCLUDED	
 glycosyltransferase	KO	K15521	mshA; D-inositol-3-phosphate glycosyltransferase [EC:2.4.1.250]	0	27	29	0	56	INCLUDED	
-glycosyltransferase	PFAM	PF00534	Glycosyl transferases group 1	0	13981	0	0	13981	INCLUDED	
+glycosyltransferase	PFAM	PF00534	Glycosyl transferases group 1	0	13981	355	0	14336	INCLUDED	
 glycosyltransferase	PFAM	PF00535	Glycosyl transferase family 2	0	2942	0	0	2942	INCLUDED	
 glycosyltransferase	PFAM	PF00777	Glycosyltransferase family 29 (sialyltransferase)	0	287	0	0	287	INCLUDED	
 glycosyltransferase	PFAM	PF00852	Glycosyltransferase family 10 (fucosyltransferase) C-term	0	1403	0	0	1403	INCLUDED	
@@ -59,9 +59,9 @@ glycosyltransferase	PFAM	PF03033	Glycosyltransferase family 28 N-terminal domain
 glycosyltransferase	PFAM	PF03385	STELLO glycosyltransferases	0	1	0	0	1	INCLUDED	
 glycosyltransferase	PFAM	PF03414	Glycosyltransferase family 6	0	321	0	0	321	INCLUDED	
 glycosyltransferase	PFAM	PF03808	Glycosyl transferase WecB/TagA/CpsF family	0	2	0	0	2	INCLUDED	
-glycosyltransferase	PFAM	PF04488	Glycosyltransferase sugar-binding region containing DXD motif	0	714	0	0	714	INCLUDED	
+glycosyltransferase	PFAM	PF04488	Glycosyltransferase sugar-binding region containing DXD motif	0	714	56	0	770	INCLUDED	
 glycosyltransferase	PFAM	PF04572	Alpha 1,4-glycosyltransferase conserved region	0	14	0	0	14	INCLUDED	
-glycosyltransferase	PFAM	PF04724	Glycosyltransferase family 17	0	529	0	0	529	INCLUDED	
+glycosyltransferase	PFAM	PF04724	Glycosyltransferase family 17	0	529	27	0	556	INCLUDED	
 glycosyltransferase	PFAM	PF05686	Glycosyl transferase family 90	0	25	0	0	25	INCLUDED	
 glycosyltransferase	PFAM	PF08759	Glycosyltransferase GT-D fold	0	14	0	0	14	INCLUDED	
 glycosyltransferase	PFAM	PF09258	Glycosyl transferase family 64 domain	0	6	0	0	6	INCLUDED	
@@ -71,10 +71,10 @@ glycosyltransferase	PFAM	PF12000	Glycosyl transferase family 4 group	0	2	0	0	2	I
 glycosyltransferase	PFAM	PF12919	TcdA/TcdB catalytic glycosyltransferase domain	0	14	0	0	14	INCLUDED	
 glycosyltransferase	PFAM	PF13439	Glycosyltransferase Family 4	0	9	0	0	9	INCLUDED	
 glycosyltransferase	PFAM	PF13506	Glycosyl transferase family 21	0	2	0	0	2	INCLUDED	
-glycosyltransferase	PFAM	PF13524	Glycosyl transferases group 1	0	44	0	0	44	INCLUDED	
+glycosyltransferase	PFAM	PF13524	Glycosyl transferases group 1	0	44	385	0	429	INCLUDED	
 glycosyltransferase	PFAM	PF13632	Glycosyl transferase family group 2	0	14	0	0	14	INCLUDED	
 glycosyltransferase	PFAM	PF13641	Glycosyltransferase like family 2	0	598	0	0	598	INCLUDED	
-glycosyltransferase	PFAM	PF13692	Glycosyl transferases group 1	0	475	0	0	475	INCLUDED	
+glycosyltransferase	PFAM	PF13692	Glycosyl transferases group 1	0	475	415	0	890	INCLUDED	
 glycosyltransferase	PFAM	PF13704	Glycosyl transferase family 2	0	124	0	0	124	INCLUDED	
 glycosyltransferase	PFAM	PF13712	Glycosyltransferase like family	0	1192	0	0	1192	INCLUDED	
 glycosyltransferase	PFAM	PF13733	N-terminal region of glycosyl transferase group 7	0	720	0	0	720	INCLUDED	

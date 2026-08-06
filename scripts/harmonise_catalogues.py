@@ -38,6 +38,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OCEAN = ROOT / "data" / "GlobalAMGs_SOM.xlsx"
 SOIL = ROOT / "sources" / "41396_2022_1188_moesm6_esm.xlsx"
 WASTE = ROOT / "sources" / "es2c07800_si_002.xlsx"
+PFAM_CLANS = ROOT / "data" / "Pfam-A.clans.tsv.gz"
 OUT_TSV = ROOT / "data" / "harmonised_calls.tsv"
 OUT_TXT = ROOT / "results" / "chunk2_harmonisation.txt"
 
@@ -65,6 +66,26 @@ SCHEMA = [
 # the first and calling it a Pfam result silently produces a KEGG answer wearing a Pfam
 # label — which is exactly the confusion this project exists to measure.
 PFAM_ID_RE = re.compile(r"PF\d{5}")
+
+
+def pfam_name_to_accession() -> dict[str, str]:
+    """Soil publishes Pfam SHORT NAMES ('Glyco_trans_1_2'), not accessions. Amendment 1
+    requires membership by accession, so the names must be resolved through Pfam's own
+    mapping rather than by matching descriptions — which would reintroduce text matching
+    by the back door. Source: Pfam-A.clans.tsv, columns accession/clan/clan_id/name/desc."""
+    import gzip
+    if not PFAM_CLANS.exists():
+        return {}
+    m = {}
+    with gzip.open(PFAM_CLANS, "rt", encoding="utf-8", errors="replace") as fh:
+        for line in fh:
+            f = line.rstrip("\n").split("\t")
+            if len(f) >= 4 and f[0].startswith("PF"):
+                m[f[3]] = f[0]
+    return m
+
+
+PFAM_BY_NAME = pfam_name_to_accession()
 
 _out = []
 
@@ -134,7 +155,7 @@ def load_soil(ws) -> list[dict]:
             "gene_id": cell(hdr, row, "virusID-gene"),
             "contig_id": cell(hdr, row, "virus ID"),
             "ko": m.group(0) if m else "",
-            "pfam_id": cell(hdr, row, "Pfam name"),      # soil publishes Pfam NAMES, not PF ids
+            "pfam_id": PFAM_BY_NAME.get(cell(hdr, row, "Pfam name"), ""),  # name -> accession
             "pfam_text": cell(hdr, row, "PFAM domain description"),
             "cazy": cell(hdr, row, "CAZy annotation"),
             "description": cell(hdr, row, "PFAM domain description"),

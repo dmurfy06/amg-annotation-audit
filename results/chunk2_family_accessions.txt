@@ -5,11 +5,11 @@ below is recorded on one line and can be objected to without rerunning anything.
 
   INCLUDED / AMBIGUOUS counts, after review:
     dcm                        3 accessions    27,650 calls
-    queuosine                  9 accessions    15,225 calls
-    dsrC_tusE                  2 accessions        88 calls
-    folate                    17 accessions     7,450 calls
+    queuosine                  9 accessions    15,282 calls
+    dsrC_tusE                  2 accessions        96 calls
+    folate                    17 accessions     7,531 calls
     glycoside_hydrolase        9 accessions       123 calls
-    glycosyltransferase       38 accessions    30,880 calls
+    glycosyltransferase       38 accessions    32,118 calls
 
   AMBIGUOUS — reported separately, never forced into one family: 6
 
