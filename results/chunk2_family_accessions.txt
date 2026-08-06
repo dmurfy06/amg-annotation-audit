@@ -1,0 +1,28 @@
+FAMILY ACCESSION LIST — 80 candidates proposed, reviewed 2026-08-05
+==============================================================================
+Per Amendment 1: generation is mechanical, inclusion is a judgement. Every decision
+below is recorded on one line and can be objected to without rerunning anything.
+
+  INCLUDED / AMBIGUOUS counts, after review:
+    dcm                        3 accessions    27,650 calls
+    queuosine                  9 accessions    15,225 calls
+    dsrC_tusE                  2 accessions        88 calls
+    folate                    17 accessions     7,450 calls
+    glycoside_hydrolase        9 accessions       123 calls
+    glycosyltransferase       38 accessions    30,880 calls
+
+  AMBIGUOUS — reported separately, never forced into one family: 6
+
+  EXCLUDED BY REVIEW — the errors this method exists to expose:
+    PF13385  (glycoside_hydrolase) — would have contributed 21,567 calls
+        STRUCTURAL FOLD, NOT AN ACTIVITY. 'Concanavalin A-like lectin/glucanases superfamily' is
+         a shared beta-sandwich fold. Concanavalin A is a lectin — it BINDS sugars, it does not 
+        hydrolyse them. Matched only via the substring 'glucanases'. This single accession was 2
+        1,567 of the family's 21,690 calls (99.4%). Same class of error as the 47.5% CAZy artefa
+        ct: a pattern hitting a fold name rather than a function.
+    K14652  (folate) — would have contributed 50 calls
+        WRONG PATHWAY. ribBA is GTP cyclohydrolase II — RIBOFLAVIN biosynthesis. Folate and queu
+        osine use GTP cyclohydrolase I. Matched only on the shared string 'GTP cyclohydrolase'. 
+        Roman numerals distinguish two unrelated enzymes here.
+
+  Written to data\family_accessions.tsv.

@@ -6,6 +6,7 @@ WHICH IDENTIFIER SYSTEM EACH CATALOGUE ACTUALLY CARRIES
     ocean conservative     n= 88,729   KO  31,772 (35.8%)   Pfam  85,768 (96.7%)   CAZy    648 ( 0.7%)
     ocean permissive       n=255,859   KO  99,822 (39.0%)   Pfam 248,052 (96.9%)   CAZy 24,725 ( 9.7%)
     soil                   n=  4,583   KO   1,151 (25.1%)   Pfam   4,583 (100.0%)   CAZy  1,978 (43.2%)
+    wastewater             n=    101   KO      77 (76.2%)   Pfam     101 (100.0%)   CAZy      0 ( 0.0%)
 
 DUPLICATES — classified before anything is removed
 
@@ -25,11 +26,17 @@ DUPLICATES — classified before anything is removed
       differing annotation evidence                1,306 surplus rows
       gene_ids assigned CONFLICTING KOs                0
 
-WROTE data\harmonised_calls.tsv  —  349,171 rows, 13 columns
+  WASTEWATER
+    calls                       : 101
+    distinct gene_ids           : 101
+    gene_ids appearing >1 time  : 0
+    surplus rows they contribute: 0  (0.00% of the table)
 
-WASTEWATER — the outstanding gap
-  No per-gene table in sources/. The paper's text carries ZERO KO accessions, so the
-  19.8% (20/101) figure came from prose naming folE/queD/queE, not from identifiers.
-  The SI listing confirms a dataset 'functional annotation of vAMGs' exists and is
-  free of charge at https://pubs.acs.org/doi/10.1021/acs.est.2c07800 — but ACS
-  returns HTTP 403 to automated download. It has to be fetched through a browser.
+WROTE data\harmonised_calls.tsv  —  349,272 rows, 13 columns
+
+WASTEWATER — obtained 2026-08-05, Dataset S4 of the ES&T Supporting Information.
+  101 vAMG calls, matching the paper's stated 101 exactly, and carrying
+  BOTH kofamscan KO and hmmsearch Pfam accessions — so it can be measured in
+  either namespace. The paper's own text carries zero KO accessions, which is why
+  the 19.8% could only ever be derived from prose before this table was obtained.
+  The hard gate in 06_project_brief.md is now PASSED for all three catalogues.

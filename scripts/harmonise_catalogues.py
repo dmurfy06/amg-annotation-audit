@@ -37,6 +37,7 @@ import openpyxl
 ROOT = Path(__file__).resolve().parent.parent
 OCEAN = ROOT / "data" / "GlobalAMGs_SOM.xlsx"
 SOIL = ROOT / "sources" / "41396_2022_1188_moesm6_esm.xlsx"
+WASTE = ROOT / "sources" / "es2c07800_si_002.xlsx"
 OUT_TSV = ROOT / "data" / "harmonised_calls.tsv"
 OUT_TXT = ROOT / "results" / "chunk2_harmonisation.txt"
 
@@ -144,6 +145,35 @@ def load_soil(ws) -> list[dict]:
     return out
 
 
+def load_wastewater(ws) -> list[dict]:
+    """ES&T Dataset S4, "Functional annotation of vAMGs". Title in row 0, a merged
+    group header in row 1, real column names in row 2. Carries BOTH a kofamscan KO and
+    an hmmsearch Pfam accession, so this catalogue can be matched in either namespace."""
+    out = []
+    for hdr, row in rows_of(ws, 2):
+        orf = cell(hdr, row, "ORF")
+        if not orf:
+            continue
+        m = KO_RE.search(cell(hdr, row, "ko"))
+        pid = PFAM_ID_RE.search(cell(hdr, row, "accession"))
+        out.append({
+            "catalogue": "wastewater",
+            "environment": "activated_sludge",
+            "pipeline": "custom_hmmer_kofamscan",
+            "gene_id": orf,
+            "contig_id": orf.rsplit("_", 1)[0] if "_" in orf else orf,
+            "ko": m.group(0) if m else "",
+            "pfam_id": pid.group(0) if pid else "",
+            "pfam_text": cell(hdr, row, "gene name"),
+            "cazy": "",
+            "description": cell(hdr, row, "ko definition"),
+            "aux_score": "",
+            "amg_flags": "",
+            "has_abundance": "1",          # Dataset S6/S7 carry RPKM
+        })
+    return out
+
+
 def duplicate_report(calls: list[dict], label: str) -> None:
     """Classify duplicate gene_ids before deciding whether to collapse them."""
     by_gene = defaultdict(list)
@@ -203,17 +233,27 @@ def main() -> None:
     soil = load_soil(wb["AMGs"])
     wb.close()
 
+    waste = []
+    if WASTE.exists():
+        wb = openpyxl.load_workbook(WASTE, read_only=True, data_only=True)
+        waste = load_wastewater(wb["Dataset S4"])
+        wb.close()
+
     say("\nWHICH IDENTIFIER SYSTEM EACH CATALOGUE ACTUALLY CARRIES")
     say("  (this is the namespace finding, measured rather than asserted)")
     namespace_report(ocean_c, "ocean conservative")
     namespace_report(ocean_p, "ocean permissive")
     namespace_report(soil, "soil")
+    if waste:
+        namespace_report(waste, "wastewater")
 
     say("\nDUPLICATES — classified before anything is removed")
     duplicate_report(ocean_c, "OCEAN CONSERVATIVE")
     duplicate_report(soil, "SOIL")
+    if waste:
+        duplicate_report(waste, "WASTEWATER")
 
-    all_calls = ocean_c + ocean_p + soil
+    all_calls = ocean_c + ocean_p + soil + waste
     OUT_TSV.parent.mkdir(exist_ok=True)
     with OUT_TSV.open("w", encoding="utf-8", newline="") as fh:
         fh.write("\t".join(SCHEMA) + "\n")
@@ -223,12 +263,16 @@ def main() -> None:
 
     say(f"\nWROTE {OUT_TSV.relative_to(ROOT)}  —  {len(all_calls):,} rows, {len(SCHEMA)} columns")
 
-    say("\nWASTEWATER — the outstanding gap")
-    say("  No per-gene table in sources/. The paper's text carries ZERO KO accessions, so the")
-    say("  19.8% (20/101) figure came from prose naming folE/queD/queE, not from identifiers.")
-    say("  The SI listing confirms a dataset 'functional annotation of vAMGs' exists and is")
-    say("  free of charge at https://pubs.acs.org/doi/10.1021/acs.est.2c07800 — but ACS")
-    say("  returns HTTP 403 to automated download. It has to be fetched through a browser.")
+    if waste:
+        say("\nWASTEWATER — obtained 2026-08-05, Dataset S4 of the ES&T Supporting Information.")
+        say(f"  {len(waste)} vAMG calls, matching the paper's stated 101 exactly, and carrying")
+        say("  BOTH kofamscan KO and hmmsearch Pfam accessions — so it can be measured in")
+        say("  either namespace. The paper's own text carries zero KO accessions, which is why")
+        say("  the 19.8% could only ever be derived from prose before this table was obtained.")
+        say("  The hard gate in 06_project_brief.md is now PASSED for all three catalogues.")
+    else:
+        say("\nWASTEWATER — still missing. Fetch Dataset S4 from the ES&T Supporting Information")
+        say("  at https://pubs.acs.org/doi/10.1021/acs.est.2c07800 (ACS blocks automated download).")
 
     OUT_TXT.parent.mkdir(exist_ok=True)
     OUT_TXT.write_text("\n".join(_out) + "\n", encoding="utf-8")
