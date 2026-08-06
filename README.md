@@ -131,5 +131,11 @@ Chunks 1, 2 and 3 are done — `07_`, `09_` and `08_`.
 3. If a short script answers the whole question in one sitting, that is a figure — the project is
    the question the figure raises.
 4. Read the figures, not the abstract.
-5. **Suspect your own best result.** Two headline numbers here were artefacts — an "83-fold"
-   difference and a "47.5%" share. Both caught only because they looked too good.
+5. **Suspect your own best result — and your worst.** Five numbers here have been artefacts:
+   an "83-fold" difference, a "47.5%" share, a false "UNSAFE" verdict, a "68% F-flagged" worry
+   with no baseline, and a "3.4%" soil share from a rubric that could not spell Pfam. They run
+   in **both** directions — over-claiming and over-killing — so "it looks too good" is only half
+   the trigger. The other half is *compared to what?*
+6. **Never trust a pattern you have not watched match real strings.** Print what it matched.
+   Free-text matching fails silently in three ways: over-match, under-match, and leakage
+   between categories.
