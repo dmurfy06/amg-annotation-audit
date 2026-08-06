@@ -1,0 +1,124 @@
+CHUNK 2 — the frozen rubric, applied correctly per namespace
+==============================================================================
+
+OCEAN CONSERVATIVE — the same catalogue, measured two ways
+
+  ocean conservative  —  matched on KO (31,772 rows carry one)
+      dcm — DNA cytosine methyltransferase       5,797
+      queC/D/E/F — queuosine biosynthesis        2,156
+      dsrC / tusE — sulfur relay                     9
+      folate / one-carbon                            3
+      glycoside hydrolases                           2
+      glycosyltransferases                           2
+    DISPUTED, per row                              7,969  25.08% [24.61%–25.56%]
+    DISPUTED, per distinct gene                    7,969  26.59% [26.09%–27.09%]  (of 29,973)
+    frozen KEGG-worded patterns would give         7,967  25.08% [24.60%–25.56%]   <- the defect
+    VALIDATION — every distinct string matched, so false positives are visible:
+      [dcm — DNA cytosine methyltransferase]
+          5,797  DNMT1, dcm; DNA (cytosine-5)-methyltransferase 1 [EC:2.1.1.37]
+      [queC/D/E/F — queuosine biosynthesis]
+          1,206  queD, ptpS, PTS; 6-pyruvoyltetrahydropterin/6-carboxytetrahydropterin 
+            626  queC; 7-cyano-7-deazaguanine synthase [EC:6.3.4.20]
+            324  queF; 7-cyano-7-deazaguanine reductase [EC:1.7.1.13]
+      [dsrC / tusE — sulfur relay]
+              9  tusE, dsrC; tRNA 2-thiouridine synthesizing protein E [EC:2.8.1.-]
+      [glycoside hydrolases]
+              1  E3.2.1.17; lysozyme [EC:3.2.1.17]
+              1  lacZ; beta-galactosidase [EC:3.2.1.23]
+      [glycosyltransferases]
+              2  bshA; L-malate glycosyltransferase [EC:2.4.1.-]
+      [folate / one-carbon]
+              3  DHFR-TS; dihydrofolate reductase / thymidylate synthase [EC:1.5.1.3 2.
+
+  ocean conservative  —  matched on PFAM (85,768 rows carry one)
+      dcm — DNA cytosine methyltransferase       5,381
+      folate / one-carbon                        2,721
+      queC/D/E/F — queuosine biosynthesis        1,304
+      dsrC / tusE — sulfur relay                    27
+      glycoside hydrolases                           3
+    DISPUTED, per row                              9,436  11.00% [10.79%–11.21%]
+    DISPUTED, per distinct gene                    9,436  11.23% [11.02%–11.45%]  (of 84,014)
+    frozen KEGG-worded patterns would give         1,332   1.55% [1.47%–1.64%]   <- the defect
+    VALIDATION — every distinct string matched, so false positives are visible:
+      [dcm — DNA cytosine methyltransferase]
+          5,277  C-5 cytosine-specific DNA methylase [PF00145.17]
+             53  C-5 cytosine-specific DNA methylase [PF00145.17]; Conserved hypothetic
+             36  C-5 cytosine-specific DNA methylase [PF00145.17]; Spermine/spermidine 
+         … and 6 other distinct string(s)
+      [folate / one-carbon]
+          1,369  GTP cyclohydrolase I [PF01227.22]
+          1,336  6-pyruvoyl tetrahydropterin synthase [PF01242.19]
+              4  GTP cyclohydrolase I [PF01227.22]; Phosphoribosyl transferase domain [
+         … and 9 other distinct string(s)
+      [queC/D/E/F — queuosine biosynthesis]
+            609  Queuosine biosynthesis protein QueC [PF06508.13]
+            270  Nitrile reductase, 7-cyano-7-deazaguanine-reductase N-term [PF14819.6]
+            192  Queuosine biosynthesis protein QueC [PF06508.13]; NAD synthase [PF0254
+         … and 16 other distinct string(s)
+      [dsrC / tusE — sulfur relay]
+             24  DsrC like protein [PF04358.13]
+              3  LexA DNA binding domain [PF01726.16]; DsrC like protein [PF04358.13]
+      [glycoside hydrolases]
+              2  Glycosyl hydrolases family 39 [PF01229.17]; Cellulase (glycosyl hydrol
+              1  Glycosyl hydrolases family 39 [PF01229.17]; Glycosyl hydrolase family 
+
+SOIL — the 29.8% headline
+
+  soil  —  matched on PFAM (4,583 rows carry one)
+      glycosyltransferases                       1,238
+      folate / one-carbon                          102
+      queC/D/E/F — queuosine biosynthesis           39
+      dsrC / tusE — sulfur relay                     8
+    DISPUTED, per row                              1,387  30.26% [28.95%–31.61%]
+    DISPUTED, per distinct gene                      743  22.67% [21.27%–24.14%]  (of 3,277)
+    frozen KEGG-worded patterns would give           155   3.38% [2.90%–3.95%]   <- the defect
+    VALIDATION — every distinct string matched, so false positives are visible:
+      [glycosyltransferases]
+          1,155  Glycosyl transferases group 1
+             56  Glycosyltransferase sugar-binding region containing DXD motif
+             27  Glycosyltransferase family 17
+      [folate / one-carbon]
+             42  GTP cyclohydrolase I
+             23  R67 dihydrofolate reductase
+             18  6-pyruvoyl tetrahydropterin synthase
+         … and 5 other distinct string(s)
+      [dsrC / tusE — sulfur relay]
+              8  DsrC like protein
+      [queC/D/E/F — queuosine biosynthesis]
+             23  Queuosine biosynthesis protein QueC
+             13  QueF-like protein
+              3  Nitrile reductase, 7-cyano-7-deazaguanine-reductase N-term
+
+  soil  —  matched on KO (1,148 rows carry one)
+      queC/D/E/F — queuosine biosynthesis           77
+      glycosyltransferases                          29
+      glycoside hydrolases                           4
+      folate / one-carbon                            3
+      dcm — DNA cytosine methyltransferase           1
+    DISPUTED, per row                                114   9.93% [8.33%–11.80%]
+    DISPUTED, per distinct gene                       66   9.48% [7.52%–11.89%]  (of 696)
+    frozen KEGG-worded patterns would give           110   9.58% [8.01%–11.42%]   <- the defect
+
+OCEAN PERMISSIVE — for the curation comparison (H2)
+
+  ocean permissive  —  matched on KO (99,386 rows carry one)
+      dcm — DNA cytosine methyltransferase       8,543
+      queC/D/E/F — queuosine biosynthesis        4,673
+      glycosyltransferases                         105
+      folate / one-carbon                           18
+      dsrC / tusE — sulfur relay                    13
+      glycoside hydrolases                           6
+    DISPUTED, per row                             13,358  13.44% [13.23%–13.65%]
+    DISPUTED, per distinct gene                   13,349  15.31% [15.08%–15.55%]  (of 87,167)
+    frozen KEGG-worded patterns would give        13,352  13.43% [13.22%–13.65%]   <- the defect
+
+  ocean permissive  —  matched on PFAM (248,052 rows carry one)
+      glycosyltransferases                      30,938
+      dcm — DNA cytosine methyltransferase       7,928
+      folate / one-carbon                        5,604
+      queC/D/E/F — queuosine biosynthesis        2,863
+      dsrC / tusE — sulfur relay                    48
+      glycoside hydrolases                           6
+    DISPUTED, per row                             47,385  19.10% [18.95%–19.26%]
+    DISPUTED, per distinct gene                   46,722  19.84% [19.68%–20.00%]  (of 235,456)
+    frozen KEGG-worded patterns would give        16,119   6.50% [6.40%–6.60%]   <- the defect

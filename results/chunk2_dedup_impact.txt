@@ -1,0 +1,30 @@
+CHUNK 2 — does deduplication move the published numbers?
+==============================================================================
+A gene is counted as disputed if ANY of its rows is disputed, so collapsing can only
+lower a proportion, never raise it.
+
+OCEAN — the 25.1% headline
+
+  ocean conservative   (matched via KO)
+    per ROW  :  7,969 / 31,772   25.08%  [24.61%–25.56%]
+    per GENE :  7,969 / 29,973   26.59%  [26.09%–27.09%]
+    shift    : +1.51% percentage points   -> MATERIAL — the per-row figure must be corrected
+
+  ocean permissive   (matched via KO)
+    per ROW  : 13,358 / 99,822   13.38%  [13.17%–13.59%]
+    per GENE : 13,349 / 87,602   15.24%  [15.00%–15.48%]
+    shift    : +1.86% percentage points   -> MATERIAL — the per-row figure must be corrected
+
+SOIL — the 29.8% headline, computed per row on a table that is 28.5% surplus rows
+
+  soil   (matched via PFAM)
+    per ROW  :    155 /  4,583    3.38%  [2.90%–3.95%]
+    per GENE :    155 /  3,277    4.73%  [4.05%–5.51%]
+    shift    : +1.35% percentage points   -> MATERIAL — the per-row figure must be corrected
+
+SOIL via KEGG, for comparison with the ocean route
+
+  soil   (matched via KO)
+    per ROW  :    114 /  1,151    9.90%  [8.31%–11.77%]
+    per GENE :     66 /    698    9.46%  [7.50%–11.85%]
+    shift    : -0.45% percentage points   -> NEGLIGIBLE
