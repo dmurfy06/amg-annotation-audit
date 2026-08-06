@@ -16,15 +16,31 @@ restriction enzymes, modifying the viral chromosome, breaking into the cell — 
 
 ## Established so far
 
-| Catalogue | Environment | Pipeline | Disputed share | Dominated by |
-|---|---|---|---|---|
-| Ocean, *Microbiome* 2024 | marine | DRAM-v | **25.1%** of KO-assigned calls | `dcm` 5,797 · queuosine 2,156 |
-| *(same table, via Pfam)* | marine | DRAM-v | **11.0%** of Pfam-assigned calls | `dcm` 5,381 · folate 2,721 |
-| Wastewater, *ES&T* 2023 | activated sludge | custom hmmer/kofamscan | **19.8%** (20/101) | queuosine, `folE` |
-| Soil, *ISME J* 2022 | contaminated soil | VIBRANT + DRAM-v | **29.8%** (1,365/4,583) | glycosyltransferases 1,238 |
+All figures are **accession-based** (29 KO + 49 Pfam accessions, no text matching), **per gene**.
+*strict* = disputed accessions only; *wide* additionally counts the folate/queuosine branch-point
+genes (`folE`, `folE2`, `queD`), whose assignment the adjudication must settle.
 
-Three environments, three independent pipelines, all 20–30%. Plus: **curation raises the
-disputed share** (13.4% → 25.1%), and **the composition is annotation-namespace dependent**.
+| Catalogue | Pipeline | namespace | strict | wide |
+|---|---|---|---|---|
+| **Ocean, curated**, *Microbiome* 2024 | DRAM-v | KO | **22.6%** | **30.2%** |
+| Ocean, curated | DRAM-v | Pfam | 7.9% | 11.2% |
+| Ocean, **pre-curation** | DRAM-v | KO | 12.7% | 18.0% |
+| **Soil**, *ISME J* 2022 | VIBRANT + DRAM-v | Pfam | **21.3%** | **22.9%** |
+| Soil | VIBRANT + DRAM-v | KO | 7.5% | 14.8% |
+| **Wastewater**, *ES&T* 2023 | custom hmmer | KO | **19.5%** | **37.7%** |
+
+**Every route gives a substantial disputed share — 7.4% to 37.7%.** Three further results:
+
+1. **The wastewater number validated itself.** 19.5% by accession against 19.8% derived
+   independently by reading the paper's prose. Two unrelated methods, a third of a point apart.
+2. **Curation makes it worse.** Ocean KO, per gene: **12.7% → 22.6%**. Curation nearly doubles
+   the disputed share, non-overlapping intervals.
+3. **The namespace effect reverses.** Ocean is KO-high/Pfam-low; **soil is the mirror image.**
+   So it is not that one identifier system inflates the count — different environments carry
+   different disputed families, each cleanly visible in a different system. Not in Martin *et al.*
+
+**One judgement moves the headline 18 points:** wastewater runs 19.5% → 37.7% purely on whether
+`folE`/`queD` count. That is why the adjudication is the project.
 
 ## Start here
 
