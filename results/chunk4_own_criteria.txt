@@ -1,0 +1,96 @@
+CHUNK 4 — every catalogue tested against ITS OWN stated criteria
+==============================================================================
+Martin et al. are not used anywhere in this analysis.
+
+==============================================================================
+OCEAN (Microbiome 2024) — RULE APPLIED
+==============================================================================
+  Their rule: AMGs excluded if on contigs carrying "transposons, lipopolysaccharide
+  islands (glycosyltransferase, ...), endonucleases, integrases, or plasmid stability".
+
+                             permissive   conservative   verdict
+  ------------------------ ------------ --------------   ------------------------
+  glycosyltransferase            30,483              2   99.993% removed
+  transposon (T flag)               762              0   removed entirely
+  auxiliary score <= 3                  ['1', '2', '3']   respected
+
+  VERDICT: the ocean catalogue APPLIES its own stated exclusions. 2 glycosyltransferase
+  calls survive out of 30,483 — a 99.99% exclusion rate — and no transposon call does.
+  This is a NEGATIVE result for H4, and it is what makes the positive one below credible.
+
+==============================================================================
+WASTEWATER (ES&T 2023) — RULE UNDER-DETERMINED, not cleanly violated
+==============================================================================
+  Their rule: metabolic genes "directly involved in viral replication (e.g.,
+  replication, repair, nucleotide transport, and metabolism) were not included".
+  Their annotation: kofamscan against KEGG. So KEGG assigns the categories, not us.
+
+  calls with a KEGG KO: 77 of 101
+  KOs KEGG cannot categorise: 0
+
+  KEGG 09104 Nucleotide metabolism      10 calls   13.0% [7.2-22.3]
+  KEGG 09124 Replication and repair      0 calls    0.0% [0.0-4.8]
+  --------------------------------------------------------------
+  in an excluded category at all       10 calls   13.0% [7.2-22.3]
+  ...EXCLUSIVELY so (a clean violation)    0 calls    0.0% [0.0-4.8]
+
+  Every KO involved, with ALL the categories KEGG gives it:
+        8  K01939  adenylosuccinate synthase [EC:6.3.4.4]
+                      09104 Nucleotide metabolism  <- excluded by their rule
+                      09105 Amino acid metabolism  (permitted)
+        2  K00948  ribose-phosphate pyrophosphokinase [EC:2.7.6
+                      09101 Carbohydrate metabolism  (permitted)
+                      09104 Nucleotide metabolism  <- excluded by their rule
+
+  >> THE HEADLINE DOES NOT SURVIVE. Both KOs are DUAL-CLASSIFIED: each also sits in a
+     category the rule permits, so the authors could read purA as amino acid metabolism
+     and prsA as carbohydrate metabolism — and they do present prsA as a carbon gene.
+     ZERO calls are exclusively in an excluded category.
+
+  >> What survives is better than a gotcha, and it is a finding about the rule itself:
+     the stated criterion CANNOT BE APPLIED DETERMINISTICALLY. Using the authors' own
+     annotation database, a gene can satisfy and violate their rule simultaneously,
+     depending on which of KEGG's categories you happen to read. A rule that does not
+     decide is not being enforced — it is being interpreted, case by case, invisibly.
+
+==============================================================================
+SOIL (ISME J 2022) — NOT MECHANICALLY TESTABLE, reported separately
+==============================================================================
+  Their rule: "Proteins involved in nutrient transformation and pollutant degradation
+  were defined as auxiliary metabolic genes." A positive definition in ordinary English.
+
+      glycosyltransferase           1,238   27.0% [25.7-28.3]
+      queuosine                        92    2.0% [1.6-2.5]
+      folate                           88    1.9% [1.6-2.4]
+      dsrC_tusE                         8    0.2% [0.1-0.3]
+      glycoside_hydrolase               4    0.1% [0.0-0.2]
+      dcm                               2    0.0% [0.0-0.2]
+
+  Deciding whether 'Glycosyl transferases group 1' — cell-surface polysaccharide
+  biosynthesis — counts as 'nutrient transformation' REQUIRES OUR JUDGEMENT. So this
+  is not an internal-inconsistency result and is not claimed as one. It goes to the
+  Chunk 5 adjudication like any other biochemical question.
+
+==============================================================================
+WHAT CHUNK 4 ESTABLISHES
+==============================================================================
+  1. OCEAN states a mechanical exclusion and APPLIES it — 30,483 glycosyltransferase
+     calls down to 2, every transposon call gone. Rules can be, and are, enforced.
+
+  2. WASTEWATER states an exclusion that CANNOT BE APPLIED DETERMINISTICALLY. 13% of
+     its KO-assigned calls carry a category its rule excludes, but ZERO carry one
+     exclusively — every such gene also sits in a permitted category. The rule does
+     not decide, so it is being interpreted case by case, invisibly, rather than
+     enforced. That is a finding about the rule, not an accusation about the authors.
+
+  3. SOIL states its rule in ordinary English, so it cannot be tested without our own
+     judgement entering. Not tested here; it goes to the Chunk 5 adjudication.
+
+  THE PRE-REGISTERED EXPECTATION FAILED, and that is reported rather than buried:
+  H4 predicted the QUEUOSINE genes would violate the wastewater rule, because the
+  authors themselves note those genes 'could also participate in tRNA biogenesis'.
+  They do not trip the test. KEGG files queuosine biosynthesis under FOLATE
+  BIOSYNTHESIS (09108, cofactors and vitamins), not nucleotide metabolism. The genes
+  that do trip it are purA and prsA — and neither trips it cleanly.
+
+Wrote results\chunk4_own_criteria.txt

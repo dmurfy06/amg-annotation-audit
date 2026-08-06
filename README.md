@@ -34,6 +34,7 @@ disputed share** (13.4% → 25.1%), and **the composition is annotation-namespac
 | `07_flag_semantics.md` | Chunk 1 result. What DRAM-v's flags mean, and why the `F`-flag worry was backwards |
 | **`08_adjudication_protocol.md`** | **The rules for judging gene families, fixed before any was judged.** Read before Chunk 5 |
 | `09_chunk2_harmonisation.md` | Chunk 2. One schema, deduplication, and a defect found in the frozen rubric |
+| `10_chunk4_own_criteria.md` | Chunk 4. Each paper against its own stated rule — and why H4 failed |
 | `05_redteam.md` | Every objection to the project and its answer. 7 attacks: 3 fail, 3 land, 1 standing risk |
 | `04_feasibility.md` | Compute, data, skills, timeline. The binding constraint is not compute |
 | `03_novelty_audit.md` | Why 15 other candidates died, with the citation that killed each |
@@ -109,20 +110,16 @@ while looking at code it belongs here; if it should still make sense in a year, 
 
 ## Next action
 
-**A decision, then Chunk 4.** Chunk 2 found the frozen rubric under-matches badly outside
-KEGG (soil: 3.4% literal vs 30.3% corrected) and that family membership is a biological
-judgement the regexes were making silently. The proposed fix — define families by explicit
-KO/Pfam accession lists — is a change to how the pre-registered rubric is applied and needs an
-appended amendment to `08_adjudication_protocol.md`. See `09_chunk2_harmonisation.md`.
+**Chunk 5 — the adjudication.** Everything upstream is done and it is now the only thing
+standing between the project and a write-up. Rules are fixed in
+`08_adjudication_protocol.md`; the frozen family list is `data/family_accessions.tsv`.
 
-Also outstanding: the wastewater per-gene table, which exists and is free but needs fetching
-through a browser (ACS blocks automated download).
+Chunks 1, 2, 3 and 4 are complete — `07_`, `09_`, `08_`, `10_`.
 
-Chunks 1, 2 and 3 are done — `07_`, `09_` and `08_`.
-
-> **Correction carried from Chunk 3:** the H1 pre-registration in `06_project_brief.md` is
-> **spent** — catalogues 2 and 3 had already been examined when it was written. All three
-> catalogue measurements are **exploratory** and must be reported as such.
+> **Carried forward:** the H1 pre-registration in `06_project_brief.md` is **spent** and all
+> catalogue measurements are exploratory. **H4 failed** in the form it was written — see
+> `10_chunk4_own_criteria.md`. Every disputed-share figure is accession-based per Amendment 1;
+> earlier text-matched numbers are void.
 
 ## House rules, each bought with a dead candidate
 
