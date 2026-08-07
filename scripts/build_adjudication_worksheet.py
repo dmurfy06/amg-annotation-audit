@@ -13,7 +13,8 @@ WHAT THIS DOES AND DOES NOT DO
       4. emit one worksheet entry per family with the fields the protocol requires
 
 THE INCLUSION RULE, quoted from the protocol (fixed before this script existed):
-      1. >=1% of KO-assigned AMG calls in any of the three catalogues; OR
+      1. >=1% of KO-assigned AMG calls AND >=10 calls, in the SAME catalogue
+         (Amendment 2 — the bare percentage was degenerate at n=77); OR
       2. named by Martin et al. (2025); OR
       3. designated a positive or negative control.
 
@@ -51,6 +52,10 @@ OUT_COUNTS = ROOT / "data" / "adjudication_counts_SEALED.tsv"
 
 CATALOGUES = ["ocean_conservative", "soil", "wastewater"]
 THRESHOLD = 0.01
+# Amendment 2: a percentage threshold means nothing when the denominator cannot support it.
+# At n=77 (wastewater) 1% is 0.77 calls, so the bare percentage selected for mere presence
+# rather than abundance. Both conditions must now hold in the SAME catalogue.
+MIN_CALLS = 10
 
 CONTROLS = {
     "K02703": ("positive", "psbA"),
@@ -95,7 +100,7 @@ def main() -> None:
         if not pool:
             continue
         for ko, n in Counter(r["ko"] for r in pool).items():
-            if n / len(pool) >= THRESHOLD:
+            if n / len(pool) >= THRESHOLD and n >= MIN_CALLS:      # Amendment 2: both, same catalogue
                 qualifying.setdefault(ko, set()).add(cat)
 
     # --- assemble adjudication units ----------------------------------------------------
@@ -106,12 +111,12 @@ def main() -> None:
         units[fam]["basis"].add("named by Martin et al.")
     for ko, cats in qualifying.items():
         if ko in martin_ko:
-            units[martin_ko[ko]]["basis"].add(f">=1% in {', '.join(sorted(cats))}")
+            units[martin_ko[ko]]["basis"].add(f">=1% and >=10 calls in {', '.join(sorted(cats))}")
             continue
         lab = gene_symbol(ko_name.get(ko, ko))
         units.setdefault(lab, {"label": lab, "kos": set(), "basis": set(), "control": ""})
         units[lab]["kos"].add(ko)
-        units[lab]["basis"].add(f">=1% in {', '.join(sorted(cats))}")
+        units[lab]["basis"].add(f">=1% and >=10 calls in {', '.join(sorted(cats))}")
     for ko, (kind, lab) in CONTROLS.items():
         units.setdefault(lab, {"label": lab, "kos": set(), "basis": set(), "control": kind})
         units[lab]["kos"].add(ko)
