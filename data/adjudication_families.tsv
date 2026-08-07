@@ -1,0 +1,54 @@
+order	family	accessions	basis_for_inclusion	control
+1	ACAT	K00626	>=1% in wastewater	
+2	acpP	K02078	>=1% in wastewater	
+3	asnB	K01953	>=1% in soil, wastewater	
+4	cgeB	K06320	>=1% in soil	
+5	cobS	K09882	>=1% in wastewater	
+6	cobT	K09883	>=1% in wastewater	
+7	csn	K01233	>=1% in wastewater	
+8	dcm	K00558,K17398	>=1% in ocean_conservative; named by Martin et al.	
+9	dsrC_tusE	K11179	named by Martin et al.	
+10	dut	K01520	>=1% in ocean_conservative	
+11	folate	K00287,K00548,K01433,K01491,K01495,K01633,K09007,K13938,K13998,K19645	>=1% in ocean_conservative, soil, wastewater; >=1% in wastewater; named by Martin et al.	
+12	galE	K01784	>=1% in ocean_conservative, soil	
+13	GGCT	K00682	>=1% in wastewater	
+14	glmS	K00820	>=1% in soil	
+15	glycoside_hydrolase	K01179,K01185,K01187,K01190,K01199,K03791	named by Martin et al.	
+16	glycosyltransferase	K00754,K03669,K03814,K07270,K15521	>=1% in soil; named by Martin et al.	
+17	gmd	K01711	>=1% in ocean_conservative, soil, wastewater	
+18	GME	K10046	>=1% in wastewater	
+19	gmhA	K03271	>=1% in wastewater	
+20	hisF	K02500	>=1% in soil	
+21	HMGCL	K01640	>=1% in ocean_conservative	
+22	IMPDH	K00088	>=1% in ocean_conservative	
+23	iscS	K04487	>=1% in wastewater	
+24	iscU	K04488	>=1% in ocean_conservative	
+25	K07336	K07336	>=1% in ocean_conservative	
+26	MAN	K19355	>=1% in wastewater	
+27	manB	K01840	>=1% in ocean_conservative	
+28	metK	K00789	>=1% in wastewater	
+29	MGAT3	K00737	>=1% in wastewater	
+30	NAMPT	K03462	>=1% in soil, wastewater	
+31	nodU	K00612	>=1% in ocean_conservative	
+32	nrdH	K06191	>=1% in soil	
+33	P4HA	K00472	>=1% in ocean_conservative, wastewater	
+34	pagL	K12976	>=1% in wastewater	
+35	phoD	K01113	>=1% in wastewater	
+36	phoH	K06217	>=1% in ocean_conservative, wastewater	
+37	ppa	K01507	>=1% in wastewater	
+38	PRPS	K00948	>=1% in wastewater	
+39	psbA	K02703	control	positive
+40	psbD	K02706	control	positive
+41	pseB	K15894	>=1% in soil	
+42	purA	K01939	>=1% in wastewater	
+43	queuosine	K01737,K06879,K06920,K09457,K10026	>=1% in ocean_conservative, soil, wastewater; >=1% in wastewater; named by Martin et al.	
+44	raxST	K13472	>=1% in ocean_conservative	
+45	rfbB	K01710	>=1% in soil	
+46	rfbC	K20444	>=1% in soil	
+47	speD	K01611	>=1% in ocean_conservative	
+48	tagD	K00980	>=1% in ocean_conservative	
+49	TALDO1	K00616	>=1% in ocean_conservative	
+50	UGDH	K00012	>=1% in ocean_conservative, soil	
+51	vanY	K07260	>=1% in wastewater	
+52	xtmA	K07474	control	negative
+53	xtmB	K06909	control	negative
