@@ -818,3 +818,115 @@ phage-specific functional evidence from this sweep either.
 that group, and `P4HA` remains in it pending the megaphage check).
 
 ---
+
+---
+
+# The eight with no evidence: COUNTS or UNRESOLVABLE?
+
+## Recommendation: **COUNTS** — with the absence reported as a separate measurement
+
+The protocol permits either. UNRESOLVABLE is technically available because the missing experiment
+*is* nameable — express the phage-encoded copy, determine its substrate, time its expression
+during infection. That is precisely what was done for transaldolase and NAMPT.
+
+But COUNTS is the better verdict, for three reasons.
+
+### 1. UNRESOLVABLE would conflate two genuinely different situations
+
+Compare:
+
+| Family | Situation |
+|---|---|
+| **queuosine** | Evidence exists and **points both ways** — tRNA modification *and* detected in phage DNA. Genuinely undecidable. |
+| **`hisF`** | **No evidence at all.** Nothing points anywhere. |
+
+Both would get the same label, and that label would then mean two incompatible things. The
+adjudication table is the project's most reusable artefact; collapsing "the evidence conflicts"
+into "there is no evidence" is exactly the kind of information loss this project exists to
+criticise.
+
+Keep UNRESOLVABLE for families where **evidence exists and does not settle the question.**
+
+### 2. COUNTS is the conservative direction, and this is where that matters most
+
+The "maximally strict" reporting rule excludes UNRESOLVABLE families as well as DOES NOT COUNT.
+So marking eight families UNRESOLVABLE would **remove them from the record and inflate the
+disputed share** — on the basis of nothing more than nobody having done an experiment.
+
+That is using ignorance to support your own hypothesis. It is the single most attackable move
+available, and it is avoidable at no cost.
+
+The protocol's whole design principle is to point the rules against yourself. Apply it here.
+
+### 3. The finding does not need the verdict
+
+Reporting "no phage-specific evidence exists for these families" is a **separate measurement**
+that stands on its own. It needs no rubric, no verdict and nobody's agreement. Wiring it to a
+verdict makes it weaker, not stronger, because it becomes contingent on accepting your rubric.
+
+Report it as its own quantity: **the evidence-free share of the record.**
+
+> [!important] What this gives the paper — two independent findings instead of one
+> 1. **X% of AMG calls sit in categories the field's own experts dispute** — depends on the rubric
+> 2. **Y% sit in families with no phage-specific functional evidence at all** — depends on nothing
+>
+> The second cannot be argued away by rejecting Martin *et al.* That makes it the more durable of
+> the two, and it should not be buried inside a verdict column.
+
+### Practical instruction
+
+- Verdict for all eight: **COUNTS**
+- Confidence: **low**
+- In the argument box, write the same sentence each time: *"No phage-specific functional evidence
+  identified after three independent search strategies; defaults to COUNTS under the protocol.
+  Resolving experiment: [name it]."*
+- Then tag them in a separate column or list as **evidence-free**, so the second measurement can
+  be computed without touching the verdicts
+
+Naming the resolving experiment even for a COUNTS verdict costs you nothing and builds the
+research-agenda table anyway.
+
+---
+
+# Draft paragraph for the paper
+
+Written to be defensible rather than punchy. Percentages left as placeholders — they get filled
+in after the verdicts are closed and the sealed counts are opened.
+
+> Of the 35 gene families adjudicated, eight — accounting for **[X]%** of KO-assigned calls —
+> had no phage-specific functional evidence that we were able to identify. For these families we
+> found no study characterising the phage-encoded protein, determining its substrate, or
+> measuring its expression during infection, and none of the three source catalogues discussed
+> them in their text. Searches were conducted in three independent passes: thematic queries,
+> per-gene queries, and targeted preprint and web searching, with all candidate hits verified
+> against primary records before inclusion. Two families initially assigned to this group
+> (transaldolase and nicotinamide phosphoribosyltransferase) were removed following the second
+> pass, and one further lead remains unresolved; we therefore report this as a **lower bound on
+> the evidence available**, not a demonstration of its absence.
+>
+> We do not treat this as grounds for exclusion. Under our pre-registered protocol, absence of
+> evidence defaults to inclusion, and these families are counted as auxiliary metabolic genes
+> throughout. We report the observation separately because it bears on a different question: for
+> approximately a quarter of the families contributing to these catalogues, the AMG designation
+> rests on sequence similarity to a characterised host enzyme and on nothing else.
+
+## Three things that paragraph does deliberately
+
+**It states the search method and admits the corrections.** "Two families were removed following
+the second pass" is not a weakness to hide — it is what makes the remaining claim credible.
+A negative result with no account of how hard you looked is worthless.
+
+**It says "lower bound", not "there is none".** You cannot prove absence from the literature. The
+claim you can defend is *"we looked this hard and found nothing"*, and it gets stronger every
+time someone checks and also finds nothing.
+
+**It separates the observation from the verdict, explicitly.** The sentence *"We do not treat this
+as grounds for exclusion"* pre-empts the obvious attack — that you are using ignorance to inflate
+your number — by stating plainly that you did the opposite.
+
+> [!tip] The sentence to avoid
+> *"Nobody has ever studied these genes."* You do not know that. What you know is that three
+> search strategies found nothing, and that the catalogue papers don't discuss them. Say that
+> instead — it is narrower, true, and nobody can knock it down.
+
+---
