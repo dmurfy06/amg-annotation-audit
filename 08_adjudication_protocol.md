@@ -267,3 +267,61 @@ a defined set rather than to whatever a regex happened to catch.
 **Direction of effect, declared.** Correcting the under-match **raises** the disputed share,
 which favours this project's own hypothesis. That is precisely why the defect, the correction,
 and both sets of numbers are reported together — see `09_chunk2_harmonisation.md`.
+
+---
+
+### Amendment 2 — 2026-08-05. The ≥1% inclusion threshold gains an absolute minimum.
+
+**Committed before the family list was regenerated and before any family was adjudicated.**
+
+**What this replaces.** Inclusion rule 1 in *"Which families get adjudicated"* above, which read:
+
+> 1. It accounts for **≥1% of KO-assigned AMG calls** in any of the three catalogues
+
+It now reads:
+
+> 1. It accounts for **≥1% of KO-assigned AMG calls in a catalogue where that 1% corresponds
+>    to at least 10 calls** — i.e. ≥1% **and** ≥10 calls in the same catalogue
+
+Rules 2 (named by Martin *et al.*) and 3 (controls) are unchanged, so **no disputed family and
+no control can be removed by this amendment.** It touches only rule 1.
+
+**Why — the threshold is degenerate at small n, and applying it exposed that.**
+
+| Catalogue | KO-assigned calls | what "1%" actually requires |
+|---|---|---|
+| Ocean, curated | 31,772 | 318 calls — a substantive bar |
+| Soil | 1,151 | 12 calls — reasonable |
+| **Wastewater** | **77** | **0.77 calls — any gene appearing even ONCE qualifies** |
+
+A percentage threshold only means anything when the denominator can support it. At n = 77 the
+rule stops selecting for abundance and starts selecting for mere presence: **18 of the 53
+families it produced qualified solely by appearing at least once in a 101-call catalogue.**
+That is not what "accounts for ≥1% of the record" was written to mean.
+
+**The justification is methodological, not workload.** The rule fails to do the job it was
+written for. It would need fixing even if it produced *fewer* families than expected. The
+minimum of 10 is the point below which a percentage of a small denominator carries no
+information; it was not tuned to reach a target family count.
+
+**Effect, stated in full and in advance:**
+
+| minimum calls | families | share of the curated ocean KO record covered |
+|---|---|---|
+| ≥1 *(rule as originally written)* | 53 | 78.1% |
+| **≥10 *(this amendment)*** | **35** | **75.0%** |
+| ≥25 | 31 | 75.0% |
+| ≥50 | 29 | 75.0% |
+
+The 18 families this removes account for **3.1 percentage points** of the record. Per the
+existing provision in *"Which families get adjudicated"*, they are **counted in aggregate as
+"not adjudicated" and their share reported**, so the unexamined remainder stays visible and
+nothing is hidden by the change.
+
+**Direction of effect, declared.** This is close to neutral for the project's hypothesis: the
+removed families are overwhelmingly single-call wastewater entries that are not in dispute
+either way. It neither inflates nor deflates the disputed share materially. It shortens the
+adjudication by roughly a third.
+
+**What would reverse it.** A further amendment, appended below with its reasoning. The original
+rule text above is not deleted and remains the record of what was first committed.
