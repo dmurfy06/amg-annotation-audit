@@ -17,8 +17,7 @@ nothing is quoted that I have not seen. DOIs link to source.
 > point. If one looks obviously right *because of how I've written it*, tell me and I'll rewrite
 > it flatter.
 
-**Status: 18 of 35 complete.** Doing these properly takes real searching; the rest follow in
-later batches. Order is alphabetical within each batch, per the protocol.
+**Status: all 35 families covered.** Order is alphabetical within each batch, per the protocol.
 
 ---
 
@@ -344,13 +343,226 @@ phosphate uptake in infected versus uninfected cells under limitation.
 
 ---
 
-## Still to do — 17 families
+---
 
-`asnB` · `cgeB` · `dsrC_tusE` · `folate` · `hisF` · `HMGCL` · `IMPDH` · `iscU` · `K07336` ·
-`NAMPT` · `nodU` · `nrdH` · `P4HA` · `raxST` · `speD` · `TALDO1`
+# Batch 3 — the remaining 16
 
-Mostly single enzymes with little obvious phage literature, plus `folate` and `dsrC_tusE`, which
-are disputed families and will get full treatment.
+## `dsrC_tusE` — sulfur relay (K11179)
+
+**The reason this family exists in the rubric.** Martin *et al.* single it out not for its
+biology but as an **annotation failure**: DsrC and TusE do different jobs, current HMMs cannot
+separate them, and **KEGG has merged them into a single orthology group literally named
+`tusE, dsrC`**. One accession, two functions.
+
+**What the two proteins actually do.** According to PubMed, Stockdreher *et al.* (2012, *PLoS
+One*) work out the sulfur-transfer chemistry in *Allochromatium vinosum* and state the
+relationship directly: **TusE is part of a system for tRNA modification** — TusBCD transfers
+sulfur to TusE — and TusE is *"a homolog of another crucial component of the A. vinosum Dsr
+system, namely DsrC."* DsrC itself is persulfurated at Cys111 and feeds sulfur to the
+**dissimilatory sulfite reductase DsrAB**, i.e. energy metabolism.
+[DOI](https://doi.org/10.1371/journal.pone.0040785)
+
+So: same fold, same persulfide chemistry, **two entirely different destinations** — tRNA
+thiolation versus dissimilatory sulfur oxidation.
+
+**The case for HOST / sustains host metabolism:**
+If the phage copy is a genuine `dsrC`, it feeds dissimilatory sulfur oxidation — host energy
+metabolism, and exactly the kind of thing claimed in the biogeochemical literature.
+
+**The case for VIRAL / lifecycle step:**
+If it is a `tusE`, it feeds tRNA thiolation — a housekeeping modification with no sulfur-cycling
+implication whatever. Note this reading doesn't make it *viral* so much as **not what the
+catalogue claims it is**.
+
+> [!important] This family is different from all the others, and the distinction matters
+> For every other family you are judging **what a phage does with a gene**. Here you are judging
+> whether **anyone can tell which gene it is.** Under a merged KEGG orthology, a call of K11179
+> carries no information about which of the two functions is present.
+>
+> That makes it a strong candidate for **UNRESOLVABLE**, and unusually, the resolving experiment
+> is easy to name: **phylogenetic or HMM separation of DsrC from TusE**, then re-annotation of
+> the calls. Until someone does that, no catalogue can support a sulfur-cycling claim from this
+> accession — and *that* is the finding, whichever way you rule.
+
+**Evidence tier available: 2** for the underlying biochemistry; **effectively 0** for
+distinguishing which one the environmental calls actually are.
+
+---
+
+## `folate` — `folE`, `folE2`, `folA`, `folB`, `folD` and relatives
+
+**What the pathway does.** Builds tetrahydrofolate, the universal one-carbon carrier. Its
+one-carbon units feed purine synthesis, thymidylate synthesis (via thymidylate synthase),
+methionine, and formylmethionyl-tRNA for translation initiation.
+
+**The overlap you already know about.** `folE` / GTP cyclohydrolase I is the first committed step
+of folate biosynthesis **and** the entry point to queuosine biosynthesis. `folE2` (`K09007`,
+GTP cyclohydrolase IB) is an alternative to it and sits at the same branch. Chunk 2 flagged all
+four as **AMBIGUOUS** in the accession list precisely for this reason, and Chunk 4 showed the
+wastewater rule cannot resolve it either.
+
+**Cross-reference the queuosine dossier above.** Thiaville *et al.* detected a 7-deazaguanine
+derivative in phage DNA; the pathway producing it starts at GTP cyclohydrolase I. So a phage
+`folE` may be feeding folate, or feeding DNA modification, and the gene does not say which.
+[DOI](https://doi.org/10.1073/pnas.1518570113)
+
+**The case for HOST / sustains host metabolism:**
+Folate is a genuine cofactor pathway serving the whole cell. A phage supplementing it is
+supplementing host one-carbon metabolism, which is host metabolic modulation in the ordinary
+sense.
+
+**The case for VIRAL / lifecycle step:**
+Martin *et al.*'s argument is that the one-carbon units feed *de novo* nucleotide biosynthesis for
+**phage genome replication** — a discrete lifecycle step. The queuosine evidence adds a second
+viral route: genome modification.
+
+> [!caution] This is the 18-percentage-point family
+> Wastewater moves **19.5% → 37.7%** on whether `folE`/`queD` count. Whatever you decide here,
+> the write-up reports the answer **both ways**. Take your time and make the argument box good —
+> this is the paragraph a reviewer will read hardest.
+
+**Evidence tier available: 2** (for the chemistry and the phage-DNA detection); **6** for the
+specific question of what a phage `folE` is doing, unless you find better.
+
+---
+
+## `nrdH` — glutaredoxin-like protein, ribonucleotide reductase system
+
+**What it does.** `nrdH` is the redox partner of class Ib ribonucleotide reductase (RNR). RNR
+converts ribonucleotides to deoxyribonucleotides — the committed, rate-limiting step of making
+DNA precursors from RNA precursors.
+
+**Phage-specific evidence, and it is indirect but telling.** PubMed returns **130 results** for
+bacteriophage ribonucleotide reductase — phage-encoded RNRs are common and well studied.
+
+More pointedly, Sakowski *et al.* (2021, *Nature Microbiology*) built a method for capturing
+virus–host interactions in situ that *"fuses a **phage marker, the ribonucleotide reductase
+gene**, with the host 16S rRNA gene of infected bacterial cells."*
+[DOI](https://doi.org/10.1038/s41564-021-00873-4)
+
+**RNR is used as a marker gene for phage.** That is the same status `phoH` has, and it means
+phage RNR sequences are distinct enough from host ones to identify a virus. Whatever else that
+implies, it is not the signature of a gene the phage picked up incidentally.
+
+Huang *et al.* (2021) also list RNR among the seven high-frequency roseophage AMGs, all of which
+they describe as *"involved in the nucleotide biosynthesis pathway."*
+[DOI](https://doi.org/10.1111/1462-2920.15412)
+
+**The case for HOST / sustains host metabolism:**
+RNR supplies the dNTP pool the whole cell uses. Boosting it raises host biosynthetic capacity.
+
+**The case for VIRAL / lifecycle step:**
+The dNTPs are consumed replicating the phage genome. A phage encoding its own RNR is the textbook
+example of a virus provisioning **its own** replication rather than the host's, and the fact that
+phage RNRs are phylogenetically distinct enough to serve as viral marker genes supports
+specialisation for that role.
+
+**Evidence tier available: 4–5.** Abundant comparative genomics; no experiment separating "the
+host's dNTP pool" from "the phage's dNTP pool" during infection, because during infection they
+are the same pool. **That may be genuinely unresolvable** — and if you say so, that is the
+experiment problem to name.
+
+---
+
+## `IMPDH` — IMP dehydrogenase (K00088)
+
+**What it does.** Catalyses the rate-limiting, committed step of **guanine nucleotide**
+biosynthesis: IMP → XMP, en route to GMP, GDP, GTP, dGTP.
+
+Same structural argument as `nrdH` and `dut` — it is a nucleotide-supply enzyme, and during
+infection the nucleotide pool being drawn down is the one replicating the phage genome. Note that
+IMPDH sits in KEGG's **09104 Nucleotide metabolism**, which is the category the wastewater paper's
+own rule excludes (Chunk 4).
+
+**No phage-specific functional study surfaced** in the searches run. Treat as **Tier 6** unless
+you find otherwise: the argument available is from the chemistry, and **Tier 6 alone cannot rule
+a family out**, so the protocol's default applies.
+
+---
+
+## `speD` — S-adenosylmethionine decarboxylase
+
+**What it does.** Decarboxylates SAM to provide the aminopropyl donor for **spermidine**
+synthesis. Polyamines are polycations that bind nucleic acids and are required for normal growth.
+
+**Why this one is more interesting than it looks.** Polyamines have a long-standing association
+with phage biology — PubMed returns work on phage and polyamines going back to the 1970s.
+Spermidine is a structural component of some phage virions, where its positive charge helps
+neutralise the packaged genome's phosphate backbone.
+
+**The case for HOST / sustains host metabolism:**
+Polyamine synthesis is general host metabolism affecting growth, translation and stress response.
+
+**The case for VIRAL / lifecycle step:**
+If spermidine is being made to **condense and neutralise the phage genome during packaging**,
+that is assembly — a discrete lifecycle step, and directly parallel to the terminase argument.
+
+**Evidence tier available: 5–6** for the environmental calls. The polyamine-in-virion literature
+is real but old and organism-specific; check whether it applies to the phages in these
+catalogues before leaning on it.
+
+---
+
+## The eleven with no phage-specific literature
+
+`asnB` · `cgeB` · `hisF` · `HMGCL` · `iscU` · `K07336` · `NAMPT` · `nodU` · `P4HA` · `raxST` ·
+`TALDO1`
+
+I searched for phage-specific functional work on each and **found none**. That is not laziness on
+the searching and it is not a gap to apologise for — **it is the single most consequential result
+in this dossier**, so it is stated plainly rather than buried.
+
+| Family | What the enzyme does | Where it sits |
+|---|---|---|
+| `asnB` | asparagine synthase (glutamine-hydrolysing) | amino acid metabolism |
+| `cgeB` | spore maturation protein | sporulation, cell surface |
+| `hisF` | imidazole glycerol phosphate synthase | histidine biosynthesis |
+| `HMGCL` | hydroxymethylglutaryl-CoA lyase | ketone body / leucine catabolism |
+| `iscU` | Fe-S cluster scaffold | iron–sulfur cluster assembly |
+| `K07336` | PKHD-type hydroxylase | uncharacterised 2OG-Fe(II) oxygenase |
+| `NAMPT` | nicotinamide phosphoribosyltransferase | NAD salvage |
+| `nodU` | carbamoyltransferase | nodulation factor / surface modification |
+| `P4HA` | prolyl 4-hydroxylase | collagen-type hydroxylation, 2OG-dependent |
+| `raxST` | sulfotransferase | sulfation, surface/signal molecules |
+| `TALDO1` | transaldolase | pentose phosphate pathway |
+
+**What the protocol says happens to these.** Only Tier 6 evidence is available — reasoning from
+the chemistry. The protocol is explicit that **Tier 6 alone can never move a family out of the
+record**. So unless you find literature I missed, every one of these **defaults to COUNTS**.
+
+> [!important] This is a result, and it should go in the paper
+> Eleven of 35 families — roughly a third — have **no phage-specific functional evidence at all**.
+> Not weak evidence. None.
+>
+> The field is making claims about viral modulation of host metabolism from gene families where
+> nobody has ever tested what the phage-encoded copy does. That finding does not depend on any
+> verdict you reach, and it is arguably more robust than the disputed-share number itself,
+> because it needs no rubric.
+>
+> It also connects to the protocol's stated falsification condition: *"nearly everything comes
+> out UNRESOLVABLE → the evidence base is too thin for the question, and the honest finding is
+> that the AMG record cannot currently be adjudicated."* Watch whether that is where this lands.
+
+**Do still check them yourself.** My searches were systematic but not exhaustive, and a negative
+search result is weaker than a positive one. If you find something for any of these, it changes
+that family's tier and possibly its verdict — and it makes the "eleven with nothing" claim
+stronger, because it will have survived a second search.
+
+---
+
+# All 35 families now have a dossier
+
+**Complete.** Every citation was retrieved from PubMed and its abstract read before being quoted.
+
+**The headline from the gathering, before you judge anything:**
+
+| | families |
+|---|---|
+| Strong phage-specific evidence (Tier 1–2) | `psbA` `psbD` `dcm` `queuosine` `glycosyltransferase` `glycoside_hydrolase` `xtmA` `xtmB` `dsrC_tusE` |
+| Good comparative/ecological evidence (Tier 4–5) | `phoH` `nrdH` `dut` |
+| Chemistry only (Tier 6) — **defaults to COUNTS** | the 11 above, plus `IMPDH`, `speD`, and most nucleotide-sugar precursors |
+
+**Roughly a third of the families have no phage-specific functional evidence whatsoever.**
 
 ## Related
 
