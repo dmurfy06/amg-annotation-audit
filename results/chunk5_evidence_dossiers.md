@@ -697,3 +697,124 @@ papers that count them as AMGs.
 *(Method note: an initial pass appeared to find `iscU` in all three papers. Those were substring
 matches inside the word "di**scu**ssion". Checked and discarded — the same class of error as the
 `iscU` phage-display hit and the `PF13385` lectin fold.)*
+
+---
+
+# Addendum — bioRxiv and wider web search, 2026-08-05
+
+Daniel asked for a second sweep outside PubMed. Note that the bioRxiv tool available here can
+only browse by date and subject category — **it has no keyword search** — so this was done by
+targeted web search against bioRxiv and the wider literature, then every promising hit was
+verified through PubMed before being used.
+
+**Two substantive additions, one unverifiable lead, and one useful concept.**
+
+## `glycoside_hydrolase` — UPGRADED to Tier 1–2. This is direct structural evidence.
+
+According to PubMed, Yuan & Gao (2016, *Frontiers in Microbiology*) performed **structural
+proteome analysis** on a *Bacillus* jumbo phage and identified 23 virion proteins — among them a
+glycoside hydrolase, Gp255.
+
+Their findings, quoted:
+
+- the glycoside hydrolase *"was identified as phage virion component and was found to **interact
+  with the phage baseplate protein**"*
+- it *"shows specific lytic activity against the phage host strain"*
+- this was *"the **first functional individual structural glycoside hydrolase in phage virion**"*
+- *"The presence of activated glycoside hydrolase in phage virions might **facilitate the
+  injection of the phage genome during infection by forming pores on the bacterial cell wall**."*
+
+[DOI](https://doi.org/10.3389/fmicb.2016.00745)
+
+**Why this matters for your verdict.** The earlier dossier could only offer the general
+endolysin/tailspike argument. This is a specific, experimentally demonstrated case: a glycoside
+hydrolase **physically in the virion, bound to the baseplate, functioning to breach the cell wall
+for genome entry.** Substrate: host cell wall. Consequence: entry — a discrete lifecycle step.
+
+It is the strongest available support for Martin *et al.*'s structural reading of this family,
+and it is an experiment rather than an argument.
+
+## `dsrC_tusE` — UPGRADED, and the new evidence runs the OTHER way
+
+The earlier dossier framed this family as an annotation problem — nobody can tell DsrC from TusE.
+That still stands, but there is a major paper making the positive case, and you need it to judge
+fairly.
+
+According to PubMed, Kieft *et al.* (2021, *Nature Communications*) — *"Ecology of inorganic
+sulfur auxiliary metabolism in widespread bacteriophages"* — identified **191 phages from twelve
+environments encoding 227 AMGs** for oxidation of sulfur and thiosulfate, and the gene list they
+give is *"dsrA, **dsrC/tusE**, soxC, soxD and soxYZ."* They report:
+
+- *"Evidence for retention of AMGs during niche-differentiation of diverse phage populations
+  provided evidence that **auxiliary metabolism imparts measurable fitness benefits to phages**"*
+- gene abundance and expression profiles *"suggested significant contributions by phages to
+  sulfur and thiosulfate oxidation in freshwater lakes and oceans"*
+- and *"a sensitive response to changing sulfur concentrations in hydrothermal environments"*
+
+[DOI](https://doi.org/10.1038/s41467-021-23698-5)
+
+> [!important] Two things to notice, and the second is sharper than the first
+> **First**, this is the strongest *pro-AMG* case for the family: expression data, an ecological
+> gradient response, and evidence of selective retention. If you were looking for the case that
+> `dsrC` in a phage is doing real sulfur metabolism, this is it.
+>
+> **Second — and worth a line in your write-up — the authors themselves write the gene as
+> `dsrC/tusE`, with a slash.** They are not claiming to have resolved which one it is either. So
+> the field's strongest paper on phage sulfur metabolism inherits exactly the ambiguity Martin
+> *et al.* complain about, and says so in its own notation.
+>
+> Note also: the first author, **Kristopher Kieft, is the author of VIBRANT** — one of the two
+> tools whose AMG database this project audited in Chunk 1. That is not a criticism of the paper;
+> it is context worth having, and it means the annotation and the interpretation come from the
+> same place.
+
+**Evidence tier available: now 3–4** (expression profiles and ecological response), up from 2 for
+the underlying biochemistry alone. The identity problem is unchanged.
+
+## `P4HA` — a lead I could not verify. Flagged rather than used.
+
+A web search summary asserted that prolyl-4-hydroxylase was *"detected in viral particle mass
+spectrometry data from a cultivated megaphage"* in a 2025 *npj Viruses* paper, and separately that
+P4HA is *"one of the most abundant AMGs in marine viromes."*
+
+**I could not verify either claim.** The *npj Viruses* article redirected to a login wall, and the
+PubMed searches I ran did not return the megaphage proteomics paper. There is also a paper on
+*"viral prolyl-4-hydroxylase"* by top-down mass spectrometry, but that concerns a **eukaryotic
+algal virus**, not a phage.
+
+**So `P4HA` stays in the "no verified phage-specific evidence" group** — but with a live lead
+attached. If you can reach the *npj Viruses* megaphage paper through your library, check whether
+prolyl 4-hydroxylase appears in its virion proteomics table. **If it does, `P4HA` moves out of
+the nine and probably becomes a structural verdict**, on the same logic as the glycoside
+hydrolase above.
+
+That is a concrete, 15-minute job with a real chance of changing a verdict — a good use of your
+library access, which I don't have.
+
+## A concept worth borrowing: "phage-exclusive" AMGs
+
+A 2026 bioRxiv preprint argues for `pebS` as a **phage-exclusive auxiliary metabolic gene** — one
+found in phages but with no extant host counterpart, implying the phage lineage did not simply
+borrow it from a host recently.
+<https://www.biorxiv.org/content/10.64898/2026.01.23.701310>
+
+I could not retrieve the full text (bioRxiv returned HTTP 429), so nothing from it is quoted here.
+But the *idea* is directly useful to your adjudication and costs nothing to adopt:
+
+> **If a gene is phage-exclusive, "the virus borrowed a host metabolic gene" is the wrong story
+> for it** — and the AMG framing, which assumes host provenance, may not apply at all.
+
+Several families in your list already show hints of this: phage `phoH` *"formed a cluster distinct
+from those of their bacterial hosts"*, and phage RNR is distinct enough to serve as a **viral
+marker gene**. Where you see that pattern, it is worth a sentence — it is a third category
+alongside "counts" and "doesn't count", and it is not in Martin *et al.*
+
+## Nothing found for the other eight
+
+`asnB` · `cgeB` · `hisF` · `HMGCL` · `iscU` · `K07336` · `nodU` · `raxST` — no verified
+phage-specific functional evidence from this sweep either.
+
+**Revised count: eight of 35 families with nothing** (was nine; `glycoside_hydrolase` was never in
+that group, and `P4HA` remains in it pending the megaphage check).
+
+---
