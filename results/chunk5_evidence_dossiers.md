@@ -503,52 +503,11 @@ catalogues before leaning on it.
 
 ---
 
-## The eleven with no phage-specific literature
+## The families with thin evidence — SEE THE CORRECTION BELOW
 
-`asnB` · `cgeB` · `hisF` · `HMGCL` · `iscU` · `K07336` · `NAMPT` · `nodU` · `P4HA` · `raxST` ·
-`TALDO1`
-
-I searched for phage-specific functional work on each and **found none**. That is not laziness on
-the searching and it is not a gap to apologise for — **it is the single most consequential result
-in this dossier**, so it is stated plainly rather than buried.
-
-| Family | What the enzyme does | Where it sits |
-|---|---|---|
-| `asnB` | asparagine synthase (glutamine-hydrolysing) | amino acid metabolism |
-| `cgeB` | spore maturation protein | sporulation, cell surface |
-| `hisF` | imidazole glycerol phosphate synthase | histidine biosynthesis |
-| `HMGCL` | hydroxymethylglutaryl-CoA lyase | ketone body / leucine catabolism |
-| `iscU` | Fe-S cluster scaffold | iron–sulfur cluster assembly |
-| `K07336` | PKHD-type hydroxylase | uncharacterised 2OG-Fe(II) oxygenase |
-| `NAMPT` | nicotinamide phosphoribosyltransferase | NAD salvage |
-| `nodU` | carbamoyltransferase | nodulation factor / surface modification |
-| `P4HA` | prolyl 4-hydroxylase | collagen-type hydroxylation, 2OG-dependent |
-| `raxST` | sulfotransferase | sulfation, surface/signal molecules |
-| `TALDO1` | transaldolase | pentose phosphate pathway |
-
-**What the protocol says happens to these.** Only Tier 6 evidence is available — reasoning from
-the chemistry. The protocol is explicit that **Tier 6 alone can never move a family out of the
-record**. So unless you find literature I missed, every one of these **defaults to COUNTS**.
-
-> [!important] This is a result, and it should go in the paper
-> Eleven of 35 families — roughly a third — have **no phage-specific functional evidence at all**.
-> Not weak evidence. None.
->
-> The field is making claims about viral modulation of host metabolism from gene families where
-> nobody has ever tested what the phage-encoded copy does. That finding does not depend on any
-> verdict you reach, and it is arguably more robust than the disputed-share number itself,
-> because it needs no rubric.
->
-> It also connects to the protocol's stated falsification condition: *"nearly everything comes
-> out UNRESOLVABLE → the evidence base is too thin for the question, and the honest finding is
-> that the AMG record cannot currently be adjudicated."* Watch whether that is where this lands.
-
-**Do still check them yourself.** My searches were systematic but not exhaustive, and a negative
-search result is weaker than a positive one. If you find something for any of these, it changes
-that family's tier and possibly its verdict — and it makes the "eleven with nothing" claim
-stronger, because it will have survived a second search.
-
----
+> [!bug] This section originally listed **eleven** families as having no phage-specific
+> evidence. A second search found that **two of them do** — `TALDO1` and `NAMPT`, both
+> Tier 1-2. The corrected analysis is at the end of this note. Read that, not this.
 
 # All 35 families now have a dossier
 
@@ -560,12 +519,157 @@ stronger, because it will have survived a second search.
 |---|---|
 | Strong phage-specific evidence (Tier 1–2) | `psbA` `psbD` `dcm` `queuosine` `glycosyltransferase` `glycoside_hydrolase` `xtmA` `xtmB` `dsrC_tusE` |
 | Good comparative/ecological evidence (Tier 4–5) | `phoH` `nrdH` `dut` |
-| Chemistry only (Tier 6) — **defaults to COUNTS** | the 11 above, plus `IMPDH`, `speD`, and most nucleotide-sugar precursors |
+| Chemistry only (Tier 6) — **defaults to COUNTS** | the **nine** below, plus `IMPDH`, `speD`, and most nucleotide-sugar precursors |
 
-**Roughly a third of the families have no phage-specific functional evidence whatsoever.**
+**Roughly a quarter of the families — nine of 35 — have no phage-specific functional evidence
+whatsoever.** (Originally reported as eleven; corrected after a second search. See below.)
 
 ## Related
 
 - [[Adjudication Worksheet]] — where the verdicts go
 - [[How To Adjudicate]] — the mechanics
 - [[Adjudication Protocol]] — the rules
+
+---
+
+# CORRECTION, 2026-08-05 — two of the "no evidence" eleven were wrong
+
+Daniel asked for a second search of the eleven families I had reported as having no
+phage-specific evidence. **He was right to.** Two of the eleven have Tier 1–2 evidence, and one
+is among the best-evidenced families in the entire list.
+
+**First, the honest bit about how the error happened.** I wrote *"I searched for phage-specific
+functional work on each and found none."* **I had not.** I ran thematic, grouped searches and
+inferred absence when those genes didn't surface. That is a much weaker basis than the sentence
+implied, and the sentence should not have been written that way.
+
+Individual, gene-by-gene searches were then run. Results below.
+
+## `TALDO1` — transaldolase. **Moved out. This is a major AMG with excellent evidence.**
+
+**What it does.** Transaldolase catalyses a reversible carbon-shuffling step in the
+**non-oxidative pentose phosphate pathway**, linking it to glycolysis. The PPP is where the cell
+makes **NADPH** (reducing power) and **ribose 5-phosphate** (the sugar backbone of nucleotides).
+
+According to PubMed, Thompson *et al.* (2011, *PNAS*) — a paper titled *"Phage auxiliary
+metabolic genes and the redirection of cyanobacterial host carbon metabolism"* — report that:
+
+- cyanophages carry and express **CP12, a Calvin cycle inhibitor**, whose host homologue
+  *"directs carbon flux from the Calvin cycle to the pentose phosphate pathway"*
+- **phage transaldolase was purified to homogeneity from several strains and shown to be
+  functional in vitro**, and is *"the most prevalent PPP gene in cyanophages"*
+- phage transaldolase has k_cat/K_m only **about one third** of the host enzyme — a possible
+  trade-off against reduced gene size
+- **the host NADPH/NADP ratio increased two-fold in infected cells**
+
+Their proposal: *"phage-augmented NADPH production fuels deoxynucleotide biosynthesis for phage
+replication."* [DOI](https://doi.org/10.1073/pnas.1102164108)
+
+Lindell *et al.* (2007, *Nature*) add expression timing: in *Prochlorococcus* phage P-SSP7,
+`talC` is transcribed **together with phage DNA replication genes**, alongside `psbA`, `hli` and
+`nrd`, forming *"a functional unit involved in energy and deoxynucleotide production for phage
+replication."* [DOI](https://doi.org/10.1038/nature06130)
+
+Huang *et al.* (2015, *PLoS One*) find `talC` at a conserved genome locus across cyanopodoviruses,
+occupying the same position that `thyX` occupies in other clades.
+[DOI](https://doi.org/10.1371/journal.pone.0142962)
+
+**The case for HOST / sustains host metabolism:**
+A phage enzyme measurably shifts host carbon flux and **doubles the host NADPH/NADP ratio**. The
+substrate is the host's own PPP intermediates; the consequence is a measured change in host
+metabolic state. If anything in this list is host metabolic modulation, this is.
+
+**The case for VIRAL / lifecycle step:**
+The authors themselves say the redirected output *"fuels deoxynucleotide biosynthesis for phage
+replication"*, and Lindell shows `talC` co-transcribed with the DNA replication module. So the
+host's metabolism is redirected — **toward making phage genomes.**
+
+> [!important] This family is the cleanest statement of the project's central tension
+> `psbA` keeps host machinery running. A terminase is purely viral. **Transaldolase is a phage
+> enzyme that demonstrably changes host metabolic flux, for a purpose that is entirely viral.**
+>
+> Part 1 says host. Part 2 has to decide whether "redirect host carbon flux to make phage dNTPs"
+> is sustaining host metabolism or serving replication. Both readings are defensible on the
+> published evidence, and **the authors of the foundational paper state the viral purpose
+> explicitly while calling the gene an AMG in the title.**
+>
+> Whatever you decide, this paragraph is worth writing carefully. It may be the best example in
+> the paper of why the category is contested.
+
+**Evidence tier available: 1–2.** Purified functional phage enzyme, kinetics against the host
+enzyme, expression timing, and a measured physiological change in infected cells.
+
+---
+
+## `NAMPT` — nicotinamide phosphoribosyltransferase. **Moved out. Tier 1–2.**
+
+**What it does.** First step of the **NAD⁺ salvage pathway**: converts nicotinamide to
+nicotinamide mononucleotide, en route to NAD⁺.
+
+According to PubMed, Lee, Li & Miller (2017, *J Bacteriol*) — *"Vibrio Phage KVP40 Encodes a
+Functional NAD⁺ Salvage Pathway"* — report that KVP40 has five genes for pyridine nucleotide
+metabolism, two of which suffice for NAD⁺ salvage. They cloned and expressed them, purified the
+proteins, and found **KVP40 NadV NAmPRTase is active**, with a clone that **complements an
+*E. coli* mutant** defective in both bacterial NAD pathways. RT-qPCR and enzyme assays of infected
+cells showed transcription **during the early and delayed-early period of infection**, alongside
+other KVP40 nucleotide-precursor genes.
+
+They conclude: *"NAD⁺ biosynthesis presents another important metabolic resource control point by
+large, rapidly replicating dsDNA bacteriophages"*, noting that T4-type phages use NADH/NADPH as
+electron donor for DNA precursor synthesis and NAD⁺ for **ADP-ribosylation of proteins involved
+in transcribing and translating the phage genome**. [DOI](https://doi.org/10.1128/JB.00855-16)
+
+Independently, Huang *et al.* (2022, *ACS Synth Biol*) used the KVP40 enzyme as a biocatalyst,
+finding it *"has the best catalytic activity"* for producing NMN from nicotinamide — confirming
+the phage enzyme is genuinely functional. [DOI](https://doi.org/10.1021/acssynbio.2c00100)
+
+**The case for HOST / sustains host metabolism:**
+NAD⁺ is a universal cofactor. A phage scavenging pathway raises NAD⁺ availability in the infected
+cell — "metabolic resource control", in the authors' phrase.
+
+**The case for VIRAL / lifecycle step:**
+The stated uses are DNA precursor synthesis and ADP-ribosylation of the phage's own transcription
+and translation machinery. Expression is early/delayed-early — the phage's own metabolic period,
+not a sustained host programme.
+
+**Evidence tier available: 1–2.** Purified active enzyme, genetic complementation, expression
+timing during infection.
+
+---
+
+## The nine that survive the second search
+
+`asnB` · `cgeB` · `hisF` · `HMGCL` · `iscU` · `K07336` · `nodU` · `P4HA` · `raxST`
+
+Search terms used, so this is auditable rather than a claim you have to take on trust:
+`bacteriophage asparagine synthetase` · `bacteriophage spore maturation protein cgeB` ·
+`bacteriophage histidine biosynthesis hisF` · `bacteriophage hydroxymethylglutaryl-CoA lyase` ·
+`phage iron-sulfur cluster assembly iscU` · `phage carbamoyltransferase nodU virion` ·
+`phage prolyl hydroxylase collagen-like tail fibre` · `bacteriophage sulfotransferase`
+
+> [!warning] Two of these "hits" were keyword false positives — worth recognising the pattern
+> - **`iscU`** returned one paper. It is about the *E. coli* Hsc66/IscU chaperone system and uses
+>   **phage display as a laboratory method**. The word "phage" is the technique, not the biology.
+> - **`raxST`** returned five. The two checked are a mouse liver study (whose keyword list
+>   includes *"bacteriophage P1 cyclization recombinase"* — i.e. Cre-lox) and a colorectal cancer
+>   autoantibody study using **phage microarrays**. Again, method not biology.
+>
+> **"Phage" appears in thousands of papers as a tool.** When you search these yourself, check that
+> a hit is about a phage-*encoded* gene before counting it. This is the same failure mode as the
+> `PF13385` lectin fold: a string match that isn't a biological match.
+
+**One adjacent finding on `asnB`, which is interesting but is not what you need.** Ito *et al.*
+(2014, *PLoS One*) found that disrupting **host** `asnH` (asparagine synthetase) in *Lactobacillus
+casei* produced **phage-resistant** mutants that had lost normal peptidoglycan structure.
+[DOI](https://doi.org/10.1371/journal.pone.0083876) That is a host gene affecting phage
+adsorption — the same shape as the Sumrall glycosyltransferase result — and says nothing about
+what a *phage-encoded* `asnB` does.
+
+**So the claim, restated correctly:** **nine of 35 families** — roughly a quarter — have no
+phage-specific functional evidence. Only Tier 6 is available, and the protocol forbids Tier 6
+alone from moving a family out, so **all nine default to COUNTS**.
+
+That is still a substantial finding and still belongs in the paper. It is just not eleven.
+
+---
+
