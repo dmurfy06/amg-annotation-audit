@@ -17,7 +17,7 @@ nothing is quoted that I have not seen. DOIs link to source.
 > point. If one looks obviously right *because of how I've written it*, tell me and I'll rewrite
 > it flatter.
 
-**Status: 7 of 35 complete.** Doing these properly takes real searching; the rest follow in
+**Status: 18 of 35 complete.** Doing these properly takes real searching; the rest follow in
 later batches. Order is alphabetical within each batch, per the protocol.
 
 ---
@@ -208,16 +208,149 @@ Assembly. It is difficult to name a more purely viral function.
 
 ---
 
-## Still to do — 28 families
+---
 
-`asnB` · `cgeB` · `dsrC_tusE` · `folate` · `galE` · `glmS` · `glycoside_hydrolase` ·
-`glycosyltransferase` · `gmd` · `hisF` · `HMGCL` · `IMPDH` · `iscU` · `K07336` · `manB` ·
-`NAMPT` · `nodU` · `nrdH` · `P4HA` · `phoH` · `pseB` · `raxST` · `rfbB` · `rfbC` · `speD` ·
-`tagD` · `TALDO1` · `UGDH`
+# Batch 2 — the cell-surface block, glycoside hydrolases, and `phoH`
 
-The ~10 nucleotide-sugar and cell-surface families (`galE`, `gmd`, `manB`, `rfbB`, `rfbC`,
-`UGDH`, `pseB`, `glmS`, `tagD`) share a literature and will be done as one batch with individual
-sections, which is why they aren't done yet — doing them singly would duplicate a lot of reading.
+## `glycosyltransferase` — plus `galE` `gmd` `manB` `rfbB` `rfbC` `UGDH` `pseB` `glmS` `tagD`
+
+*(One shared evidence base. Each still gets its own verdict — the enzymes differ in how directly
+they touch the surface.)*
+
+**What these enzymes do.** They build and interconvert **nucleotide sugars** — UDP-glucose,
+UDP-galactose, dTDP-rhamnose, GDP-mannose and relatives — and transfer those sugars onto growing
+glycans. Downstream: **O-antigen, LPS, capsule, wall teichoic acid.** That is, the bacterial cell
+surface.
+
+- `galE` UDP-glucose 4-epimerase · `UGDH` UDP-glucose 6-dehydrogenase · `gmd` GDP-mannose
+  4,6-dehydratase · `rfbB` dTDP-glucose 4,6-dehydratase · `rfbC` O-antigen biosynthesis protein ·
+  `manB` phosphomannomutase · `glmS` glutamine–fructose-6-P transaminase (entry to amino sugars) ·
+  `pseB` pseudaminic acid pathway · `tagD` teichoic acid pathway
+- `glycosyltransferase` — the transfer step itself
+
+**The phage-specific evidence, and it is unusually good here.**
+
+According to PubMed, Mann *et al.* (2015, *J Biol Chem*) state that lysogenic bacteriophages
+encode enzymes that modify LPS O-antigen glycans, *"altering the structure of the bacteriophage
+receptor and resulting in serotype conversion"*, and demonstrate phage-mediated glucosylation of
+an O-antigen experimentally. [DOI](https://doi.org/10.1074/jbc.M115.660803)
+
+Sun *et al.* (2013, *BMC Microbiology*) describe the *Shigella flexneri* system, where *"nearly
+all variations between serotypes are due to glucosyl and/or O-acetyl modifications of the common
+O unit mediated by glycosyltransferases encoded by serotype-converting bacteriophages."*
+[DOI](https://doi.org/10.1186/1471-2180-13-39)
+
+From the other direction, Sumrall *et al.* (2021, *J Bacteriol*) deleted a **host**
+glycosyltransferase in *Listeria ivanovii*, removing glucose decoration from wall teichoic acid;
+the mutant *"became resistant to phage B025 infection due to an inability of the phage to adsorb
+to the bacterial surface."* [DOI](https://doi.org/10.1128/JB.00136-21)
+
+> [!important] This block does not fit the two-part rule cleanly, and you should expect that
+> The substrate is unambiguously **host** — phage glycosyltransferases modify the host's own
+> O-antigen. Part 1 says host.
+>
+> But the demonstrated consequence is **serotype conversion — changing the phage receptor.**
+> That is neither "sustaining host metabolism" nor obviously one of the listed lifecycle steps
+> (entry, genome protection, replication, assembly, egress).
+>
+> **It is arguably a third thing: modifying the host to control who else can infect it.** For a
+> lysogen, excluding competitors is a real fitness function.
+>
+> Three honest options, and the protocol permits all three:
+> 1. read receptor modification as a **lifecycle function** (superinfection exclusion, host-range
+>    control) → DOES NOT COUNT
+> 2. read it as **genuine host modification** — the host's surface chemistry really is changed,
+>    persistently, in a lysogen → COUNTS
+> 3. **UNRESOLVABLE**, and name the experiment
+>
+> Whichever you pick, **say in the argument box that the two-part rule underdetermined it.**
+> Chunk 4 showed the field's own rules have exactly this problem; being able to say "and so does
+> ours, here, and we noticed" is far stronger than hiding it.
+
+**A distinction worth drawing across the nine.** The evidence above concerns the **transfer**
+step — glycosyltransferases acting on the surface. The **precursor** enzymes (`galE`, `UGDH`,
+`gmd`, `rfbB`, `manB`, `glmS`) make nucleotide sugars feeding *many* pathways, not only the
+surface. Whether the same reasoning carries to them is a real question, not a formality: a phage
+carrying `galE` may be feeding surface modification, or something else entirely.
+
+**Evidence tier available: 2** for the transfer step. Likely **5–6** for the individual precursor
+enzymes unless you find phage-specific work on them.
+
+---
+
+## `glycoside_hydrolase`
+
+**What they do.** Cleave glycosidic bonds. In phage biology that means **endolysins** (degrade
+peptidoglycan from inside to lyse the cell at the end of infection), **virion-associated lysins**
+(locally degrade the wall during entry), and **tailspike depolymerases** (chew capsule or
+O-antigen to reach the receptor).
+
+**Why this family is the protocol's own worked example.** An endolysin acts on a **host**
+substrate — the cell wall — so Part 1 says host. But it is unambiguously viral work: it bursts
+the cell open to release progeny. That is exactly why the decision rule has two parts.
+
+**The case for HOST / sustains host metabolism:**
+Some glycoside hydrolases are genuine sugar-catabolic enzymes. If a phage-encoded one liberated
+usable sugars for the host, that would be host metabolic modulation. **I found no phage-specific
+evidence for this reading.** That absence is itself the finding — and under default-COUNTS it
+still has to be weighed rather than waved away.
+
+**The case for VIRAL / lifecycle step:**
+Entry and egress. Both are discrete lifecycle steps.
+
+> [!note] The Chunk 2 lesson applies directly here
+> `PF13385` — *"Concanavalin A-like lectin/glucanases superfamily"* — was excluded from this
+> family during the accession review because it is a **fold, not an activity**: concanavalin A
+> binds sugars, it does not hydrolyse them. That was **99.4%** of the family's original count.
+>
+> So you are judging the **123 calls that survived that check**, not the 21,690 that didn't.
+
+**Evidence tier available: 1–2** for endolysins and tailspikes; a very well developed field.
+
+---
+
+## `phoH` — phosphate starvation-inducible protein (K06217)
+
+**What it does.** Part of the **Pho regulon** — the bacterial response to phosphate limitation,
+which switches on high-affinity phosphate scavenging when phosphate runs short. `phoH` itself is
+an ATP-binding protein whose precise function is not fully resolved.
+
+**Phage-specific evidence.** According to PubMed, Goldsmith *et al.* (2011, *Appl Environ
+Microbiol*) found Pho regulon genes in **nearly 40% of marine phage genomes but only 4% of
+non-marine phage genomes**, with `phoH` the most prevalent — in 42 of 602 complete phage genomes.
+Phage `phoH` sequences *"formed a cluster distinct from those of their bacterial hosts"*, and the
+gene is now used as a **signature gene for marine phage diversity**.
+[DOI](https://doi.org/10.1128/AEM.05531-11)
+
+Huang *et al.* (2021, *Environ Microbiol*) list `phoH` among the seven high-frequency AMGs shared
+across roseophages. [DOI](https://doi.org/10.1111/1462-2920.15412)
+
+**The case for HOST / sustains host metabolism:**
+This is about as good as the AMG hypothesis gets outside photosynthesis. The marine/non-marine
+split — **40% vs 4%** — is a strong ecological signal: phages carry it **where phosphate is
+limiting**. That pattern is hard to explain except by phosphate acquisition mattering to the
+infected cell.
+
+**The case for VIRAL / lifecycle step:**
+Phage genome replication is phosphate-expensive; a burst of a hundred virions is a large
+nucleic-acid demand. Boosting phosphate scavenging could serve the phage's own replication rather
+than host metabolism generally. Note too the phylogenetic separation — phage `phoH` forms its own
+cluster, consistent with specialisation away from the host function.
+
+**Evidence tier available: 4–5.** Strong comparative genomics and a clear ecological correlation;
+no experiment isolating what phage `phoH` does during infection. **That missing experiment is
+nameable**, which matters if you land on UNRESOLVABLE: delete or express phage `phoH` and measure
+phosphate uptake in infected versus uninfected cells under limitation.
+
+---
+
+## Still to do — 17 families
+
+`asnB` · `cgeB` · `dsrC_tusE` · `folate` · `hisF` · `HMGCL` · `IMPDH` · `iscU` · `K07336` ·
+`NAMPT` · `nodU` · `nrdH` · `P4HA` · `raxST` · `speD` · `TALDO1`
+
+Mostly single enzymes with little obvious phage literature, plus `folate` and `dsrC_tusE`, which
+are disputed families and will get full treatment.
 
 ## Related
 
