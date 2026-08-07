@@ -673,3 +673,27 @@ That is still a substantial finding and still belongs in the paper. It is just n
 
 ---
 
+---
+
+## The nine — what is actually known about them, checked from both directions
+
+**Direction 1: the primary literature.** No phage-specific functional study found, per the
+per-gene searches listed above.
+
+**Direction 2: the catalogue papers that counted them.** Searched the full text of all three
+papers (ocean *Microbiome* 2024, soil *ISME J* 2022, wastewater *ES&T* 2023) for each gene symbol
+and each enzyme name. **Zero mentions.** Not one of the nine is discussed anywhere in the three
+papers that count them as AMGs.
+
+> [!note] Be careful how strongly this is stated
+> These genes sit in supplementary tables of tens of thousands of rows. **Papers do not discuss
+> every gene they count, and not discussing one is normal practice, not misconduct.**
+>
+> The defensible claim is narrower and still worth making: for these nine families the **entire
+> evidentiary basis for the AMG designation is a database match.** No phage-specific experiment,
+> and no discussion by the authors who counted them. That is a statement about how the record is
+> built, not an accusation about anyone's care.
+
+*(Method note: an initial pass appeared to find `iscU` in all three papers. Those were substring
+matches inside the word "di**scu**ssion". Checked and discarded — the same class of error as the
+`iscU` phage-display hit and the `PF13385` lectin fold.)*
