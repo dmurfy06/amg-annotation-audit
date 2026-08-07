@@ -1,4 +1,30 @@
+---
+tags: [project, research, adjudication, active]
+---
+
 # Chunk 5 — Adjudication Worksheet
+
+> [!tip] Work in this file. It lives in the vault so you can use Obsidian.
+> When you're done (or at any checkpoint), Claude copies it back into the repo as the record.
+> The repo original is `C:\ProjectAuxiliary
+esults\chunk5_worksheet.md` — **don't edit that one**,
+> it'll be overwritten by this.
+
+> [!note] Nine entries are PRE-FILLED
+> `asnB` `cgeB` `hisF` `HMGCL` `iscU` `K07336` `nodU` `raxST` `P4HA` — the families with no
+> phage-specific evidence. Each carries the protocol's **mechanical default**: no Tier 1–5
+> evidence means the family cannot be ruled out, so COUNTS applies automatically. That is rule
+> application, not judgement.
+>
+> **What you still have to decide for those nine:** whether you accept the evidence really is
+> absent. Re-search a couple if you want — two of my earlier "no evidence" calls turned out
+> wrong. `P4HA` additionally needs a library check that could change its verdict.
+>
+> **26 families are blank and are yours.**
+
+**Per family: ~30–45 min.** 35 families ≈ 18–26 hours ≈ 3–4 weeks part-time.
+See [[Adjudication Protocol]] for the rules and [[How To Adjudicate]] for the step-by-step.
+
 
 **35 families**, frozen by the rule in `08_adjudication_protocol.md` and ordered **alphabetically** so the big families cannot anchor the run.
 
@@ -23,22 +49,29 @@ is unresearched, not unresolvable, and defaults to COUNTS.
 
 ## 1. `asnB`
 
+
 - **K01953** — asnB, ASNS; asparagine synthase (glutamine-hydrolysing) [EC:6.3.5.4]
 
 *Included because: >=1% and >=10 calls in soil*
 
+> [!note] PRE-FILLED by Claude — review and edit. This is the protocol's mechanical default,
+> not a judgement: with no Tier 1–5 evidence the protocol forbids ruling the family out, so
+> COUNTS applies automatically. **Your judgement here is whether you accept that the evidence
+> is genuinely absent** — i.e. whether my searching held up.
+
 | | |
 |---|---|
-| **Part 1 — substrate** | host / viral — *what does the product act on?* |
-| **Part 2 — consequence** | sustains host metabolism / discrete lifecycle step |
-| **Evidence tier** | 1–6 (see protocol) |
-| **Citations** | |
-| **VERDICT** | COUNTS / DOES NOT COUNT / UNRESOLVABLE |
-| **Confidence** | high / low |
-| **If unresolvable — resolving experiment** | |
+| **Part 1 — substrate** | UNDETERMINED — no evidence either way |
+| **Part 2 — consequence** | UNDETERMINED — no evidence either way |
+| **Evidence tier** | 6 (chemistry only; no Tier 1–5 available) |
+| **Citations** | KEGG/EcoCyc for the reaction. No phage-specific study found. |
+| **VERDICT** | **COUNTS** |
+| **Confidence** | low |
+| **Resolving experiment** | Express the phage-encoded enzyme; confirm asparagine synthase activity; test whether asparagine limitation alters burst size |
 
-**Argument (half a page):**
+**Argument:**
 
+No phage-specific functional evidence identified after three independent search strategies (thematic PubMed, per-gene PubMed, targeted preprint/web), and the gene is not discussed in any of the three source catalogue papers. Only Tier 6 evidence is available, which under the protocol cannot move a family out of the record. Defaults to COUNTS at low confidence. Flagged as **evidence-free** for separate reporting.
 
 ---
 
@@ -48,18 +81,24 @@ is unresearched, not unresolvable, and defaults to COUNTS.
 
 *Included because: >=1% and >=10 calls in soil*
 
+> [!note] PRE-FILLED by Claude — review and edit. This is the protocol's mechanical default,
+> not a judgement: with no Tier 1–5 evidence the protocol forbids ruling the family out, so
+> COUNTS applies automatically. **Your judgement here is whether you accept that the evidence
+> is genuinely absent** — i.e. whether my searching held up.
+
 | | |
 |---|---|
-| **Part 1 — substrate** | host / viral — *what does the product act on?* |
-| **Part 2 — consequence** | sustains host metabolism / discrete lifecycle step |
-| **Evidence tier** | 1–6 (see protocol) |
-| **Citations** | |
-| **VERDICT** | COUNTS / DOES NOT COUNT / UNRESOLVABLE |
-| **Confidence** | high / low |
-| **If unresolvable — resolving experiment** | |
+| **Part 1 — substrate** | UNDETERMINED — no evidence either way |
+| **Part 2 — consequence** | UNDETERMINED — no evidence either way |
+| **Evidence tier** | 6 (chemistry only; no Tier 1–5 available) |
+| **Citations** | KEGG/EcoCyc for the reaction. No phage-specific study found. |
+| **VERDICT** | **COUNTS** |
+| **Confidence** | low |
+| **Resolving experiment** | Determine whether the protein localises to the virion or to the host cell surface |
 
-**Argument (half a page):**
+**Argument:**
 
+No phage-specific functional evidence identified after three independent search strategies (thematic PubMed, per-gene PubMed, targeted preprint/web), and the gene is not discussed in any of the three source catalogue papers. Only Tier 6 evidence is available, which under the protocol cannot move a family out of the record. Defaults to COUNTS at low confidence. Flagged as **evidence-free** for separate reporting.
 
 ---
 
@@ -70,17 +109,20 @@ is unresearched, not unresolvable, and defaults to COUNTS.
 
 *Included because: >=1% and >=10 calls in ocean_conservative; named by Martin et al.*
 
-| | |
-|---|---|
-| **Part 1 — substrate** | host / viral — *what does the product act on?* |
-| **Part 2 — consequence** | sustains host metabolism / discrete lifecycle step |
-| **Evidence tier** | 1–6 (see protocol) |
-| **Citations** | |
-| **VERDICT** | COUNTS / DOES NOT COUNT / UNRESOLVABLE |
-| **Confidence** | high / low |
-| **If unresolvable — resolving experiment** | |
+|                                            |                               |
+| ------------------------------------------ | ----------------------------- |
+| **Part 1 — substrate**                     | viral                         |
+| **Part 2 — consequence**                   | discrete lifecycle step       |
+| **Evidence tier**                          | 2                             |
+| **Citations**                              | Burke *et al.* (2021, *PNAS*) |
+| **VERDICT**                                | DOES NOT COUNT                |
+| **Confidence**                             | high                          |
+| **If unresolvable — resolving experiment** |                               |
 
-**Argument (half a page):**
+**Argument (half a page):**  The Burke paper places phage C5-MTases in modification clusters whose described function is
+protecting the phage genome. Anti-restriction is the textbook reason a phage carries a
+methyltransferase: methylate your own genome in the host's pattern and the host's endonucleases
+ignore it. Genome protection is a discrete lifecycle step under the protocol's Part 2.
 
 
 ---
@@ -277,18 +319,24 @@ is unresearched, not unresolvable, and defaults to COUNTS.
 
 *Included because: >=1% and >=10 calls in soil*
 
+> [!note] PRE-FILLED by Claude — review and edit. This is the protocol's mechanical default,
+> not a judgement: with no Tier 1–5 evidence the protocol forbids ruling the family out, so
+> COUNTS applies automatically. **Your judgement here is whether you accept that the evidence
+> is genuinely absent** — i.e. whether my searching held up.
+
 | | |
 |---|---|
-| **Part 1 — substrate** | host / viral — *what does the product act on?* |
-| **Part 2 — consequence** | sustains host metabolism / discrete lifecycle step |
-| **Evidence tier** | 1–6 (see protocol) |
-| **Citations** | |
-| **VERDICT** | COUNTS / DOES NOT COUNT / UNRESOLVABLE |
-| **Confidence** | high / low |
-| **If unresolvable — resolving experiment** | |
+| **Part 1 — substrate** | UNDETERMINED — no evidence either way |
+| **Part 2 — consequence** | UNDETERMINED — no evidence either way |
+| **Evidence tier** | 6 (chemistry only; no Tier 1–5 available) |
+| **Citations** | KEGG/EcoCyc for the reaction. No phage-specific study found. |
+| **VERDICT** | **COUNTS** |
+| **Confidence** | low |
+| **Resolving experiment** | Test whether the phage copy complements a histidine auxotroph; measure histidine flux in infected cells |
 
-**Argument (half a page):**
+**Argument:**
 
+No phage-specific functional evidence identified after three independent search strategies (thematic PubMed, per-gene PubMed, targeted preprint/web), and the gene is not discussed in any of the three source catalogue papers. Only Tier 6 evidence is available, which under the protocol cannot move a family out of the record. Defaults to COUNTS at low confidence. Flagged as **evidence-free** for separate reporting.
 
 ---
 
@@ -298,18 +346,24 @@ is unresearched, not unresolvable, and defaults to COUNTS.
 
 *Included because: >=1% and >=10 calls in ocean_conservative*
 
+> [!note] PRE-FILLED by Claude — review and edit. This is the protocol's mechanical default,
+> not a judgement: with no Tier 1–5 evidence the protocol forbids ruling the family out, so
+> COUNTS applies automatically. **Your judgement here is whether you accept that the evidence
+> is genuinely absent** — i.e. whether my searching held up.
+
 | | |
 |---|---|
-| **Part 1 — substrate** | host / viral — *what does the product act on?* |
-| **Part 2 — consequence** | sustains host metabolism / discrete lifecycle step |
-| **Evidence tier** | 1–6 (see protocol) |
-| **Citations** | |
-| **VERDICT** | COUNTS / DOES NOT COUNT / UNRESOLVABLE |
-| **Confidence** | high / low |
-| **If unresolvable — resolving experiment** | |
+| **Part 1 — substrate** | UNDETERMINED — no evidence either way |
+| **Part 2 — consequence** | UNDETERMINED — no evidence either way |
+| **Evidence tier** | 6 (chemistry only; no Tier 1–5 available) |
+| **Citations** | KEGG/EcoCyc for the reaction. No phage-specific study found. |
+| **VERDICT** | **COUNTS** |
+| **Confidence** | low |
+| **Resolving experiment** | Determine the substrate of the phage enzyme; test whether infection alters host leucine/ketone catabolism |
 
-**Argument (half a page):**
+**Argument:**
 
+No phage-specific functional evidence identified after three independent search strategies (thematic PubMed, per-gene PubMed, targeted preprint/web), and the gene is not discussed in any of the three source catalogue papers. Only Tier 6 evidence is available, which under the protocol cannot move a family out of the record. Defaults to COUNTS at low confidence. Flagged as **evidence-free** for separate reporting.
 
 ---
 
@@ -340,18 +394,24 @@ is unresearched, not unresolvable, and defaults to COUNTS.
 
 *Included because: >=1% and >=10 calls in ocean_conservative*
 
+> [!note] PRE-FILLED by Claude — review and edit. This is the protocol's mechanical default,
+> not a judgement: with no Tier 1–5 evidence the protocol forbids ruling the family out, so
+> COUNTS applies automatically. **Your judgement here is whether you accept that the evidence
+> is genuinely absent** — i.e. whether my searching held up.
+
 | | |
 |---|---|
-| **Part 1 — substrate** | host / viral — *what does the product act on?* |
-| **Part 2 — consequence** | sustains host metabolism / discrete lifecycle step |
-| **Evidence tier** | 1–6 (see protocol) |
-| **Citations** | |
-| **VERDICT** | COUNTS / DOES NOT COUNT / UNRESOLVABLE |
-| **Confidence** | high / low |
-| **If unresolvable — resolving experiment** | |
+| **Part 1 — substrate** | UNDETERMINED — no evidence either way |
+| **Part 2 — consequence** | UNDETERMINED — no evidence either way |
+| **Evidence tier** | 6 (chemistry only; no Tier 1–5 available) |
+| **Citations** | KEGG/EcoCyc for the reaction. No phage-specific study found. |
+| **VERDICT** | **COUNTS** |
+| **Confidence** | low |
+| **Resolving experiment** | Test Fe-S cluster assembly by the phage protein, and identify which apo-proteins it loads — host or phage |
 
-**Argument (half a page):**
+**Argument:**
 
+No phage-specific functional evidence identified after three independent search strategies (thematic PubMed, per-gene PubMed, targeted preprint/web), and the gene is not discussed in any of the three source catalogue papers. Only Tier 6 evidence is available, which under the protocol cannot move a family out of the record. Defaults to COUNTS at low confidence. Flagged as **evidence-free** for separate reporting.
 
 ---
 
@@ -361,18 +421,24 @@ is unresearched, not unresolvable, and defaults to COUNTS.
 
 *Included because: >=1% and >=10 calls in ocean_conservative*
 
+> [!note] PRE-FILLED by Claude — review and edit. This is the protocol's mechanical default,
+> not a judgement: with no Tier 1–5 evidence the protocol forbids ruling the family out, so
+> COUNTS applies automatically. **Your judgement here is whether you accept that the evidence
+> is genuinely absent** — i.e. whether my searching held up.
+
 | | |
 |---|---|
-| **Part 1 — substrate** | host / viral — *what does the product act on?* |
-| **Part 2 — consequence** | sustains host metabolism / discrete lifecycle step |
-| **Evidence tier** | 1–6 (see protocol) |
-| **Citations** | |
-| **VERDICT** | COUNTS / DOES NOT COUNT / UNRESOLVABLE |
-| **Confidence** | high / low |
-| **If unresolvable — resolving experiment** | |
+| **Part 1 — substrate** | UNDETERMINED — no evidence either way |
+| **Part 2 — consequence** | UNDETERMINED — no evidence either way |
+| **Evidence tier** | 6 (chemistry only; no Tier 1–5 available) |
+| **Citations** | KEGG/EcoCyc for the reaction. No phage-specific study found. |
+| **VERDICT** | **COUNTS** |
+| **Confidence** | low |
+| **Resolving experiment** | **Determine the substrate at all.** Uncharacterised 2OG-Fe(II) oxygenase; the gap is more basic than for the others |
 
-**Argument (half a page):**
+**Argument:**
 
+No phage-specific functional evidence identified after three independent search strategies (thematic PubMed, per-gene PubMed, targeted preprint/web), and the gene is not discussed in any of the three source catalogue papers. Only Tier 6 evidence is available, which under the protocol cannot move a family out of the record. Defaults to COUNTS at low confidence. Flagged as **evidence-free** for separate reporting.
 
 ---
 
@@ -424,18 +490,24 @@ is unresearched, not unresolvable, and defaults to COUNTS.
 
 *Included because: >=1% and >=10 calls in ocean_conservative*
 
+> [!note] PRE-FILLED by Claude — review and edit. This is the protocol's mechanical default,
+> not a judgement: with no Tier 1–5 evidence the protocol forbids ruling the family out, so
+> COUNTS applies automatically. **Your judgement here is whether you accept that the evidence
+> is genuinely absent** — i.e. whether my searching held up.
+
 | | |
 |---|---|
-| **Part 1 — substrate** | host / viral — *what does the product act on?* |
-| **Part 2 — consequence** | sustains host metabolism / discrete lifecycle step |
-| **Evidence tier** | 1–6 (see protocol) |
-| **Citations** | |
-| **VERDICT** | COUNTS / DOES NOT COUNT / UNRESOLVABLE |
-| **Confidence** | high / low |
-| **If unresolvable — resolving experiment** | |
+| **Part 1 — substrate** | UNDETERMINED — no evidence either way |
+| **Part 2 — consequence** | UNDETERMINED — no evidence either way |
+| **Evidence tier** | 6 (chemistry only; no Tier 1–5 available) |
+| **Citations** | KEGG/EcoCyc for the reaction. No phage-specific study found. |
+| **VERDICT** | **COUNTS** |
+| **Confidence** | low |
+| **Resolving experiment** | Identify the carbamoylation target — host surface polysaccharide, or a phage structural protein |
 
-**Argument (half a page):**
+**Argument:**
 
+No phage-specific functional evidence identified after three independent search strategies (thematic PubMed, per-gene PubMed, targeted preprint/web), and the gene is not discussed in any of the three source catalogue papers. Only Tier 6 evidence is available, which under the protocol cannot move a family out of the record. Defaults to COUNTS at low confidence. Flagged as **evidence-free** for separate reporting.
 
 ---
 
@@ -466,18 +538,27 @@ is unresearched, not unresolvable, and defaults to COUNTS.
 
 *Included because: >=1% and >=10 calls in ocean_conservative*
 
+> [!note] PRE-FILLED by Claude — review and edit. This is the protocol's mechanical default,
+> not a judgement: with no Tier 1–5 evidence the protocol forbids ruling the family out, so
+> COUNTS applies automatically. **Your judgement here is whether you accept that the evidence
+> is genuinely absent** — i.e. whether my searching held up.
+
+> [!warning] PENDING — do the library check before accepting this
+> A lead suggests prolyl 4-hydroxylase appears in megaphage virion proteomics (*npj Viruses* 2025), which I could not verify behind a login wall. **If it does, this becomes a structural verdict and leaves the evidence-free group.** ~15 minutes.
+
 | | |
 |---|---|
-| **Part 1 — substrate** | host / viral — *what does the product act on?* |
-| **Part 2 — consequence** | sustains host metabolism / discrete lifecycle step |
-| **Evidence tier** | 1–6 (see protocol) |
-| **Citations** | |
-| **VERDICT** | COUNTS / DOES NOT COUNT / UNRESOLVABLE |
-| **Confidence** | high / low |
-| **If unresolvable — resolving experiment** | |
+| **Part 1 — substrate** | UNDETERMINED — no evidence either way |
+| **Part 2 — consequence** | UNDETERMINED — no evidence either way |
+| **Evidence tier** | 6 (chemistry only; no Tier 1–5 available) |
+| **Citations** | KEGG/EcoCyc for the reaction. No phage-specific study found. |
+| **VERDICT** | **COUNTS** |
+| **Confidence** | low |
+| **Resolving experiment** | Check virion proteomics for the protein (see the megaphage lead in [[Evidence Dossiers]]); determine whether the hydroxylation target is a phage structural protein |
 
-**Argument (half a page):**
+**Argument:**
 
+No phage-specific functional evidence identified after three independent search strategies (thematic PubMed, per-gene PubMed, targeted preprint/web), and the gene is not discussed in any of the three source catalogue papers. Only Tier 6 evidence is available, which under the protocol cannot move a family out of the record. Defaults to COUNTS at low confidence. Flagged as **evidence-free** for separate reporting.
 
 ---
 
@@ -596,18 +677,24 @@ is unresearched, not unresolvable, and defaults to COUNTS.
 
 *Included because: >=1% and >=10 calls in ocean_conservative*
 
+> [!note] PRE-FILLED by Claude — review and edit. This is the protocol's mechanical default,
+> not a judgement: with no Tier 1–5 evidence the protocol forbids ruling the family out, so
+> COUNTS applies automatically. **Your judgement here is whether you accept that the evidence
+> is genuinely absent** — i.e. whether my searching held up.
+
 | | |
 |---|---|
-| **Part 1 — substrate** | host / viral — *what does the product act on?* |
-| **Part 2 — consequence** | sustains host metabolism / discrete lifecycle step |
-| **Evidence tier** | 1–6 (see protocol) |
-| **Citations** | |
-| **VERDICT** | COUNTS / DOES NOT COUNT / UNRESOLVABLE |
-| **Confidence** | high / low |
-| **If unresolvable — resolving experiment** | |
+| **Part 1 — substrate** | UNDETERMINED — no evidence either way |
+| **Part 2 — consequence** | UNDETERMINED — no evidence either way |
+| **Evidence tier** | 6 (chemistry only; no Tier 1–5 available) |
+| **Citations** | KEGG/EcoCyc for the reaction. No phage-specific study found. |
+| **VERDICT** | **COUNTS** |
+| **Confidence** | low |
+| **Resolving experiment** | Identify the sulfation target |
 
-**Argument (half a page):**
+**Argument:**
 
+No phage-specific functional evidence identified after three independent search strategies (thematic PubMed, per-gene PubMed, targeted preprint/web), and the gene is not discussed in any of the three source catalogue papers. Only Tier 6 evidence is available, which under the protocol cannot move a family out of the record. Defaults to COUNTS at low confidence. Flagged as **evidence-free** for separate reporting.
 
 ---
 
