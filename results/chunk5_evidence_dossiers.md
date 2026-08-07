@@ -4,905 +4,948 @@ tags: [project, research, adjudication, evidence]
 
 # Evidence Dossiers
 
-Literature gathered per family so you can judge without doing the searching.
-**No verdicts here — that's [[Adjudication Worksheet]].** This note lays out what's known and
-the strongest case for each reading, and stops there.
+**One section per family, numbered and ordered to match [[Adjudication Worksheet]] exactly.**
+Family 7 here is family 7 there. Work down both together.
 
-Literature retrieved from **PubMed**. Every citation below was fetched and its abstract read;
-nothing is quoted that I have not seen. DOIs link to source.
+**No verdicts.** Each section gives what the enzyme does, the phage-specific literature, and the
+strongest case for *each* reading. The decision is yours.
 
-> [!warning] Read the dossier, then decide — don't let it decide
-> Where I've written "the case for X" and "the case for Y", both are meant to be genuinely
-> arguable. If one looks obviously right to you, that's your judgement forming, which is the
-> point. If one looks obviously right *because of how I've written it*, tell me and I'll rewrite
-> it flatter.
+Literature from **PubMed** unless noted; every citation was fetched and its abstract read before
+being quoted. Search method and corrections are in the [Appendix](#appendix-c--method-and-corrections).
 
-**Status: all 35 families covered.** Order is alphabetical within each batch, per the protocol.
+> [!tip] Shortcut
+> Families **1, 2, 12, 13, 15, 16, 19, 21, 27** have no phage-specific evidence and are
+> pre-filled in the worksheet. See [Appendix B](#appendix-b--the-evidence-free-families).
 
 ---
 
-## `dcm` — DNA cytosine methyltransferase (K00558, K17398)
+## 1. `asnB` — asparagine synthase (glutamine-hydrolysing)
 
-**What the enzyme does.** Transfers a methyl group to the C5 position of cytosine in DNA.
-In bacteria this is the "M" half of restriction–modification: the host methylates its own DNA at
-specific motifs, and its restriction endonucleases cleave any DNA lacking that mark.
+**K01953** · EC 6.3.5.4
 
-**The phage-specific evidence — and it is unusually direct.**
+**What it does.** Amidates aspartate to asparagine, using glutamine as the nitrogen donor.
+Standard amino-acid biosynthesis.
 
-According to PubMed, Burke *et al.* (2021, *PNAS*) characterised **phage-encoded TET dioxygenases
-found in viral metagenomes** and showed they oxidise 5-methylcytosine. The relevant part for this
-family is what the TETs work *on*: the paper reports the phage TETs cluster with, and act on the
-methyl groups installed by, *"their genomically cooccurring cytosine C5-methyltransferases"* —
-i.e. phage-encoded `dcm` homologues — and that these sit *"within gene clusters specifying complex
-cytosine modifications that may be important for DNA packaging and evasion of host restriction."*
-[DOI](https://doi.org/10.1073/pnas.2026742118)
+**Phage-specific evidence: none found.** → [Appendix B](#appendix-b--the-evidence-free-families)
 
-So there is direct biochemical work on phage-encoded C5-methyltransferases, and the substrate
-described is the **phage's own cytosines**, in a modification cluster.
+**One adjacent finding, which is not what you need.** Ito *et al.* (2014, *PLoS One*) disrupted
+**host** `asnH` in *Lactobacillus casei* and got **phage-resistant** mutants that had lost normal
+peptidoglycan structure. [DOI](https://doi.org/10.1371/journal.pone.0083876) That is a host gene
+affecting phage adsorption — same shape as the Sumrall result in §10 — and says nothing about
+what a *phage-encoded* `asnB` does.
 
-**The case that it acts on a HOST substrate / sustains host metabolism:**
-Methylation is a genuine enzymatic modification of DNA, and DNA methylation in bacteria does have
-regulatory roles beyond defence (gene expression, replication timing). If a phage-encoded MTase
-methylated *host* DNA it could in principle reprogram host gene expression. **I found no study
-demonstrating this for a phage `dcm`** — that absence is itself the finding.
-
-**The case that it acts on a VIRAL substrate / serves a lifecycle step:**
-The Burke paper places phage C5-MTases in modification clusters whose described function is
-protecting the phage genome. Anti-restriction is the textbook reason a phage carries a
-methyltransferase: methylate your own genome in the host's pattern and the host's endonucleases
-ignore it. Genome protection is a discrete lifecycle step under the protocol's Part 2.
-
-**Evidence tier available: 2** (biochemical characterisation of the phage-encoded protein and its
-modification cluster). Not Tier 1 — no knockout-and-measure experiment surfaced.
+**Tier available: 6.**
 
 ---
 
-## `dut` — dUTP diphosphatase (K01520)
+## 2. `cgeB` — spore maturation protein CgeB
 
-**What the enzyme does.** Hydrolyses dUTP to dUMP + PPi. Two jobs at once: it keeps dUTP out of
-the nucleotide pool (uracil would otherwise be misincorporated into DNA) and it supplies dUMP,
-the substrate for thymidylate synthase. So it sits directly on the path to dTTP.
+**K06320**
 
-**Phage-specific evidence.** According to PubMed, Huang *et al.* (2021, *Environ Microbiol*)
-catalogued 180 AMGs across 50 roseophage genomes and found seven high-frequency ones — *"trx,
-grx, RNR, thyX, DCD, phoH, and mazG"* — reporting that **most are** *"involved in the nucleotide
-biosynthesis pathway."* `dUTPase` appears in their *sporadic* AMG set.
-[DOI](https://doi.org/10.1111/1462-2920.15412)
+**What it does.** Involved in spore coat maturation in *Bacillus*; the CgeB family is
+glycosyltransferase-like and contributes to the outermost spore layer.
 
-**A complication worth knowing about.** Phage dUTPases have a documented role that is not
-enzymatic at all. Nyíri *et al.* (2019, *Biomolecules*) and (2024, *Sci Rep*) show
-staphylococcal phage dUTPases binding the **Stl master repressor** of pathogenicity islands,
-de-repressing island transfer — a signalling/regulatory function distinct from dUTP hydrolysis.
-[DOI](https://doi.org/10.3390/biom9090488) ·
-[DOI](https://doi.org/10.1038/s41598-024-51260-y)
+**Phage-specific evidence: none found.** → [Appendix B](#appendix-b--the-evidence-free-families)
 
-That doesn't settle your question, but it means "what is a phage dUTPase for?" has at least two
-published answers, and neither is host metabolic modulation.
+**Worth noting when you write it up.** This is a **sporulation** protein appearing in an AMG
+catalogue. Whatever it is doing in a phage genome, "auxiliary metabolic gene" is an odd label for
+it, and that is worth a clause even under a COUNTS verdict.
 
-**The case for HOST / sustains host metabolism:**
-dUTPase is a housekeeping enzyme of the host's own nucleotide pool. A phage boosting it arguably
-raises the cell's overall dNTP supply, which is metabolic modulation in the ordinary sense.
-
-**The case for VIRAL / lifecycle step:**
-The pool it protects is the one being drawn on to replicate the **phage** genome, during an
-infection that ends in lysis. Under the protocol's Part 2, feeding your own genome replication is
-a discrete lifecycle step, not sustaining host metabolism. Martin *et al.* make exactly this
-argument for nucleotide-pathway genes generally.
-
-**Evidence tier available: 2–4.** Structural/biochemical work on phage dUTPases exists (Tier 2)
-but addresses the Stl interaction rather than the AMG question; the AMG-context evidence is
-genomic (Tier 4).
+**Tier available: 6.**
 
 ---
 
-## `psbA` (K02703) and `psbD` (K02706) — photosystem II D1 and D2
+## 3. `dcm` — DNA cytosine methyltransferase
 
-*(Two worksheet entries; the evidence is shared, so it is presented once.)*
+**K00558, K17398** · EC 2.1.1.37
 
-**What they do.** D1 and D2 form the heterodimeric core of the photosystem II reaction centre.
-D1 is the most rapidly turned-over protein in the photosynthetic apparatus — it is continually
-damaged by light and continually replaced.
+**What it does.** Methylates C5 of cytosine in DNA. In bacteria this is the "M" of
+restriction–modification: methylate your own DNA at specific motifs and your restriction
+endonucleases spare it.
 
-**Phage-specific evidence, and this is the strongest in the whole list.**
+**Phage-specific evidence — unusually direct.** Burke *et al.* (2021, *PNAS*) characterised
+**phage-encoded TET dioxygenases** from viral metagenomes that oxidise 5-methylcytosine. The part
+that matters here is what those TETs act on: the methyl groups installed by *"their genomically
+cooccurring cytosine C5-methyltransferases"* — phage-encoded `dcm` homologues — sitting *"within
+gene clusters specifying complex cytosine modifications that may be important for DNA packaging
+and evasion of host restriction."* [DOI](https://doi.org/10.1073/pnas.2026742118)
 
-Sullivan *et al.* (2006, *PLoS Biology*) screened 33 cultured cyanophages plus field samples and
-found **88% of phage genomes contain `psbA`, and 50% contain both `psbA` and `psbD`**, describing
-them as host-like photosynthesis genes carried *"presumably to augment the host photosynthetic
-machinery during infection."* [DOI](https://doi.org/10.1371/journal.pbio.0040234)
+**Case for HOST.** DNA methylation in bacteria has regulatory roles beyond defence — gene
+expression, replication timing. A phage MTase methylating *host* DNA could reprogram host
+expression. **No study demonstrating this for a phage `dcm` was found**; that absence is itself
+the finding.
 
-Sieradzki *et al.* (2019, *Nature Communications*) went further and measured expression in situ
-by metatranscriptomics, reporting that **sometimes more than 50% of all cyanobacterial + viral
-`psbA` expression is of viral origin**, and concluding this highlights *"the contribution of
-viruses to photosynthesis and oxygen production."*
-[DOI](https://doi.org/10.1038/s41467-019-09106-z)
+**Case for VIRAL.** The substrate described in the only direct work is the phage's own cytosines,
+inside a modification cluster whose stated function is genome protection. Anti-restriction is the
+textbook reason a phage carries a methyltransferase.
 
-**The case for HOST / sustains host metabolism:**
-The gene product is inserted into the **host's** thylakoid membrane, replacing a host subunit
-that photodamage is destroying. The measured consequence is that photosynthesis keeps running in
-an infected cell. Substrate: host. Consequence: sustaining host metabolism.
+**Tier available: 2.** No knockout-and-measure experiment surfaced.
 
-**The case for VIRAL / lifecycle step:**
-The phage keeps the lights on only because it needs ATP and reducing power to finish replicating
-before the cell dies — so ultimately this serves phage replication. **Note that this argument
-generalises to almost everything**, which is precisely why the protocol's Part 2 asks whether
-the action is a *discrete lifecycle step* rather than whether it ultimately benefits the virus.
-
-**Evidence tier available: 1–2.** Expression measured during real infections in the environment.
-This is as good as the evidence in this field gets.
+> [!caution] Not blind. `dcm` → *doesn't count* appears in the protocol's own worked-example table,
+> so this verdict cannot be cited as evidence of impartiality. Say so in the write-up.
 
 ---
 
-## `queuosine` — `queC`, `queD`, `queE`, `queF` and relatives
+## 4. `dsrC_tusE` — sulfur relay
 
-**What the pathway does.** Builds 7-deazaguanine derivatives. In the classical picture this ends
-in queuosine, a hypermodified base inserted into the wobble position of certain tRNAs, tuning
-translation. `folE`/GTP cyclohydrolase I supplies the entry-point precursor — **the same step
-that feeds folate biosynthesis**, which is why these genes sit at the branch point that moves
-your headline by 18 points.
+**K11179** · EC 2.8.1.-
 
-**The phage-specific evidence, which reframes the family.**
+**Why this family is in the rubric.** Martin *et al.* single it out as an **annotation failure**,
+not a biological one: DsrC and TusE do different jobs, HMMs cannot separate them, and **KEGG has
+merged them into one orthology group literally named `tusE, dsrC`.**
 
-According to PubMed, Thiaville *et al.* (2016, *PNAS*) showed that 7-deazaguanine derivatives are
-inserted **into DNA, not only tRNA**. They detected modified deoxynucleosides in bacterial DNA
-from gene clusters containing preQ₀-synthesis genes, and their transformation experiments
-*"strongly suggest a restriction-modification role for the cluster."* Crucially for you, they also
-report finding **2′-deoxy-7-formamidino-7-deazaguanosine in the *E. coli* bacteriophage 9g**.
+**The two proteins.** Stockdreher *et al.* (2012, *PLoS One*) work out the chemistry and state the
+relationship: **TusE is part of a tRNA-modification system** — TusBCD transfers sulfur to TusE —
+and TusE is *"a homolog of another crucial component of the A. vinosum Dsr system, namely DsrC."*
+DsrC is persulfurated at Cys111 and feeds sulfur to **dissimilatory sulfite reductase DsrAB**,
+i.e. energy metabolism. [DOI](https://doi.org/10.1371/journal.pone.0040785)
+
+Same fold, same persulfide chemistry, **two entirely different destinations.**
+
+**Case for HOST — and this is stronger than it first looked.** Kieft *et al.* (2021, *Nature
+Communications*) identified **191 phages across twelve environments encoding 227 AMGs** for sulfur
+and thiosulfate oxidation — listing *"dsrA, dsrC/tusE, soxC, soxD and soxYZ"*. They report
+*"evidence for retention of AMGs during niche-differentiation… auxiliary metabolism imparts
+measurable fitness benefits to phages"*, expression profiles suggesting *"significant
+contributions by phages to sulfur and thiosulfate oxidation in freshwater lakes and oceans"*, and
+a response to sulfur gradients in hydrothermal systems.
+[DOI](https://doi.org/10.1038/s41467-021-23698-5)
+
+**Case for VIRAL / not-what-it-claims.** If the phage copy is a `tusE`, it feeds tRNA thiolation —
+housekeeping, with no sulfur-cycling implication at all.
+
+> [!important] Two things to notice, and the second is sharper
+> **First**, Kieft *et al.* is the strongest pro-AMG case for any family in this list.
+>
+> **Second — the authors themselves write `dsrC/tusE`, with a slash.** The field's strongest
+> phage-sulfur paper inherits the exact ambiguity Martin complains about, and says so in its own
+> notation. Also worth knowing: first author **Kristopher Kieft is the author of VIBRANT**, one of
+> the two tools audited in Chunk 1. Not a criticism — context.
+
+**Tier available: 3–4** for the ecology; **effectively 0** for telling which gene the
+environmental calls actually are.
+
+**Resolving experiment, if UNRESOLVABLE:** phylogenetic or HMM separation of DsrC from TusE, then
+re-annotation. Until someone does it, no catalogue can support a sulfur-cycling claim from K11179.
+
+---
+
+## 5. `dut` — dUTP diphosphatase
+
+**K01520** · EC 3.6.1.23
+
+**What it does.** Hydrolyses dUTP → dUMP + PPi. Two jobs: keeps dUTP out of the pool so uracil
+isn't misincorporated into DNA, and supplies dUMP for thymidylate synthase. Sits directly on the
+path to dTTP.
+
+**Phage-specific evidence.** Huang *et al.* (2021, *Environ Microbiol*) catalogued 180 AMGs across
+50 roseophage genomes; seven high-frequency ones (*"trx, grx, RNR, thyX, DCD, phoH, and mazG"*)
+are **mostly** *"involved in the nucleotide biosynthesis pathway."* `dUTPase` is in their
+*sporadic* set. [DOI](https://doi.org/10.1111/1462-2920.15412)
+
+**A complication.** Phage dUTPases have a documented **non-enzymatic** role: Nyíri *et al.* (2019,
+*Biomolecules*; 2024, *Sci Rep*) show staphylococcal phage dUTPases binding the **Stl master
+repressor**, de-repressing pathogenicity-island transfer.
+[DOI](https://doi.org/10.3390/biom9090488) · [DOI](https://doi.org/10.1038/s41598-024-51260-y)
+So "what is a phage dUTPase for?" already has two published answers, neither host metabolism.
+
+**Case for HOST.** A housekeeping enzyme of the host's own nucleotide pool; boosting it raises the
+cell's dNTP supply.
+
+**Case for VIRAL.** That pool is being drawn down to replicate the **phage** genome, in an
+infection ending in lysis. Feeding your own replication is a discrete lifecycle step.
+
+**Tier available: 2–4.**
+
+---
+
+## 6. `folate` — folate / one-carbon pathway
+
+**K00287, K00548, K01433, K01491, K01495, K01633, K09007, K13938, K13998, K19645**
+Includes `folA`, `folB`, `folD`, `folE` (K01495), `folE2` (K09007), `metH`, `purU`, DHFR-TS.
+
+**What it does.** Builds tetrahydrofolate, the universal one-carbon carrier — feeding purine
+synthesis, thymidylate synthesis, methionine, and formylmethionyl-tRNA for translation initiation.
+
+**The overlap you already know about.** `folE`/GTP cyclohydrolase I is the first committed step of
+folate biosynthesis **and** the entry point to queuosine biosynthesis (§26). `folE2` is an
+alternative at the same branch. All four are flagged **AMBIGUOUS** in the frozen accession list,
+and Chunk 4 showed the wastewater paper's own rule cannot resolve them either.
+
+**Cross-reference §26.** Thiaville *et al.* detected a 7-deazaguanine derivative **in phage DNA**;
+the pathway making it starts at GTP cyclohydrolase I.
 [DOI](https://doi.org/10.1073/pnas.1518570113)
 
-Hutinet *et al.* (2016, *RNA Biology*) summarise the position: seven-deazapurine modifications
-*"were thought to be highly specific of tRNAs, but have now been discovered in DNA of phages and
-of phylogenetically diverse bacteria"*, and *"the presence of 7-deazapurine in DNA is proposed to
-be a protection mechanism against endonucleases."*
-[DOI](https://doi.org/10.1080/15476286.2016.1265200)
+**Case for HOST.** Folate is a genuine cofactor pathway serving the whole cell; supplementing it
+is host metabolic modulation in the ordinary sense.
 
-de Crécy-Lagard *et al.* (2024, *MMBR*) review the field and list among the functions of
-deazaguanine modifications *"cellular stress resistance, self-nonself discrimination mechanisms,
-and host evasion defenses."* [DOI](https://doi.org/10.1128/mmbr.00199-23)
+**Case for VIRAL.** Martin *et al.*'s argument: the one-carbon units feed *de novo* nucleotide
+biosynthesis for **phage genome replication**. The queuosine evidence adds a second viral route —
+genome modification.
 
-**The case for HOST / sustains host metabolism:**
-Queuosine's established role is tRNA modification, which affects translational fidelity across
-the whole cell. The wastewater authors themselves note the genes *"could also participate in tRNA
-biogenesis."* If the phage copies feed host tRNA modification, that is genuine host metabolic
-modulation.
+> [!caution] This is the 18-percentage-point family
+> Wastewater runs **19.5% → 37.7%** on whether `folE`/`queD` count. The write-up reports it both
+> ways regardless. Make this argument box your best one — it is the paragraph a reviewer reads
+> hardest.
 
-**The case for VIRAL / lifecycle step:**
-The pathway's product has been directly detected **in phage DNA**, and the function attributed to
-it in that context is protection from host endonucleases. That makes the substrate viral and the
-consequence genome protection — a discrete lifecycle step.
-
-> [!important] The specific question you have to answer here
-> The evidence shows this pathway does **both** things in different organisms. So the question is
-> not "what can 7-deazaguanine chemistry do?" but **"when a phage carries `queC`/`queD`/`queE`,
-> which is it doing?"** Note that a phage carrying the pathway to modify its own DNA needs the
-> same enzymes as one feeding host tRNA — the genes do not distinguish the two uses.
->
-> That may be a case for **UNRESOLVABLE** — in which case the protocol requires you to name the
-> experiment. A plausible one: detect 7-deazaguanine derivatives in the DNA of phages whose
-> genomes carry these genes, versus those that don't. Thiaville *et al.* did exactly that for one
-> phage; nobody has done it systematically.
-
-**Evidence tier available: 2.** Direct chemical detection of the pathway's product in phage DNA.
+**Tier available: 2** for the chemistry and the phage-DNA detection; **6** for what a phage `folE`
+is specifically doing.
 
 ---
 
-## `xtmA` / `xtmB` — phage terminase small and large subunit (K07474, K06909)
+## 7. `galE` — UDP-glucose 4-epimerase
 
-**What they do.** The terminase holoenzyme is the phage DNA-packaging motor. The large subunit
-provides ATPase and nuclease activity; the small subunit recognises the packaging initiation site.
-Together they translocate the phage genome into the preformed capsid against enormous internal
-pressure. PubMed returns 88 results for phage terminase DNA packaging — this is among the best
-characterised machines in phage biology.
+**K01784** · EC 5.1.3.2
 
-**The case for HOST / sustains host metabolism:**
-None that I can construct. The substrate is the phage genome; the product is a filled phage head.
+**What it does.** Interconverts UDP-glucose and UDP-galactose. A **precursor** enzyme: its product
+feeds surface glycans, but also several other pathways.
 
-**The case for VIRAL / lifecycle step:**
-Assembly. It is difficult to name a more purely viral function.
+**Phage-specific evidence:** none specific to `galE`. See
+[Appendix A](#appendix-a--the-nucleotide-sugar-and-cell-surface-literature) for the block
+literature, which concerns the **transfer** step rather than precursor supply.
 
-> [!note] Why this is in your list at all
-> These are genuine entries in the **soil AMG catalogue**. A DNA-packaging motor was called an
-> auxiliary *metabolic* gene. Whatever verdict you reach, that is worth a sentence in the paper.
-
-**Evidence tier available: 1–2**, abundantly.
-
----
-
----
-
-# Batch 2 — the cell-surface block, glycoside hydrolases, and `phoH`
-
-## `glycosyltransferase` — plus `galE` `gmd` `manB` `rfbB` `rfbC` `UGDH` `pseB` `glmS` `tagD`
-
-*(One shared evidence base. Each still gets its own verdict — the enzymes differ in how directly
-they touch the surface.)*
-
-**What these enzymes do.** They build and interconvert **nucleotide sugars** — UDP-glucose,
-UDP-galactose, dTDP-rhamnose, GDP-mannose and relatives — and transfer those sugars onto growing
-glycans. Downstream: **O-antigen, LPS, capsule, wall teichoic acid.** That is, the bacterial cell
+**Case for HOST.** Nucleotide-sugar supply is general host metabolism, feeding more than the
 surface.
 
-- `galE` UDP-glucose 4-epimerase · `UGDH` UDP-glucose 6-dehydrogenase · `gmd` GDP-mannose
-  4,6-dehydratase · `rfbB` dTDP-glucose 4,6-dehydratase · `rfbC` O-antigen biosynthesis protein ·
-  `manB` phosphomannomutase · `glmS` glutamine–fructose-6-P transaminase (entry to amino sugars) ·
-  `pseB` pseudaminic acid pathway · `tagD` teichoic acid pathway
-- `glycosyltransferase` — the transfer step itself
+**Case for VIRAL.** If it is feeding surface modification, the block reasoning in §10 applies.
 
-**The phage-specific evidence, and it is unusually good here.**
+> [!warning] Don't import §10's verdict automatically
+> The demonstrated phage biology in Appendix A is about glycosyltransferases **transferring**
+> sugars onto the host surface. `galE` **makes the precursor**, which has many destinations. That
+> the block reasoning carries to it is an assumption, not a finding.
 
-According to PubMed, Mann *et al.* (2015, *J Biol Chem*) state that lysogenic bacteriophages
-encode enzymes that modify LPS O-antigen glycans, *"altering the structure of the bacteriophage
-receptor and resulting in serotype conversion"*, and demonstrate phage-mediated glucosylation of
-an O-antigen experimentally. [DOI](https://doi.org/10.1074/jbc.M115.660803)
+**Tier available: 5–6.**
 
-Sun *et al.* (2013, *BMC Microbiology*) describe the *Shigella flexneri* system, where *"nearly
-all variations between serotypes are due to glucosyl and/or O-acetyl modifications of the common
-O unit mediated by glycosyltransferases encoded by serotype-converting bacteriophages."*
-[DOI](https://doi.org/10.1186/1471-2180-13-39)
+---
 
-From the other direction, Sumrall *et al.* (2021, *J Bacteriol*) deleted a **host**
-glycosyltransferase in *Listeria ivanovii*, removing glucose decoration from wall teichoic acid;
-the mutant *"became resistant to phage B025 infection due to an inability of the phage to adsorb
-to the bacterial surface."* [DOI](https://doi.org/10.1128/JB.00136-21)
+## 8. `glmS` — glutamine–fructose-6-phosphate transaminase
 
-> [!important] This block does not fit the two-part rule cleanly, and you should expect that
-> The substrate is unambiguously **host** — phage glycosyltransferases modify the host's own
-> O-antigen. Part 1 says host.
->
-> But the demonstrated consequence is **serotype conversion — changing the phage receptor.**
-> That is neither "sustaining host metabolism" nor obviously one of the listed lifecycle steps
-> (entry, genome protection, replication, assembly, egress).
+**K00820**
+
+**What it does.** The committed entry step to **amino-sugar biosynthesis** — makes glucosamine-
+6-phosphate, upstream of UDP-GlcNAc, which feeds peptidoglycan, LPS and teichoic acids.
+
+**Phage-specific evidence:** none specific. See
+[Appendix A](#appendix-a--the-nucleotide-sugar-and-cell-surface-literature).
+
+**Case for HOST.** Amino sugars feed the cell wall — the cell's largest structural investment.
+This is core host anabolism.
+
+**Case for VIRAL.** As §7: if it is feeding surface modification for receptor control, §10's
+reasoning applies. But `glmS` sits further upstream than almost anything else in this block.
+
+**Tier available: 6.**
+
+---
+
+## 9. `glycoside_hydrolase`
+
+**K01179, K01185, K01187, K01190, K01199, K03791** — endoglucanase, lysozyme, α-glucosidase,
+β-galactosidase, glucan endo-1,3-β-D-glucosidase, putative chitinase
+
+**What they do.** Cleave glycosidic bonds. In phage biology: **endolysins** (lyse the cell from
+inside at the end of infection), **virion-associated lysins** (locally degrade the wall during
+entry), **tailspike depolymerases** (chew capsule or O-antigen to reach the receptor).
+
+**Phage-specific evidence — direct and structural.** Yuan & Gao (2016, *Front Microbiol*) did
+**structural proteome analysis** on a *Bacillus* jumbo phage and identified 23 virion proteins
+including a glycoside hydrolase, Gp255, which:
+
+- *"was identified as phage virion component and was found to **interact with the phage baseplate
+  protein**"*
+- shows lytic activity against the host strain
+- was *"the **first functional individual structural glycoside hydrolase in phage virion**"*
+- *"might **facilitate the injection of the phage genome during infection** by forming pores on
+  the bacterial cell wall."*
+
+[DOI](https://doi.org/10.3389/fmicb.2016.00745)
+
+**Case for HOST.** Some glycoside hydrolases are genuine sugar-catabolic enzymes; one liberating
+usable sugars for the host would be host metabolic modulation. **No phage-specific evidence for
+this reading was found.**
+
+**Case for VIRAL.** A glycoside hydrolase physically in the virion, bound to the baseplate,
+breaching the wall for genome entry. Substrate host, consequence entry — a discrete lifecycle step.
+
+> [!note] You are judging 123 calls, not 21,690
+> `PF13385` — *"Concanavalin A-like lectin/glucanases superfamily"* — was struck from this family
+> during the accession review because it is a **fold, not an activity**. It was 99.4% of the
+> original count.
+
+**Tier available: 1–2.**
+
+---
+
+## 10. `glycosyltransferase`
+
+**K00754, K03669, K03814, K07270, K15521** — `bshA`, `mdoH`, `mtgA`, family-25 GT, `mshA`
+
+**What they do.** Transfer sugars onto growing glycans. Downstream: **O-antigen, LPS, capsule,
+wall teichoic acid** — the bacterial cell surface.
+
+**Phage-specific evidence — good.** See
+[Appendix A](#appendix-a--the-nucleotide-sugar-and-cell-surface-literature) in full. In short:
+phage-encoded glycosyltransferases demonstrably modify the **host's** O-antigen, and the
+demonstrated consequence is **serotype conversion — changing the phage receptor.**
+
+> [!important] This family breaks the two-part rule, and you should expect that
+> Substrate is unambiguously **host**. But the consequence — receptor modification — is neither
+> "sustaining host metabolism" nor obviously one of the listed lifecycle steps.
 >
 > **It is arguably a third thing: modifying the host to control who else can infect it.** For a
 > lysogen, excluding competitors is a real fitness function.
 >
-> Three honest options, and the protocol permits all three:
-> 1. read receptor modification as a **lifecycle function** (superinfection exclusion, host-range
+> Three defensible readings, all permitted:
+> 1. receptor modification is a **lifecycle function** (superinfection exclusion / host-range
 >    control) → DOES NOT COUNT
-> 2. read it as **genuine host modification** — the host's surface chemistry really is changed,
->    persistently, in a lysogen → COUNTS
+> 2. it is **genuine host modification** — the surface chemistry really is changed, persistently
+>    → COUNTS
 > 3. **UNRESOLVABLE**, and name the experiment
 >
-> Whichever you pick, **say in the argument box that the two-part rule underdetermined it.**
-> Chunk 4 showed the field's own rules have exactly this problem; being able to say "and so does
-> ours, here, and we noticed" is far stronger than hiding it.
+> Whichever you choose, **say in the argument box that the rule underdetermined it.** Chunk 4
+> showed the field's rules have this problem; "and so does ours, here, and we noticed" is a far
+> stronger paper than hiding it.
 
-**A distinction worth drawing across the nine.** The evidence above concerns the **transfer**
-step — glycosyltransferases acting on the surface. The **precursor** enzymes (`galE`, `UGDH`,
-`gmd`, `rfbB`, `manB`, `glmS`) make nucleotide sugars feeding *many* pathways, not only the
-surface. Whether the same reasoning carries to them is a real question, not a formality: a phage
-carrying `galE` may be feeding surface modification, or something else entirely.
-
-**Evidence tier available: 2** for the transfer step. Likely **5–6** for the individual precursor
-enzymes unless you find phage-specific work on them.
+**Tier available: 2.**
 
 ---
 
-## `glycoside_hydrolase`
+## 11. `gmd` — GDP-mannose 4,6-dehydratase
 
-**What they do.** Cleave glycosidic bonds. In phage biology that means **endolysins** (degrade
-peptidoglycan from inside to lyse the cell at the end of infection), **virion-associated lysins**
-(locally degrade the wall during entry), and **tailspike depolymerases** (chew capsule or
-O-antigen to reach the receptor).
+**K01711** · EC 4.2.1.47
 
-**Why this family is the protocol's own worked example.** An endolysin acts on a **host**
-substrate — the cell wall — so Part 1 says host. But it is unambiguously viral work: it bursts
-the cell open to release progeny. That is exactly why the decision rule has two parts.
+**What it does.** First step from GDP-mannose toward GDP-fucose and related deoxy sugars, which
+go into O-antigen and capsule.
 
-**The case for HOST / sustains host metabolism:**
-Some glycoside hydrolases are genuine sugar-catabolic enzymes. If a phage-encoded one liberated
-usable sugars for the host, that would be host metabolic modulation. **I found no phage-specific
-evidence for this reading.** That absence is itself the finding — and under default-COUNTS it
-still has to be weighed rather than waved away.
+**Phage-specific evidence:** none specific. See
+[Appendix A](#appendix-a--the-nucleotide-sugar-and-cell-surface-literature).
 
-**The case for VIRAL / lifecycle step:**
-Entry and egress. Both are discrete lifecycle steps.
+**Case for HOST / VIRAL:** as §7 — a precursor enzyme, so the §10 reasoning is an assumption
+rather than a finding. `gmd` is more surface-committed than `galE` (fucose is largely a surface
+sugar), which is a point you can make either way.
 
-> [!note] The Chunk 2 lesson applies directly here
-> `PF13385` — *"Concanavalin A-like lectin/glucanases superfamily"* — was excluded from this
-> family during the accession review because it is a **fold, not an activity**: concanavalin A
-> binds sugars, it does not hydrolyse them. That was **99.4%** of the family's original count.
+**Tier available: 5–6.**
+
+---
+
+## 12. `hisF` — imidazole glycerol-phosphate synthase subunit
+
+**K02500** · EC 4.3.2.10
+
+**What it does.** Histidine biosynthesis. Also connects to purine metabolism — the reaction
+releases AICAR, which re-enters purine synthesis.
+
+**Phage-specific evidence: none found.** → [Appendix B](#appendix-b--the-evidence-free-families)
+
+**Tier available: 6.**
+
+---
+
+## 13. `HMGCL` — hydroxymethylglutaryl-CoA lyase
+
+**K01640** · EC 4.1.3.4
+
+**What it does.** Cleaves HMG-CoA to acetyl-CoA and acetoacetate. Leucine catabolism and ketone
+body formation.
+
+**Phage-specific evidence: none found.** → [Appendix B](#appendix-b--the-evidence-free-families)
+
+**Tier available: 6.**
+
+---
+
+## 14. `IMPDH` — IMP dehydrogenase
+
+**K00088** · EC 1.1.1.205
+
+**What it does.** The rate-limiting committed step of **guanine nucleotide** biosynthesis:
+IMP → XMP, en route to GMP/GDP/GTP/dGTP.
+
+**Phage-specific evidence:** no functional study of a phage-encoded IMPDH surfaced. The structural
+argument is the same as §5 and §20 — a nucleotide-supply enzyme, where during infection the pool
+being drawn down replicates the phage genome.
+
+**Worth knowing:** IMPDH sits in KEGG's **09104 Nucleotide metabolism** — the category the
+wastewater paper's own rule excludes (Chunk 4).
+
+**Case for HOST.** Guanine nucleotides serve the whole cell.
+
+**Case for VIRAL.** Feeding phage genome replication; Martin *et al.* make this argument for
+nucleotide-pathway genes generally.
+
+**Tier available: 6.** Under the protocol, Tier 6 alone cannot rule it out.
+
+---
+
+## 15. `iscU` — Fe-S cluster scaffold / NifU
+
+**K04488**
+
+**What it does.** Scaffold protein on which iron–sulfur clusters are assembled before delivery to
+apo-proteins. Fe-S clusters are cofactors for a very large number of enzymes.
+
+**Phage-specific evidence: none found.** → [Appendix B](#appendix-b--the-evidence-free-families)
+
+> [!warning] Beware the false positive here
+> A PubMed search returns one hit, which is about the *E. coli* Hsc66/IscU chaperone and uses
+> **phage display as a laboratory method**. "Phage" is the technique, not the biology.
+
+**Tier available: 6.**
+
+---
+
+## 16. `K07336` — PKHD-type hydroxylase
+
+**K07336** · EC 1.14.11.-
+
+**What it does.** An uncharacterised 2OG-Fe(II) oxygenase. **KEGG gives it no gene symbol** — the
+family label *is* the accession.
+
+**Phage-specific evidence: none found.** → [Appendix B](#appendix-b--the-evidence-free-families)
+
+> [!important] Worth its own sentence in the paper
+> This is counted as an auxiliary **metabolic** gene while being an enzyme **whose substrate
+> nobody has identified.** The gap here is more basic than for the other eight: it is not that
+> nobody has studied the phage copy, it is that nobody has characterised the enzyme at all.
+
+**Tier available: 6, and arguably less.**
+
+---
+
+## 17. `manB` — phosphomannomutase
+
+**K01840** · EC 5.4.2.8
+
+**What it does.** Mannose-6-P ⇄ mannose-1-P, feeding GDP-mannose and thence surface glycans.
+A **precursor** enzyme.
+
+**Phage-specific evidence:** none specific. See
+[Appendix A](#appendix-a--the-nucleotide-sugar-and-cell-surface-literature). Same caution as §7.
+
+**Tier available: 5–6.**
+
+---
+
+## 18. `NAMPT` — nicotinamide phosphoribosyltransferase
+
+**K03462** · EC 2.4.2.12
+
+**What it does.** First step of **NAD⁺ salvage**: nicotinamide → nicotinamide mononucleotide,
+en route to NAD⁺.
+
+**Phage-specific evidence — Tier 1–2.** Lee, Li & Miller (2017, *J Bacteriol*), *"Vibrio Phage
+KVP40 Encodes a Functional NAD⁺ Salvage Pathway"*: KVP40 has five pyridine-nucleotide genes, two
+sufficient for salvage. They cloned, expressed and purified them; **KVP40 NadV NAmPRTase is
+active**, and a clone **complements an *E. coli* mutant** defective in both bacterial NAD
+pathways. RT-qPCR and enzyme assays of infected cells showed transcription **during the early and
+delayed-early period of infection**, alongside other nucleotide-precursor genes.
+[DOI](https://doi.org/10.1128/JB.00855-16)
+
+They conclude NAD⁺ biosynthesis is *"another important metabolic resource control point by large,
+rapidly replicating dsDNA bacteriophages"*, noting T4-type phages use NADH/NADPH for DNA precursor
+synthesis and NAD⁺ for **ADP-ribosylation of proteins transcribing and translating the phage
+genome**.
+
+Independently, Huang *et al.* (2022, *ACS Synth Biol*) used the KVP40 enzyme as a biocatalyst,
+finding it *"has the best catalytic activity"* for producing NMN — confirming it is genuinely
+functional. [DOI](https://doi.org/10.1021/acssynbio.2c00100)
+
+**Case for HOST.** NAD⁺ is a universal cofactor; a phage salvage pathway raises its availability
+in the infected cell — "metabolic resource control", in the authors' phrase.
+
+**Case for VIRAL.** The stated uses are DNA precursor synthesis and ADP-ribosylation of the
+phage's own machinery, expressed in the phage's own metabolic window rather than as a sustained
+host programme.
+
+**Tier available: 1–2.**
+
+---
+
+## 19. `nodU` — carbamoyltransferase
+
+**K00612** · EC 2.1.3.-
+
+**What it does.** Transfers a carbamoyl group. In rhizobia, `nodU` carbamoylates the Nod factor —
+a secreted signalling glycan. Outside that context the target is generally unknown.
+
+**Phage-specific evidence: none found.** → [Appendix B](#appendix-b--the-evidence-free-families)
+
+**Tier available: 6.**
+
+---
+
+## 20. `nrdH` — glutaredoxin-like protein NrdH
+
+**K06191**
+
+**What it does.** Redox partner of class Ib **ribonucleotide reductase** (RNR). RNR converts
+ribonucleotides to deoxyribonucleotides — the committed step in making DNA precursors.
+
+**Phage-specific evidence — indirect but telling.** PubMed returns ~130 results for bacteriophage
+ribonucleotide reductase. More pointedly, Sakowski *et al.* (2021, *Nature Microbiology*) built a
+method for capturing virus–host interactions that *"fuses a **phage marker, the ribonucleotide
+reductase gene**, with the host 16S rRNA gene of infected bacterial cells."*
+[DOI](https://doi.org/10.1038/s41564-021-00873-4)
+
+**RNR is used as a marker gene for phage** — the same status `phoH` has (§22). Phage RNRs are
+distinct enough from host copies to identify a virus, which is not the signature of an
+incidentally acquired gene. Huang *et al.* (2021) also list RNR among the seven high-frequency
+roseophage AMGs. [DOI](https://doi.org/10.1111/1462-2920.15412)
+
+**Case for HOST.** RNR supplies the dNTP pool the whole cell uses.
+
+**Case for VIRAL.** Those dNTPs replicate the phage genome; a phage encoding its own RNR is the
+textbook case of provisioning its own replication, and the phylogenetic distinctness supports
+specialisation.
+
+**Tier available: 4–5.** No experiment separates "the host's dNTP pool" from "the phage's" during
+infection, **because during infection they are the same pool** — which may make this genuinely
+unresolvable. If you go that way, that is the experiment problem to name.
+
+---
+
+## 21. `P4HA` — prolyl 4-hydroxylase
+
+**K00472** · EC 1.14.11.2
+
+**What it does.** 2OG-dependent hydroxylation of proline residues in peptide linkage, giving
+4-hydroxyproline — a structural modification best known from collagen.
+
+**Phage-specific evidence: none verified.** → [Appendix B](#appendix-b--the-evidence-free-families)
+
+> [!warning] PENDING — a live lead worth 15 minutes of your library access
+> A web source asserted that prolyl-4-hydroxylase appears in **megaphage virion proteomics**
+> (*npj Viruses* 2025) and that P4HA is among the most abundant AMGs in marine viromes.
+> **I could not verify either** — the article sits behind a login wall and PubMed did not return
+> it. A separate paper on "viral prolyl-4-hydroxylase" concerns a **eukaryotic algal virus**, not
+> a phage.
 >
-> So you are judging the **123 calls that survived that check**, not the 21,690 that didn't.
+> **If you can reach that paper and prolyl 4-hydroxylase is in its virion proteomics table, this
+> family leaves the evidence-free group** and probably becomes a structural verdict on the same
+> logic as §9.
 
-**Evidence tier available: 1–2** for endolysins and tailspikes; a very well developed field.
+**Tier available: 6 pending that check.**
 
 ---
 
-## `phoH` — phosphate starvation-inducible protein (K06217)
+## 22. `phoH` — phosphate starvation-inducible protein
 
-**What it does.** Part of the **Pho regulon** — the bacterial response to phosphate limitation,
-which switches on high-affinity phosphate scavenging when phosphate runs short. `phoH` itself is
-an ATP-binding protein whose precise function is not fully resolved.
+**K06217**
 
-**Phage-specific evidence.** According to PubMed, Goldsmith *et al.* (2011, *Appl Environ
-Microbiol*) found Pho regulon genes in **nearly 40% of marine phage genomes but only 4% of
-non-marine phage genomes**, with `phoH` the most prevalent — in 42 of 602 complete phage genomes.
-Phage `phoH` sequences *"formed a cluster distinct from those of their bacterial hosts"*, and the
-gene is now used as a **signature gene for marine phage diversity**.
-[DOI](https://doi.org/10.1128/AEM.05531-11)
+**What it does.** Part of the **Pho regulon**, the response to phosphate limitation that switches
+on high-affinity phosphate scavenging. `phoH` is an ATP-binding protein of not-fully-resolved
+function.
 
-Huang *et al.* (2021, *Environ Microbiol*) list `phoH` among the seven high-frequency AMGs shared
-across roseophages. [DOI](https://doi.org/10.1111/1462-2920.15412)
+**Phage-specific evidence.** Goldsmith *et al.* (2011, *Appl Environ Microbiol*) found Pho regulon
+genes in **~40% of marine phage genomes but only 4% of non-marine ones**, `phoH` most prevalent —
+in 42 of 602 complete phage genomes. Phage `phoH` sequences *"formed a cluster distinct from those
+of their bacterial hosts"*, and the gene is now a **signature gene for marine phage diversity**.
+[DOI](https://doi.org/10.1128/AEM.05531-11) Huang *et al.* (2021) list it among the seven
+high-frequency roseophage AMGs. [DOI](https://doi.org/10.1111/1462-2920.15412)
 
-**The case for HOST / sustains host metabolism:**
-This is about as good as the AMG hypothesis gets outside photosynthesis. The marine/non-marine
-split — **40% vs 4%** — is a strong ecological signal: phages carry it **where phosphate is
-limiting**. That pattern is hard to explain except by phosphate acquisition mattering to the
-infected cell.
+**Case for HOST.** About as good as the AMG hypothesis gets outside photosynthesis: the 40%-vs-4%
+split says phages carry it **where phosphate is limiting**, which is hard to explain except by
+phosphate acquisition mattering to the infected cell.
 
-**The case for VIRAL / lifecycle step:**
-Phage genome replication is phosphate-expensive; a burst of a hundred virions is a large
-nucleic-acid demand. Boosting phosphate scavenging could serve the phage's own replication rather
-than host metabolism generally. Note too the phylogenetic separation — phage `phoH` forms its own
-cluster, consistent with specialisation away from the host function.
+**Case for VIRAL.** Phage replication is phosphate-expensive — a hundred-virion burst is a large
+nucleic-acid demand. And the phylogenetic separation is consistent with specialisation away from
+the host function.
 
-**Evidence tier available: 4–5.** Strong comparative genomics and a clear ecological correlation;
-no experiment isolating what phage `phoH` does during infection. **That missing experiment is
-nameable**, which matters if you land on UNRESOLVABLE: delete or express phage `phoH` and measure
+**Tier available: 4–5.** **Resolving experiment:** delete or express phage `phoH` and measure
 phosphate uptake in infected versus uninfected cells under limitation.
 
 ---
 
----
+## 23. `psbA` — photosystem II D1 protein
 
-# Batch 3 — the remaining 16
+**K02703** · EC 1.10.3.9
 
-## `dsrC_tusE` — sulfur relay (K11179)
+**What it does.** D1 is half the heterodimeric core of the photosystem II reaction centre, and the
+most rapidly turned-over protein in the photosynthetic apparatus — continually photodamaged and
+continually replaced.
 
-**The reason this family exists in the rubric.** Martin *et al.* single it out not for its
-biology but as an **annotation failure**: DsrC and TusE do different jobs, current HMMs cannot
-separate them, and **KEGG has merged them into a single orthology group literally named
-`tusE, dsrC`**. One accession, two functions.
+**Phage-specific evidence — the strongest in the list.** Sullivan *et al.* (2006, *PLoS Biology*)
+screened 33 cultured cyanophages plus field samples: **88% of phage genomes contain `psbA`**,
+carried *"presumably to augment the host photosynthetic machinery during infection."*
+[DOI](https://doi.org/10.1371/journal.pbio.0040234)
 
-**What the two proteins actually do.** According to PubMed, Stockdreher *et al.* (2012, *PLoS
-One*) work out the sulfur-transfer chemistry in *Allochromatium vinosum* and state the
-relationship directly: **TusE is part of a system for tRNA modification** — TusBCD transfers
-sulfur to TusE — and TusE is *"a homolog of another crucial component of the A. vinosum Dsr
-system, namely DsrC."* DsrC itself is persulfurated at Cys111 and feeds sulfur to the
-**dissimilatory sulfite reductase DsrAB**, i.e. energy metabolism.
-[DOI](https://doi.org/10.1371/journal.pone.0040785)
+Sieradzki *et al.* (2019, *Nature Communications*) measured expression in situ by
+metatranscriptomics: **sometimes more than 50% of all cyanobacterial + viral `psbA` expression is
+of viral origin**, highlighting *"the contribution of viruses to photosynthesis and oxygen
+production."* [DOI](https://doi.org/10.1038/s41467-019-09106-z)
 
-So: same fold, same persulfide chemistry, **two entirely different destinations** — tRNA
-thiolation versus dissimilatory sulfur oxidation.
+Lindell *et al.* (2007, *Nature*) show `psbA` transcribed **together with phage DNA replication
+genes**, in a cluster with `hli`, `talC` and `nrd`, described as *"a functional unit involved in
+energy and deoxynucleotide production for phage replication."*
+[DOI](https://doi.org/10.1038/nature06130)
 
-**The case for HOST / sustains host metabolism:**
-If the phage copy is a genuine `dsrC`, it feeds dissimilatory sulfur oxidation — host energy
-metabolism, and exactly the kind of thing claimed in the biogeochemical literature.
+**Case for HOST.** Inserted into the **host's** thylakoid membrane, replacing a host subunit
+photodamage is destroying; the measured consequence is that photosynthesis keeps running.
 
-**The case for VIRAL / lifecycle step:**
-If it is a `tusE`, it feeds tRNA thiolation — a housekeeping modification with no sulfur-cycling
-implication whatever. Note this reading doesn't make it *viral* so much as **not what the
-catalogue claims it is**.
+**Case for VIRAL.** Lindell places it in the replication module — the lights stay on so the phage
+can finish. **Note this argument generalises to almost everything**, which is why Part 2 asks
+about *discrete lifecycle steps* rather than ultimate benefit.
 
-> [!important] This family is different from all the others, and the distinction matters
-> For every other family you are judging **what a phage does with a gene**. Here you are judging
-> whether **anyone can tell which gene it is.** Under a merged KEGG orthology, a call of K11179
-> carries no information about which of the two functions is present.
->
-> That makes it a strong candidate for **UNRESOLVABLE**, and unusually, the resolving experiment
-> is easy to name: **phylogenetic or HMM separation of DsrC from TusE**, then re-annotation of
-> the calls. Until someone does that, no catalogue can support a sulfur-cycling claim from this
-> accession — and *that* is the finding, whichever way you rule.
+**Tier available: 1–2.**
 
-**Evidence tier available: 2** for the underlying biochemistry; **effectively 0** for
-distinguishing which one the environmental calls actually are.
+> [!caution] Not blind. `psbA` → COUNTS appears in the protocol's worked-example table.
 
 ---
 
-## `folate` — `folE`, `folE2`, `folA`, `folB`, `folD` and relatives
+## 24. `psbD` — photosystem II D2 protein
 
-**What the pathway does.** Builds tetrahydrofolate, the universal one-carbon carrier. Its
-one-carbon units feed purine synthesis, thymidylate synthesis (via thymidylate synthase),
-methionine, and formylmethionyl-tRNA for translation initiation.
+**K02706** · EC 1.10.3.9
 
-**The overlap you already know about.** `folE` / GTP cyclohydrolase I is the first committed step
-of folate biosynthesis **and** the entry point to queuosine biosynthesis. `folE2` (`K09007`,
-GTP cyclohydrolase IB) is an alternative to it and sits at the same branch. Chunk 2 flagged all
-four as **AMBIGUOUS** in the accession list precisely for this reason, and Chunk 4 showed the
-wastewater rule cannot resolve it either.
+**What it does.** The other half of the PSII reaction-centre core. Pairs with D1.
 
-**Cross-reference the queuosine dossier above.** Thiaville *et al.* detected a 7-deazaguanine
-derivative in phage DNA; the pathway producing it starts at GTP cyclohydrolase I. So a phage
-`folE` may be feeding folate, or feeding DNA modification, and the gene does not say which.
+**Phage-specific evidence.** Sullivan *et al.* (2006): **50% of cyanophage genomes carry both
+`psbA` and `psbD`**, and *"nearly all of the phages that encoded both psbA and psbD had broad host
+ranges."* They speculate that carrying `psbD` too *"may reflect constraints on coupling of viral-
+and host-encoded PsbA-PsbD in the photosynthetic reaction center across divergent hosts."*
+[DOI](https://doi.org/10.1371/journal.pbio.0040234)
+
+**Case for HOST / VIRAL:** as §23.
+
+> [!tip] Judge this separately from `psbA`, and the host-range point is why
+> `psbD` is carried by **half** as many phages as `psbA`, and its presence correlates with broad
+> host range. That is a genuine difference between the two, and it is evidence about *why* a
+> phage carries the pair rather than just D1 — which bears on whether this is host-directed
+> function or compatibility engineering.
+
+**Tier available: 2.**
+
+---
+
+## 25. `pseB` — UDP-N-acetylglucosamine 4,6-dehydratase
+
+**K15894**
+
+**What it does.** First step of **pseudaminic acid** biosynthesis — a sialic-acid-like sugar used
+in surface glycans and flagellar glycosylation.
+
+**Phage-specific evidence:** none specific. See
+[Appendix A](#appendix-a--the-nucleotide-sugar-and-cell-surface-literature).
+
+**A point worth making either way.** Pseudaminic acid is a **surface-committed** sugar with few
+other destinations — so unlike `galE` or `manB`, the "it feeds many pathways" defence is weaker
+here. That cuts toward surface modification being the actual purpose.
+
+**Tier available: 5–6.**
+
+---
+
+## 26. `queuosine` — `queC`, `queD`, `queE`, `queF`
+
+**K01737, K06879, K06920, K09457, K10026**
+
+**What the pathway does.** Builds 7-deazaguanine derivatives. Classically it ends in queuosine, a
+hypermodified base at the wobble position of certain tRNAs. **`folE` supplies the entry precursor
+— the same step that feeds folate biosynthesis** (§6), which is why these sit at the branch point
+that moves the headline by 18 points.
+
+**Phage-specific evidence — reframes the family.** Thiaville *et al.* (2016, *PNAS*) showed
+7-deazaguanine derivatives are inserted **into DNA, not only tRNA**; transformation assays
+*"strongly suggest a restriction-modification role for the cluster"*; and they detected
+**2′-deoxy-7-formamidino-7-deazaguanosine in *E. coli* bacteriophage 9g.**
 [DOI](https://doi.org/10.1073/pnas.1518570113)
 
-**The case for HOST / sustains host metabolism:**
-Folate is a genuine cofactor pathway serving the whole cell. A phage supplementing it is
-supplementing host one-carbon metabolism, which is host metabolic modulation in the ordinary
-sense.
+Hutinet *et al.* (2016, *RNA Biology*): the modifications *"were thought to be highly specific of
+tRNAs, but have now been discovered in DNA of phages"*, and are *"proposed to be a protection
+mechanism against endonucleases."* [DOI](https://doi.org/10.1080/15476286.2016.1265200)
 
-**The case for VIRAL / lifecycle step:**
-Martin *et al.*'s argument is that the one-carbon units feed *de novo* nucleotide biosynthesis for
-**phage genome replication** — a discrete lifecycle step. The queuosine evidence adds a second
-viral route: genome modification.
+de Crécy-Lagard *et al.* (2024, *MMBR*) list among their functions *"cellular stress resistance,
+self-nonself discrimination mechanisms, and host evasion defenses."*
+[DOI](https://doi.org/10.1128/mmbr.00199-23)
 
-> [!caution] This is the 18-percentage-point family
-> Wastewater moves **19.5% → 37.7%** on whether `folE`/`queD` count. Whatever you decide here,
-> the write-up reports the answer **both ways**. Take your time and make the argument box good —
-> this is the paragraph a reviewer will read hardest.
+**Case for HOST.** Queuosine's established role is tRNA modification, affecting translational
+fidelity cell-wide. The wastewater authors themselves note the genes *"could also participate in
+tRNA biogenesis."*
 
-**Evidence tier available: 2** (for the chemistry and the phage-DNA detection); **6** for the
-specific question of what a phage `folE` is doing, unless you find better.
+**Case for VIRAL.** The product has been **detected in phage DNA**, with the attributed function
+being protection from host endonucleases — viral substrate, genome protection.
 
----
+> [!important] The specific question here
+> The pathway demonstrably does **both**, in different organisms, and **the genes do not
+> distinguish the two uses** — a phage modifying its own DNA needs the same enzymes as one
+> feeding host tRNA.
+>
+> That may be a genuine **UNRESOLVABLE**. **Resolving experiment:** detect 7-deazaguanine
+> derivatives in the DNA of phages carrying these genes versus those that don't. Thiaville did it
+> for one phage; nobody has done it systematically.
 
-## `nrdH` — glutaredoxin-like protein, ribonucleotide reductase system
-
-**What it does.** `nrdH` is the redox partner of class Ib ribonucleotide reductase (RNR). RNR
-converts ribonucleotides to deoxyribonucleotides — the committed, rate-limiting step of making
-DNA precursors from RNA precursors.
-
-**Phage-specific evidence, and it is indirect but telling.** PubMed returns **130 results** for
-bacteriophage ribonucleotide reductase — phage-encoded RNRs are common and well studied.
-
-More pointedly, Sakowski *et al.* (2021, *Nature Microbiology*) built a method for capturing
-virus–host interactions in situ that *"fuses a **phage marker, the ribonucleotide reductase
-gene**, with the host 16S rRNA gene of infected bacterial cells."*
-[DOI](https://doi.org/10.1038/s41564-021-00873-4)
-
-**RNR is used as a marker gene for phage.** That is the same status `phoH` has, and it means
-phage RNR sequences are distinct enough from host ones to identify a virus. Whatever else that
-implies, it is not the signature of a gene the phage picked up incidentally.
-
-Huang *et al.* (2021) also list RNR among the seven high-frequency roseophage AMGs, all of which
-they describe as *"involved in the nucleotide biosynthesis pathway."*
-[DOI](https://doi.org/10.1111/1462-2920.15412)
-
-**The case for HOST / sustains host metabolism:**
-RNR supplies the dNTP pool the whole cell uses. Boosting it raises host biosynthetic capacity.
-
-**The case for VIRAL / lifecycle step:**
-The dNTPs are consumed replicating the phage genome. A phage encoding its own RNR is the textbook
-example of a virus provisioning **its own** replication rather than the host's, and the fact that
-phage RNRs are phylogenetically distinct enough to serve as viral marker genes supports
-specialisation for that role.
-
-**Evidence tier available: 4–5.** Abundant comparative genomics; no experiment separating "the
-host's dNTP pool" from "the phage's dNTP pool" during infection, because during infection they
-are the same pool. **That may be genuinely unresolvable** — and if you say so, that is the
-experiment problem to name.
+**Tier available: 2.**
 
 ---
 
-## `IMPDH` — IMP dehydrogenase (K00088)
+## 27. `raxST` — sulfotransferase
 
-**What it does.** Catalyses the rate-limiting, committed step of **guanine nucleotide**
-biosynthesis: IMP → XMP, en route to GMP, GDP, GTP, dGTP.
+**K13472**
 
-Same structural argument as `nrdH` and `dut` — it is a nucleotide-supply enzyme, and during
-infection the nucleotide pool being drawn down is the one replicating the phage genome. Note that
-IMPDH sits in KEGG's **09104 Nucleotide metabolism**, which is the category the wastewater paper's
-own rule excludes (Chunk 4).
+**What it does.** Transfers sulfate to an acceptor. In *Xanthomonas*, RaxST sulfates a secreted
+peptide involved in plant immune recognition. Outside that, the target is generally unknown.
 
-**No phage-specific functional study surfaced** in the searches run. Treat as **Tier 6** unless
-you find otherwise: the argument available is from the chemistry, and **Tier 6 alone cannot rule
-a family out**, so the protocol's default applies.
+**Phage-specific evidence: none found.** → [Appendix B](#appendix-b--the-evidence-free-families)
+
+> [!warning] Beware the false positives here
+> "Bacteriophage sulfotransferase" returns hits that are a **mouse liver study** (whose keyword
+> list includes *"bacteriophage P1 cyclization recombinase"* — Cre-lox) and a **cancer
+> autoantibody study using phage microarrays**. Method, not biology.
+
+**Tier available: 6.**
 
 ---
 
-## `speD` — S-adenosylmethionine decarboxylase
+## 28. `rfbB` — dTDP-glucose 4,6-dehydratase
 
-**What it does.** Decarboxylates SAM to provide the aminopropyl donor for **spermidine**
-synthesis. Polyamines are polycations that bind nucleic acids and are required for normal growth.
+**K01710** · EC 4.2.1.46
 
-**Why this one is more interesting than it looks.** Polyamines have a long-standing association
-with phage biology — PubMed returns work on phage and polyamines going back to the 1970s.
+**What it does.** Second step of the dTDP-L-rhamnose pathway. Rhamnose is a **major O-antigen
+sugar**.
+
+**Phage-specific evidence:** none specific. See
+[Appendix A](#appendix-a--the-nucleotide-sugar-and-cell-surface-literature).
+
+**As with `pseB` (§25),** dTDP-rhamnose is strongly surface-committed, so the "feeds many
+pathways" defence is weaker than for `galE`.
+
+**Tier available: 5–6.**
+
+---
+
+## 29. `rfbC` — O-antigen biosynthesis protein
+
+**K20444** · EC 2.4.1.-
+
+**What it does.** KEGG's own description names it **O-antigen biosynthesis**. Of the whole
+nucleotide-sugar block, this is the most explicitly surface-dedicated.
+
+**Phage-specific evidence:** the block literature in
+[Appendix A](#appendix-a--the-nucleotide-sugar-and-cell-surface-literature) applies most directly
+here — Mann *et al.* and Sun *et al.* are specifically about phage modification of O-antigen.
+
+**Case for HOST / VIRAL:** as §10, and with less of the precursor-ambiguity caveat. If you reach
+different verdicts for §10 and §29, be sure you can say why.
+
+**Tier available: 2** (via the block literature, which is about this exact process).
+
+---
+
+## 30. `speD` — S-adenosylmethionine decarboxylase
+
+**K01611** · EC 4.1.1.50
+
+**What it does.** Decarboxylates SAM to supply the aminopropyl donor for **spermidine** synthesis.
+Polyamines are polycations that bind nucleic acids and are needed for normal growth.
+
+**Phage-specific evidence.** PubMed returns work on phage and polyamines going back to the 1970s.
 Spermidine is a structural component of some phage virions, where its positive charge helps
 neutralise the packaged genome's phosphate backbone.
 
-**The case for HOST / sustains host metabolism:**
-Polyamine synthesis is general host metabolism affecting growth, translation and stress response.
+**Case for HOST.** Polyamine synthesis is general host metabolism — growth, translation, stress
+response.
 
-**The case for VIRAL / lifecycle step:**
-If spermidine is being made to **condense and neutralise the phage genome during packaging**,
-that is assembly — a discrete lifecycle step, and directly parallel to the terminase argument.
+**Case for VIRAL.** If spermidine is being made to **condense and neutralise the phage genome
+during packaging**, that is assembly — a discrete lifecycle step, directly parallel to the
+terminase argument (§34–35).
 
-**Evidence tier available: 5–6** for the environmental calls. The polyamine-in-virion literature
-is real but old and organism-specific; check whether it applies to the phages in these
-catalogues before leaning on it.
-
----
-
-## The families with thin evidence — SEE THE CORRECTION BELOW
-
-> [!bug] This section originally listed **eleven** families as having no phage-specific
-> evidence. A second search found that **two of them do** — `TALDO1` and `NAMPT`, both
-> Tier 1-2. The corrected analysis is at the end of this note. Read that, not this.
-
-# All 35 families now have a dossier
-
-**Complete.** Every citation was retrieved from PubMed and its abstract read before being quoted.
-
-**The headline from the gathering, before you judge anything:**
-
-| | families |
-|---|---|
-| Strong phage-specific evidence (Tier 1–2) | `psbA` `psbD` `dcm` `queuosine` `glycosyltransferase` `glycoside_hydrolase` `xtmA` `xtmB` `dsrC_tusE` |
-| Good comparative/ecological evidence (Tier 4–5) | `phoH` `nrdH` `dut` |
-| Chemistry only (Tier 6) — **defaults to COUNTS** | the **nine** below, plus `IMPDH`, `speD`, and most nucleotide-sugar precursors |
-
-**Roughly a quarter of the families — nine of 35 — have no phage-specific functional evidence
-whatsoever.** (Originally reported as eleven; corrected after a second search. See below.)
-
-## Related
-
-- [[Adjudication Worksheet]] — where the verdicts go
-- [[How To Adjudicate]] — the mechanics
-- [[Adjudication Protocol]] — the rules
+**Tier available: 5–6.** The polyamine-in-virion literature is real but old and organism-specific;
+check whether it applies to the phages in these catalogues before leaning on it.
 
 ---
 
-# CORRECTION, 2026-08-05 — two of the "no evidence" eleven were wrong
+## 31. `tagD` — glycerol-3-phosphate cytidylyltransferase
 
-Daniel asked for a second search of the eleven families I had reported as having no
-phage-specific evidence. **He was right to.** Two of the eleven have Tier 1–2 evidence, and one
-is among the best-evidenced families in the entire list.
+**K00980** · EC 2.7.7.39
 
-**First, the honest bit about how the error happened.** I wrote *"I searched for phage-specific
-functional work on each and found none."* **I had not.** I ran thematic, grouped searches and
-inferred absence when those genes didn't surface. That is a much weaker basis than the sentence
-implied, and the sentence should not have been written that way.
+**What it does.** Makes CDP-glycerol, the donor for **wall teichoic acid** — a major Gram-positive
+surface polymer.
 
-Individual, gene-by-gene searches were then run. Results below.
+**Phage-specific evidence:** none specific, but see the Sumrall result in
+[Appendix A](#appendix-a--the-nucleotide-sugar-and-cell-surface-literature): removing glucose
+decoration from **wall teichoic acid** made *Listeria* **resistant to phage** by preventing
+adsorption. That is the same polymer `tagD` feeds.
 
-## `TALDO1` — transaldolase. **Moved out. This is a major AMG with excellent evidence.**
+**Case for HOST.** Teichoic acid is core cell-wall biosynthesis.
 
-**What it does.** Transaldolase catalyses a reversible carbon-shuffling step in the
-**non-oxidative pentose phosphate pathway**, linking it to glycolysis. The PPP is where the cell
-makes **NADPH** (reducing power) and **ribose 5-phosphate** (the sugar backbone of nucleotides).
+**Case for VIRAL.** WTA glycosylation *is* the phage receptor in Gram-positives, so §10's
+receptor-control reasoning applies here more directly than to most of the block.
 
-According to PubMed, Thompson *et al.* (2011, *PNAS*) — a paper titled *"Phage auxiliary
-metabolic genes and the redirection of cyanobacterial host carbon metabolism"* — report that:
+**Tier available: 5–6.**
 
-- cyanophages carry and express **CP12, a Calvin cycle inhibitor**, whose host homologue
-  *"directs carbon flux from the Calvin cycle to the pentose phosphate pathway"*
+---
+
+## 32. `TALDO1` — transaldolase
+
+**K00616** · EC 2.2.1.2
+
+**What it does.** Reversible carbon-shuffling step of the **non-oxidative pentose phosphate
+pathway**, linking PPP to glycolysis. The PPP makes **NADPH** and **ribose 5-phosphate** — the
+sugar backbone of nucleotides.
+
+**Phage-specific evidence — Tier 1–2, and among the best here.** Thompson *et al.* (2011, *PNAS*),
+*"Phage auxiliary metabolic genes and the redirection of cyanobacterial host carbon metabolism"*:
+
+- cyanophages carry and express **CP12, a Calvin cycle inhibitor**, whose host homologue *"directs
+  carbon flux from the Calvin cycle to the pentose phosphate pathway"*
 - **phage transaldolase was purified to homogeneity from several strains and shown to be
-  functional in vitro**, and is *"the most prevalent PPP gene in cyanophages"*
-- phage transaldolase has k_cat/K_m only **about one third** of the host enzyme — a possible
-  trade-off against reduced gene size
+  functional in vitro**; it is *"the most prevalent PPP gene in cyanophages"*
+- phage transaldolase has k_cat/K_m only **~one third** of the host enzyme
 - **the host NADPH/NADP ratio increased two-fold in infected cells**
+- their proposal: *"phage-augmented NADPH production fuels deoxynucleotide biosynthesis for phage
+  replication"*
 
-Their proposal: *"phage-augmented NADPH production fuels deoxynucleotide biosynthesis for phage
-replication."* [DOI](https://doi.org/10.1073/pnas.1102164108)
+[DOI](https://doi.org/10.1073/pnas.1102164108)
 
-Lindell *et al.* (2007, *Nature*) add expression timing: in *Prochlorococcus* phage P-SSP7,
-`talC` is transcribed **together with phage DNA replication genes**, alongside `psbA`, `hli` and
-`nrd`, forming *"a functional unit involved in energy and deoxynucleotide production for phage
-replication."* [DOI](https://doi.org/10.1038/nature06130)
-
-Huang *et al.* (2015, *PLoS One*) find `talC` at a conserved genome locus across cyanopodoviruses,
-occupying the same position that `thyX` occupies in other clades.
+Lindell *et al.* (2007, *Nature*): `talC` is transcribed **together with phage DNA replication
+genes**. [DOI](https://doi.org/10.1038/nature06130) Huang *et al.* (2015, *PLoS One*) find `talC`
+at a conserved locus across cyanopodoviruses, in the position `thyX` occupies in other clades.
 [DOI](https://doi.org/10.1371/journal.pone.0142962)
 
-**The case for HOST / sustains host metabolism:**
-A phage enzyme measurably shifts host carbon flux and **doubles the host NADPH/NADP ratio**. The
-substrate is the host's own PPP intermediates; the consequence is a measured change in host
-metabolic state. If anything in this list is host metabolic modulation, this is.
+**Case for HOST.** A phage enzyme measurably shifts host carbon flux and **doubles the host
+NADPH/NADP ratio**. If anything here is host metabolic modulation, this is.
 
-**The case for VIRAL / lifecycle step:**
-The authors themselves say the redirected output *"fuels deoxynucleotide biosynthesis for phage
-replication"*, and Lindell shows `talC` co-transcribed with the DNA replication module. So the
-host's metabolism is redirected — **toward making phage genomes.**
+**Case for VIRAL.** The authors themselves say the redirected output fuels **phage** dNTP
+synthesis, and Lindell shows it co-transcribed with the replication module.
 
-> [!important] This family is the cleanest statement of the project's central tension
+> [!important] The cleanest statement of the project's central tension
 > `psbA` keeps host machinery running. A terminase is purely viral. **Transaldolase is a phage
-> enzyme that demonstrably changes host metabolic flux, for a purpose that is entirely viral.**
+> enzyme that demonstrably changes host metabolic flux, for a purpose that is entirely viral** —
+> stated as such by the authors, in a paper whose title calls it an AMG.
 >
-> Part 1 says host. Part 2 has to decide whether "redirect host carbon flux to make phage dNTPs"
-> is sustaining host metabolism or serving replication. Both readings are defensible on the
-> published evidence, and **the authors of the foundational paper state the viral purpose
-> explicitly while calling the gene an AMG in the title.**
+> Both readings are defensible on the published evidence. This may be the best example in the
+> paper of why the category is contested. Give it time.
+
+**Tier available: 1–2.**
+
+---
+
+## 33. `UGDH` — UDP-glucose 6-dehydrogenase
+
+**K00012** · EC 1.1.1.22
+
+**What it does.** Oxidises UDP-glucose to UDP-glucuronate, feeding capsule and other acidic
+surface polysaccharides.
+
+**Phage-specific evidence:** none specific. See
+[Appendix A](#appendix-a--the-nucleotide-sugar-and-cell-surface-literature).
+
+**As with `pseB` and `rfbB`,** UDP-glucuronate is fairly surface-committed.
+
+**Tier available: 5–6.**
+
+---
+
+## 34. `xtmA` — phage terminase small subunit
+
+**K07474**
+
+**What it does.** Recognises the packaging initiation site on the phage genome and regulates the
+large subunit. Part of the DNA-packaging motor.
+
+**Case for HOST.** None that can be constructed. The substrate is the phage genome.
+
+**Case for VIRAL.** Assembly.
+
+> [!note] Why it is in your list at all
+> This is a genuine entry in the **soil AMG catalogue**. A DNA-packaging motor subunit was called
+> an auxiliary *metabolic* gene. Worth a sentence in the paper whatever the verdict.
+
+**Tier available: 1–2, abundantly.** PubMed returns ~88 results for phage terminase DNA packaging.
+
+> [!caution] Not blind — this note previously identified `xtmA`/`xtmB` as the negative controls.
+
+---
+
+## 35. `xtmB` — phage terminase large subunit
+
+**K06909**
+
+**What it does.** The ATPase and nuclease of the packaging motor; translocates the genome into the
+preformed capsid against enormous internal pressure. Among the best-characterised machines in
+phage biology.
+
+**Case for HOST / VIRAL:** as §34.
+
+**Tier available: 1–2, abundantly.**
+
+---
+---
+
+# Appendix A — the nucleotide-sugar and cell-surface literature
+
+Shared evidence for §7 `galE`, §8 `glmS`, §10 `glycosyltransferase`, §11 `gmd`, §17 `manB`,
+§25 `pseB`, §28 `rfbB`, §29 `rfbC`, §31 `tagD`, §33 `UGDH`.
+
+**Phage-encoded glycosyltransferases modify the host's O-antigen.** Mann *et al.* (2015, *J Biol
+Chem*): lysogenic bacteriophages encode enzymes that modify LPS O-antigen glycans, *"altering the
+structure of the bacteriophage receptor and resulting in serotype conversion"*, demonstrated
+experimentally. [DOI](https://doi.org/10.1074/jbc.M115.660803)
+
+**The *Shigella* system.** Sun *et al.* (2013, *BMC Microbiology*): *"nearly all variations between
+serotypes are due to glucosyl and/or O-acetyl modifications of the common O unit mediated by
+glycosyltransferases encoded by serotype-converting bacteriophages."*
+[DOI](https://doi.org/10.1186/1471-2180-13-39)
+
+**Surface glycosylation *is* the phage receptor.** Sumrall *et al.* (2021, *J Bacteriol*) deleted
+a **host** glycosyltransferase in *Listeria ivanovii*, removing glucose decoration from wall
+teichoic acid; the mutant *"became resistant to phage B025 infection due to an inability of the
+phage to adsorb to the bacterial surface."* [DOI](https://doi.org/10.1128/JB.00136-21)
+
+> [!warning] What this literature does and does not cover
+> It concerns the **transfer** step — glycosyltransferases acting on the surface. The **precursor**
+> enzymes (`galE`, `UGDH`, `gmd`, `rfbB`, `manB`, `glmS`) make nucleotide sugars feeding *many*
+> pathways. That the same reasoning carries to them is **an assumption, not a finding** — and how
+> surface-committed each precursor is (`pseB`, `rfbB`, `rfbC`, `tagD` more so; `galE`, `manB`,
+> `glmS` less so) is a real distinction you can use.
+
+---
+
+# Appendix B — the evidence-free families
+
+**§1 `asnB` · §2 `cgeB` · §12 `hisF` · §13 `HMGCL` · §15 `iscU` · §16 `K07336` · §19 `nodU` ·
+§21 `P4HA` · §27 `raxST`**
+
+No phage-specific functional evidence found for any of these after three independent search
+strategies. **These nine are pre-filled in the worksheet** with the protocol's mechanical default.
+
+## Verdict: COUNTS, not UNRESOLVABLE
+
+Both are permitted — the missing experiment *is* nameable. But COUNTS is right, for three reasons.
+
+**1. UNRESOLVABLE would conflate two different situations.** §26 `queuosine` has evidence
+pointing **both ways** — genuinely undecidable. §12 `hisF` has **no evidence at all**. Same label,
+two incompatible meanings, in the project's most reusable artefact. Keep UNRESOLVABLE for *"the
+evidence conflicts."*
+
+**2. COUNTS is the conservative direction, and this is where it matters most.** The
+maximally-strict rule excludes UNRESOLVABLE families too — so marking nine that way would
+**inflate the disputed share on the basis of nobody having done an experiment.** That is using
+ignorance to support your own hypothesis: the most attackable move available, avoidable at no cost.
+
+**3. The finding does not need the verdict.** "No phage-specific evidence exists for these
+families" is a **separate measurement** that depends on no rubric and nobody's agreement — which
+makes it *more* durable than the disputed share, not less. Report it as its own quantity.
+
+> [!important] Two independent findings instead of one
+> 1. **X% of calls sit in categories the field's own experts dispute** — depends on the rubric
+> 2. **Y% sit in families with no phage-specific evidence at all** — depends on nothing
 >
-> Whatever you decide, this paragraph is worth writing carefully. It may be the best example in
-> the paper of why the category is contested.
-
-**Evidence tier available: 1–2.** Purified functional phage enzyme, kinetics against the host
-enzyme, expression timing, and a measured physiological change in infected cells.
-
----
-
-## `NAMPT` — nicotinamide phosphoribosyltransferase. **Moved out. Tier 1–2.**
-
-**What it does.** First step of the **NAD⁺ salvage pathway**: converts nicotinamide to
-nicotinamide mononucleotide, en route to NAD⁺.
-
-According to PubMed, Lee, Li & Miller (2017, *J Bacteriol*) — *"Vibrio Phage KVP40 Encodes a
-Functional NAD⁺ Salvage Pathway"* — report that KVP40 has five genes for pyridine nucleotide
-metabolism, two of which suffice for NAD⁺ salvage. They cloned and expressed them, purified the
-proteins, and found **KVP40 NadV NAmPRTase is active**, with a clone that **complements an
-*E. coli* mutant** defective in both bacterial NAD pathways. RT-qPCR and enzyme assays of infected
-cells showed transcription **during the early and delayed-early period of infection**, alongside
-other KVP40 nucleotide-precursor genes.
-
-They conclude: *"NAD⁺ biosynthesis presents another important metabolic resource control point by
-large, rapidly replicating dsDNA bacteriophages"*, noting that T4-type phages use NADH/NADPH as
-electron donor for DNA precursor synthesis and NAD⁺ for **ADP-ribosylation of proteins involved
-in transcribing and translating the phage genome**. [DOI](https://doi.org/10.1128/JB.00855-16)
-
-Independently, Huang *et al.* (2022, *ACS Synth Biol*) used the KVP40 enzyme as a biocatalyst,
-finding it *"has the best catalytic activity"* for producing NMN from nicotinamide — confirming
-the phage enzyme is genuinely functional. [DOI](https://doi.org/10.1021/acssynbio.2c00100)
-
-**The case for HOST / sustains host metabolism:**
-NAD⁺ is a universal cofactor. A phage scavenging pathway raises NAD⁺ availability in the infected
-cell — "metabolic resource control", in the authors' phrase.
-
-**The case for VIRAL / lifecycle step:**
-The stated uses are DNA precursor synthesis and ADP-ribosylation of the phage's own transcription
-and translation machinery. Expression is early/delayed-early — the phage's own metabolic period,
-not a sustained host programme.
-
-**Evidence tier available: 1–2.** Purified active enzyme, genetic complementation, expression
-timing during infection.
-
----
-
-## The nine that survive the second search
-
-`asnB` · `cgeB` · `hisF` · `HMGCL` · `iscU` · `K07336` · `nodU` · `P4HA` · `raxST`
-
-Search terms used, so this is auditable rather than a claim you have to take on trust:
-`bacteriophage asparagine synthetase` · `bacteriophage spore maturation protein cgeB` ·
-`bacteriophage histidine biosynthesis hisF` · `bacteriophage hydroxymethylglutaryl-CoA lyase` ·
-`phage iron-sulfur cluster assembly iscU` · `phage carbamoyltransferase nodU virion` ·
-`phage prolyl hydroxylase collagen-like tail fibre` · `bacteriophage sulfotransferase`
-
-> [!warning] Two of these "hits" were keyword false positives — worth recognising the pattern
-> - **`iscU`** returned one paper. It is about the *E. coli* Hsc66/IscU chaperone system and uses
->   **phage display as a laboratory method**. The word "phage" is the technique, not the biology.
-> - **`raxST`** returned five. The two checked are a mouse liver study (whose keyword list
->   includes *"bacteriophage P1 cyclization recombinase"* — i.e. Cre-lox) and a colorectal cancer
->   autoantibody study using **phage microarrays**. Again, method not biology.
->
-> **"Phage" appears in thousands of papers as a tool.** When you search these yourself, check that
-> a hit is about a phage-*encoded* gene before counting it. This is the same failure mode as the
-> `PF13385` lectin fold: a string match that isn't a biological match.
-
-**One adjacent finding on `asnB`, which is interesting but is not what you need.** Ito *et al.*
-(2014, *PLoS One*) found that disrupting **host** `asnH` (asparagine synthetase) in *Lactobacillus
-casei* produced **phage-resistant** mutants that had lost normal peptidoglycan structure.
-[DOI](https://doi.org/10.1371/journal.pone.0083876) That is a host gene affecting phage
-adsorption — the same shape as the Sumrall glycosyltransferase result — and says nothing about
-what a *phage-encoded* `asnB` does.
-
-**So the claim, restated correctly:** **nine of 35 families** — roughly a quarter — have no
-phage-specific functional evidence. Only Tier 6 is available, and the protocol forbids Tier 6
-alone from moving a family out, so **all nine default to COUNTS**.
-
-That is still a substantial finding and still belongs in the paper. It is just not eleven.
-
----
-
----
-
-## The nine — what is actually known about them, checked from both directions
-
-**Direction 1: the primary literature.** No phage-specific functional study found, per the
-per-gene searches listed above.
-
-**Direction 2: the catalogue papers that counted them.** Searched the full text of all three
-papers (ocean *Microbiome* 2024, soil *ISME J* 2022, wastewater *ES&T* 2023) for each gene symbol
-and each enzyme name. **Zero mentions.** Not one of the nine is discussed anywhere in the three
-papers that count them as AMGs.
-
-> [!note] Be careful how strongly this is stated
-> These genes sit in supplementary tables of tens of thousands of rows. **Papers do not discuss
-> every gene they count, and not discussing one is normal practice, not misconduct.**
->
-> The defensible claim is narrower and still worth making: for these nine families the **entire
-> evidentiary basis for the AMG designation is a database match.** No phage-specific experiment,
-> and no discussion by the authors who counted them. That is a statement about how the record is
-> built, not an accusation about anyone's care.
-
-*(Method note: an initial pass appeared to find `iscU` in all three papers. Those were substring
-matches inside the word "di**scu**ssion". Checked and discarded — the same class of error as the
-`iscU` phage-display hit and the `PF13385` lectin fold.)*
-
----
-
-# Addendum — bioRxiv and wider web search, 2026-08-05
-
-Daniel asked for a second sweep outside PubMed. Note that the bioRxiv tool available here can
-only browse by date and subject category — **it has no keyword search** — so this was done by
-targeted web search against bioRxiv and the wider literature, then every promising hit was
-verified through PubMed before being used.
-
-**Two substantive additions, one unverifiable lead, and one useful concept.**
-
-## `glycoside_hydrolase` — UPGRADED to Tier 1–2. This is direct structural evidence.
-
-According to PubMed, Yuan & Gao (2016, *Frontiers in Microbiology*) performed **structural
-proteome analysis** on a *Bacillus* jumbo phage and identified 23 virion proteins — among them a
-glycoside hydrolase, Gp255.
-
-Their findings, quoted:
-
-- the glycoside hydrolase *"was identified as phage virion component and was found to **interact
-  with the phage baseplate protein**"*
-- it *"shows specific lytic activity against the phage host strain"*
-- this was *"the **first functional individual structural glycoside hydrolase in phage virion**"*
-- *"The presence of activated glycoside hydrolase in phage virions might **facilitate the
-  injection of the phage genome during infection by forming pores on the bacterial cell wall**."*
-
-[DOI](https://doi.org/10.3389/fmicb.2016.00745)
-
-**Why this matters for your verdict.** The earlier dossier could only offer the general
-endolysin/tailspike argument. This is a specific, experimentally demonstrated case: a glycoside
-hydrolase **physically in the virion, bound to the baseplate, functioning to breach the cell wall
-for genome entry.** Substrate: host cell wall. Consequence: entry — a discrete lifecycle step.
-
-It is the strongest available support for Martin *et al.*'s structural reading of this family,
-and it is an experiment rather than an argument.
-
-## `dsrC_tusE` — UPGRADED, and the new evidence runs the OTHER way
-
-The earlier dossier framed this family as an annotation problem — nobody can tell DsrC from TusE.
-That still stands, but there is a major paper making the positive case, and you need it to judge
-fairly.
-
-According to PubMed, Kieft *et al.* (2021, *Nature Communications*) — *"Ecology of inorganic
-sulfur auxiliary metabolism in widespread bacteriophages"* — identified **191 phages from twelve
-environments encoding 227 AMGs** for oxidation of sulfur and thiosulfate, and the gene list they
-give is *"dsrA, **dsrC/tusE**, soxC, soxD and soxYZ."* They report:
-
-- *"Evidence for retention of AMGs during niche-differentiation of diverse phage populations
-  provided evidence that **auxiliary metabolism imparts measurable fitness benefits to phages**"*
-- gene abundance and expression profiles *"suggested significant contributions by phages to
-  sulfur and thiosulfate oxidation in freshwater lakes and oceans"*
-- and *"a sensitive response to changing sulfur concentrations in hydrothermal environments"*
-
-[DOI](https://doi.org/10.1038/s41467-021-23698-5)
-
-> [!important] Two things to notice, and the second is sharper than the first
-> **First**, this is the strongest *pro-AMG* case for the family: expression data, an ecological
-> gradient response, and evidence of selective retention. If you were looking for the case that
-> `dsrC` in a phage is doing real sulfur metabolism, this is it.
->
-> **Second — and worth a line in your write-up — the authors themselves write the gene as
-> `dsrC/tusE`, with a slash.** They are not claiming to have resolved which one it is either. So
-> the field's strongest paper on phage sulfur metabolism inherits exactly the ambiguity Martin
-> *et al.* complain about, and says so in its own notation.
->
-> Note also: the first author, **Kristopher Kieft, is the author of VIBRANT** — one of the two
-> tools whose AMG database this project audited in Chunk 1. That is not a criticism of the paper;
-> it is context worth having, and it means the annotation and the interpretation come from the
-> same place.
-
-**Evidence tier available: now 3–4** (expression profiles and ecological response), up from 2 for
-the underlying biochemistry alone. The identity problem is unchanged.
-
-## `P4HA` — a lead I could not verify. Flagged rather than used.
-
-A web search summary asserted that prolyl-4-hydroxylase was *"detected in viral particle mass
-spectrometry data from a cultivated megaphage"* in a 2025 *npj Viruses* paper, and separately that
-P4HA is *"one of the most abundant AMGs in marine viromes."*
-
-**I could not verify either claim.** The *npj Viruses* article redirected to a login wall, and the
-PubMed searches I ran did not return the megaphage proteomics paper. There is also a paper on
-*"viral prolyl-4-hydroxylase"* by top-down mass spectrometry, but that concerns a **eukaryotic
-algal virus**, not a phage.
-
-**So `P4HA` stays in the "no verified phage-specific evidence" group** — but with a live lead
-attached. If you can reach the *npj Viruses* megaphage paper through your library, check whether
-prolyl 4-hydroxylase appears in its virion proteomics table. **If it does, `P4HA` moves out of
-the nine and probably becomes a structural verdict**, on the same logic as the glycoside
-hydrolase above.
-
-That is a concrete, 15-minute job with a real chance of changing a verdict — a good use of your
-library access, which I don't have.
-
-## A concept worth borrowing: "phage-exclusive" AMGs
-
-A 2026 bioRxiv preprint argues for `pebS` as a **phage-exclusive auxiliary metabolic gene** — one
-found in phages but with no extant host counterpart, implying the phage lineage did not simply
-borrow it from a host recently.
-<https://www.biorxiv.org/content/10.64898/2026.01.23.701310>
-
-I could not retrieve the full text (bioRxiv returned HTTP 429), so nothing from it is quoted here.
-But the *idea* is directly useful to your adjudication and costs nothing to adopt:
-
-> **If a gene is phage-exclusive, "the virus borrowed a host metabolic gene" is the wrong story
-> for it** — and the AMG framing, which assumes host provenance, may not apply at all.
-
-Several families in your list already show hints of this: phage `phoH` *"formed a cluster distinct
-from those of their bacterial hosts"*, and phage RNR is distinct enough to serve as a **viral
-marker gene**. Where you see that pattern, it is worth a sentence — it is a third category
-alongside "counts" and "doesn't count", and it is not in Martin *et al.*
-
-## Nothing found for the other eight
-
-`asnB` · `cgeB` · `hisF` · `HMGCL` · `iscU` · `K07336` · `nodU` · `raxST` — no verified
-phage-specific functional evidence from this sweep either.
-
-**Revised count: eight of 35 families with nothing** (was nine; `glycoside_hydrolase` was never in
-that group, and `P4HA` remains in it pending the megaphage check).
-
----
-
----
-
-# The eight with no evidence: COUNTS or UNRESOLVABLE?
-
-## Recommendation: **COUNTS** — with the absence reported as a separate measurement
-
-The protocol permits either. UNRESOLVABLE is technically available because the missing experiment
-*is* nameable — express the phage-encoded copy, determine its substrate, time its expression
-during infection. That is precisely what was done for transaldolase and NAMPT.
-
-But COUNTS is the better verdict, for three reasons.
-
-### 1. UNRESOLVABLE would conflate two genuinely different situations
-
-Compare:
-
-| Family | Situation |
-|---|---|
-| **queuosine** | Evidence exists and **points both ways** — tRNA modification *and* detected in phage DNA. Genuinely undecidable. |
-| **`hisF`** | **No evidence at all.** Nothing points anywhere. |
-
-Both would get the same label, and that label would then mean two incompatible things. The
-adjudication table is the project's most reusable artefact; collapsing "the evidence conflicts"
-into "there is no evidence" is exactly the kind of information loss this project exists to
-criticise.
-
-Keep UNRESOLVABLE for families where **evidence exists and does not settle the question.**
-
-### 2. COUNTS is the conservative direction, and this is where that matters most
-
-The "maximally strict" reporting rule excludes UNRESOLVABLE families as well as DOES NOT COUNT.
-So marking eight families UNRESOLVABLE would **remove them from the record and inflate the
-disputed share** — on the basis of nothing more than nobody having done an experiment.
-
-That is using ignorance to support your own hypothesis. It is the single most attackable move
-available, and it is avoidable at no cost.
-
-The protocol's whole design principle is to point the rules against yourself. Apply it here.
-
-### 3. The finding does not need the verdict
-
-Reporting "no phage-specific evidence exists for these families" is a **separate measurement**
-that stands on its own. It needs no rubric, no verdict and nobody's agreement. Wiring it to a
-verdict makes it weaker, not stronger, because it becomes contingent on accepting your rubric.
-
-Report it as its own quantity: **the evidence-free share of the record.**
-
-> [!important] What this gives the paper — two independent findings instead of one
-> 1. **X% of AMG calls sit in categories the field's own experts dispute** — depends on the rubric
-> 2. **Y% sit in families with no phage-specific functional evidence at all** — depends on nothing
->
-> The second cannot be argued away by rejecting Martin *et al.* That makes it the more durable of
-> the two, and it should not be buried inside a verdict column.
-
-### Practical instruction
-
-- Verdict for all eight: **COUNTS**
-- Confidence: **low**
-- In the argument box, write the same sentence each time: *"No phage-specific functional evidence
-  identified after three independent search strategies; defaults to COUNTS under the protocol.
-  Resolving experiment: [name it]."*
-- Then tag them in a separate column or list as **evidence-free**, so the second measurement can
-  be computed without touching the verdicts
-
-Naming the resolving experiment even for a COUNTS verdict costs you nothing and builds the
-research-agenda table anyway.
-
----
-
-# Draft paragraph for the paper
-
-Written to be defensible rather than punchy. Percentages left as placeholders — they get filled
-in after the verdicts are closed and the sealed counts are opened.
-
-> Of the 35 gene families adjudicated, eight — accounting for **[X]%** of KO-assigned calls —
-> had no phage-specific functional evidence that we were able to identify. For these families we
-> found no study characterising the phage-encoded protein, determining its substrate, or
-> measuring its expression during infection, and none of the three source catalogues discussed
-> them in their text. Searches were conducted in three independent passes: thematic queries,
-> per-gene queries, and targeted preprint and web searching, with all candidate hits verified
-> against primary records before inclusion. Two families initially assigned to this group
-> (transaldolase and nicotinamide phosphoribosyltransferase) were removed following the second
-> pass, and one further lead remains unresolved; we therefore report this as a **lower bound on
-> the evidence available**, not a demonstration of its absence.
+> The second cannot be argued away by rejecting Martin *et al.*
+
+## Draft paragraph for the paper
+
+Percentages filled in after the verdicts close and the sealed counts open.
+
+> Of the 35 gene families adjudicated, nine — accounting for **[X]%** of KO-assigned calls — had
+> no phage-specific functional evidence that we were able to identify. For these families we found
+> no study characterising the phage-encoded protein, determining its substrate, or measuring its
+> expression during infection, and none of the three source catalogues discussed them in their
+> text. Searches were conducted in three independent passes: thematic queries, per-gene queries,
+> and targeted preprint and web searching, with all candidate hits verified against primary
+> records before inclusion. Two families initially assigned to this group (transaldolase and
+> nicotinamide phosphoribosyltransferase) were removed following the second pass, and one further
+> lead remains unresolved; we therefore report this as a **lower bound on the evidence available**,
+> not a demonstration of its absence.
 >
 > We do not treat this as grounds for exclusion. Under our pre-registered protocol, absence of
 > evidence defaults to inclusion, and these families are counted as auxiliary metabolic genes
@@ -910,23 +953,47 @@ in after the verdicts are closed and the sealed counts are opened.
 > approximately a quarter of the families contributing to these catalogues, the AMG designation
 > rests on sequence similarity to a characterised host enzyme and on nothing else.
 
-## Three things that paragraph does deliberately
-
-**It states the search method and admits the corrections.** "Two families were removed following
-the second pass" is not a weakness to hide — it is what makes the remaining claim credible.
-A negative result with no account of how hard you looked is worthless.
-
-**It says "lower bound", not "there is none".** You cannot prove absence from the literature. The
-claim you can defend is *"we looked this hard and found nothing"*, and it gets stronger every
-time someone checks and also finds nothing.
-
-**It separates the observation from the verdict, explicitly.** The sentence *"We do not treat this
-as grounds for exclusion"* pre-empts the obvious attack — that you are using ignorance to inflate
-your number — by stating plainly that you did the opposite.
-
 > [!tip] The sentence to avoid
-> *"Nobody has ever studied these genes."* You do not know that. What you know is that three
-> search strategies found nothing, and that the catalogue papers don't discuss them. Say that
-> instead — it is narrower, true, and nobody can knock it down.
+> *"Nobody has ever studied these genes."* You don't know that. What you know is that three
+> search strategies found nothing and the catalogue papers don't discuss them. Narrower, true,
+> and nobody can knock it down.
+
+## Also checked: the catalogue papers themselves
+
+The full text of all three catalogue papers was searched for each gene symbol and enzyme name.
+**Zero mentions.** But state this carefully — these genes sit in supplementary tables of tens of
+thousands of rows, and **papers do not discuss every gene they count.** The defensible claim is
+the narrow one: for these families the entire evidentiary basis is a database match.
 
 ---
+
+# Appendix C — method and corrections
+
+**Searches run.** Three passes: (1) thematic PubMed queries by biological topic; (2) per-gene
+PubMed queries using gene symbol, enzyme name and reaction; (3) targeted web and preprint
+searching, with every promising hit verified through PubMed before use. The bioRxiv tool available
+here browses by date and category only — **it has no keyword search** — so preprint coverage came
+via web search.
+
+**Corrections made, recorded rather than quietly fixed:**
+
+| # | What was claimed | What was true |
+|---|---|---|
+| 1 | *"I searched each of the eleven and found none"* | I had run **thematic** searches and inferred absence. Not a per-gene search. |
+| 2 | `TALDO1` has no evidence | **Tier 1–2.** Thompson 2011 *PNAS*, Lindell 2007 *Nature*. See §32. |
+| 3 | `NAMPT` has no evidence | **Tier 1–2.** Lee 2017 *J Bacteriol*. See §18. |
+| 4 | The negative controls are blind | **They are not.** All four controls are named in the protocol or in [[How To Adjudicate]]. |
+
+**False positives to watch for.** "Phage" appears in thousands of papers as a *tool*:
+**phage display** (caught in §15 `iscU`), **phage microarrays** and **Cre-lox from phage P1**
+(caught in §27 `raxST`), and a substring match inside the word "di**scu**ssion" (caught in the
+catalogue-paper search). Check that a hit concerns a phage-*encoded* gene before counting it.
+
+**Two corrections came from Daniel asking for a re-check.** Both times the check was justified.
+A negative claim needs more evidence than a positive one, not less.
+
+## Related
+
+- [[Adjudication Worksheet]] — where the verdicts go
+- [[How To Adjudicate]] — the mechanics
+- [[Adjudication Protocol]] — the rules
