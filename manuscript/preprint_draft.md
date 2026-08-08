@@ -48,15 +48,23 @@ the standard category. The problem is in the category.
 ## 1. Introduction
 
 Bacteriophages carry genes with unmistakable homology to bacterial metabolic enzymes. The
-canonical example is `psbA`, the photosystem II reaction centre protein, carried and
-expressed by marine cyanophages during infection [CITE: Mann 2003 / Lindell 2005 — verify].
-Such genes are interpreted as **auxiliary metabolic genes**: virus-encoded functions that
-sustain or redirect host metabolism through infection, with consequences that scale to
-biogeochemical cycling.
+canonical example is `psbA`, encoding the photosystem II reaction centre protein D1. Mann
+*et al.* (2003) found it in a cyanophage genome (doi:10.1038/424741a); Lindell *et al.* (2005)
+showed the phage copy is transcribed during infection of *Prochlorococcus*, co-transcribed with
+essential phage capsid genes, with phage D1 protein accumulating through the infective period
+while host photosynthesis gene expression declines (doi:10.1038/nature04111); and Sullivan
+*et al.* (2006) found `psbA` in 88% of surveyed cyanophage genomes, and both `psbA` and `psbD`
+in 50% (doi:10.1371/journal.pbio.0040234). Such genes are interpreted as **auxiliary metabolic
+genes**: virus-encoded functions that sustain or redirect host metabolism through infection,
+with consequences that scale to biogeochemical cycling.
 
-For `psbA` the interpretation is well supported. A phage that keeps photosynthesis running
-in a cell it is consuming is doing something the host would recognise as its own metabolism,
-and the fitness rationale — maintaining the energy supply the phage is drawing on — is clear.
+For `psbA` the interpretation is well supported — and the standard of evidence behind it is
+worth stating, because very little else in the record meets it: expression measured across
+infection, protein quantified, and phage genome replication shown to depend on photosynthesis.
+A phage that keeps photosynthesis running in a cell it is consuming is doing something the host
+would recognise as its own metabolism, and the fitness rationale — maintaining the energy supply
+the phage is drawing on — is clear. `psbA` and `psbD` serve as this study's positive controls
+for precisely that reason.
 
 The inference has since been generalised well beyond that case. Annotation pipelines assign
 AMG status semi-automatically; catalogues are published at the scale of tens of thousands of
@@ -84,9 +92,14 @@ The general form of the objection is that a gene can act on a host molecule and 
 performing a discrete step of the viral lifecycle rather than sustaining host metabolism —
 and that the AMG category, as applied, does not distinguish the two.
 
-Martin *et al.* name the suspects. They do not count them, and a 2021 standards paper raising
-the same concern explicitly declined to catalogue it [CITE: PeerJ 2021 — verify]. **How much
-of the AMG record actually rests on contested families has never been measured.**
+Martin *et al.* name the suspects. They do not count them.
+
+The concern is not new. Pratama *et al.* (2021, doi:10.7717/peerj.11447) benchmarked viromics
+workflows, showed that fragmented assemblies lead to **erroneous identification of AMGs**, and
+set out a best-practice workflow for curating candidate AMGs. But that work addresses how to
+curate a candidate correctly going forward; it does not quantify how much of the
+already-published record rests on families whose interpretation is contested. **That has never
+been measured.**
 
 That is the gap. It matters because the answer is not obvious in either direction: the
 contested families could be a rounding error, or they could be most of the record, and the
@@ -252,12 +265,16 @@ working from the blind materials alone, and we did not obtain one.
 
 ### 3.1 A DRAM-v flag that looked like a fatal objection, and was not
 
+Pratama *et al.* (2021) showed that fragmented assemblies produce erroneous AMG identifications,
+which makes assembly quality the first thing to check before any of what follows means anything.
+
 68% of `dcm` calls — the largest contested family — carry DRAM-v's `F` flag. We established
 from the DRAM-v source (`annotate_vgfs.py::get_metabolic_flags`, `length_from_end=5000`) that
 `F` means *the gene lies within 5,000 bp of a contig end*: a positional property, not a
-biological one, and a plausible marker of unreliable assembly.
+biological one, and exactly the marker of fragmented assembly Pratama *et al.* warn about.
 
-The obvious objection is that contested families are assembly artefacts. They are not.
+The obvious objection follows immediately — that contested families are assembly artefacts.
+They are not.
 
 | Stratum | n | % F-flagged [95% CI] |
 |---|---|---|
@@ -601,7 +618,36 @@ passes: **https://github.com/dmurfy06/amg-annotation-audit**
 Source catalogues are the published supplementary files of the three cited studies and are not
 redistributed here.
 
-## 7. Acknowledgements
+## 7. References
+
+Verified against PubMed. Catalogue sources are cited in §2.1; the primary phage literature
+underpinning individual family verdicts is cited inline in Appendix A and in
+`results/chunk5_evidence_dossiers.md`.
+
+1. Mann NH, Cook A, Millard A, Bailey S, Clokie M (2003). Marine ecosystems: bacterial
+   photosynthesis genes in a virus. *Nature* 424(6950):741.
+   [doi:10.1038/424741a](https://doi.org/10.1038/424741a)
+2. Lindell D, Jaffe JD, Johnson ZI, Church GM, Chisholm SW (2005). Photosynthesis genes in
+   marine viruses yield proteins during host infection. *Nature* 438(7064):86–89.
+   [doi:10.1038/nature04111](https://doi.org/10.1038/nature04111)
+3. Sullivan MB, Lindell D, Lee JA, Thompson LR, Bielawski JP, Chisholm SW (2006). Prevalence
+   and evolution of core photosystem II genes in marine cyanobacterial viruses and their hosts.
+   *PLoS Biology* 4(8):e234.
+   [doi:10.1371/journal.pbio.0040234](https://doi.org/10.1371/journal.pbio.0040234)
+4. Pratama AA, Bolduc B, Zayed AA, Zhong Z-P, Guo J, Vik DR, Gazitúa MC, Wainaina JM, Roux S,
+   Sullivan MB (2021). Expanding standards in viromics: in silico evaluation of dsDNA viral
+   genome identification, classification, and auxiliary metabolic gene curation. *PeerJ*
+   9:e11447. [doi:10.7717/peerj.11447](https://doi.org/10.7717/peerj.11447)
+5. Martin C *et al.* (2025). [Caution regarding auxiliary metabolic gene interpretation.]
+   *Nature Microbiology*.
+   [doi:10.1038/s41564-025-02095-4](https://doi.org/10.1038/s41564-025-02095-4)
+   — *title and author list to be completed from the source PDF in `refs/`.*
+
+*Citations 1–4 were retrieved and verified via PubMed. Full citations for the three source
+catalogues (§2.1) and the phage literature cited in the dossiers still need to be compiled into
+this list before submission.*
+
+## 8. Acknowledgements
 
 Analysis code was written with Claude (Anthropic), and the first adjudication pass was
 AI-produced; see §2.5 for what that means for the reliability claims in this paper. Scientific
