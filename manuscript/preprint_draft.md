@@ -465,8 +465,11 @@ judgement, verdicts, and all decisions about what to report are the author's.
 
 ## Appendix A — the 35 adjudicated families
 
-*[TODO — table: family, accessions, basis for inclusion, verdict, tier, confidence,
-resolving experiment. Generate from `results/chunk5_worksheet_pass1_completed.md`.]*
+**Complete: `manuscript/appendix_a_families.md`.** Verdict, evidence tier, confidence,
+per-catalogue counts, basis for inclusion and full accession list for all 35 families, plus
+the named resolving experiment for each unresolvable verdict. Generated directly from the
+adjudication record by `scripts/build_appendix_a.py` rather than transcribed, so it cannot
+drift from the underlying verdicts.
 
 ## Appendix B — figures to build
 
