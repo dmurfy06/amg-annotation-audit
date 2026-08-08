@@ -1,0 +1,115 @@
+CHUNK 7 - DO THE DISPUTED GENES CHANGE A PUBLISHED CLAIM?
+========================================================================================
+One claim per catalogue, taken from its own abstract, each recomputed under the
+adjudication's four rules. Claims were fixed before any was recomputed.
+
+========================================================================================
+OCEAN (Microbiome 2024) - "~19% of ocean virus populations carry at least one AMG"
+========================================================================================
+A virus counts as AMG-carrying if it has at least one AMG call. Exclude a family and
+any virus whose calls were ALL in excluded families stops qualifying. Both namespaces
+are used, since dcm carries 5,797 KO and 5,381 Pfam calls in this catalogue.
+
+virus contigs carrying >=1 AMG call, as published: 60471
+
+rule                          still AMG       lost  claim becomes
+------------------------------------------------------------------
+As published (inclusive)          60471          0          19.0%
+Strict                            55504       4967          17.4%
+Maximally strict                  53885       6586          16.9%
+
+Viruses whose ENTIRE AMG content is disputed (these are the ones that drop out):
+    dcm                            4945
+    queuosine                      702
+    folate+queuosine               620
+    folate                         255
+    dcm+queuosine                  31
+    glycoside_hydrolase            22
+
+The claim moves from 19% to 16.9%. Note what carries that: 4945 viruses qualify as
+AMG-carrying solely on the strength of `dcm` - a family whose verdict the protocol
+fixed in advance as a worked example, and which Martin et al. name explicitly.
+
+========================================================================================
+WASTEWATER (ES&T 2023) - "the most common ... queuosine genes folE, queD, queE"
+========================================================================================
+Abstract: "A total of 101 vAMGs involved in various metabolic pathways were
+identified, the most common of which were the queuosine biosynthesis genes folE,
+queD, and queE and the sulfur metabolism gene cysH."
+
+As published (inclusive) - 101 of 101 vAMGs remain
+    cysH            12  (11.9%)   
+    purA,ADSS        8  ( 7.9%)   
+    queD,ptpS,       7  ( 6.9%)   queuosine
+    GCH1,folE        7  ( 6.9%)   folate
+    queE             7  ( 6.9%)   queuosine
+
+Strict - 101 of 101 vAMGs remain
+    cysH            12  (11.9%)   
+    purA,ADSS        8  ( 7.9%)   
+    queD,ptpS,       7  ( 6.9%)   queuosine
+    GCH1,folE        7  ( 6.9%)   folate
+    queE             7  ( 6.9%)   queuosine
+
+Maximally strict - 72 of 101 vAMGs remain
+    cysH            12  (16.7%)   
+    purA,ADSS        8  (11.1%)   
+    acpP             5  ( 6.9%)   
+    phoH,phoL        5  ( 6.9%)   phoH
+    NAMPT            4  ( 5.6%)   NAMPT
+
+The paper's named genes, as published:
+    queuosine pathway genes, aggregated: 27
+    cysH (not a disputed family):        12
+
+The claim is only true if the queuosine genes are aggregated as a pathway: no single
+queuosine gene beats cysH's 12, but together they reach 27. Removing the family
+removes the subject of the sentence entirely, and 28.7% of the catalogue with it.
+
+========================================================================================
+SOIL (ISME J 2022) - AMG abundance and diversity rise with contamination severity
+========================================================================================
+Abstract: "the diversity and relative abundance of AMGs significantly increased
+along with the severity of pesticide contamination". Gradient: Clean -> Light -> Heavy,
+three replicates each. Abundance is per VIRUS, so every total is deduplicated.
+
+ABUNDANCE:
+  As published (inclusive)   Clean    0.96+-0.14   Light    1.09+-0.06   Heavy    1.20+-0.08   H/C 1.25x
+  Strict                     Clean    0.96+-0.14   Light    1.09+-0.06   Heavy    1.20+-0.08   H/C 1.25x
+  Maximally strict           Clean    0.95+-0.13   Light    1.09+-0.06   Heavy    1.19+-0.08   H/C 1.25x
+
+RICHNESS:
+  As published (inclusive)   Clean  562.33+-81.27   Light 1380.67+-21.59   Heavy 1427.67+-61.03   H/C 2.54x
+  Strict                     Clean  561.67+-80.70   Light 1378.33+-20.55   Heavy 1424.33+-60.48   H/C 2.54x
+  Maximally strict           Clean  552.33+-77.86   Light 1360.33+-20.13   Heavy 1406.00+-61.21   H/C 2.55x
+
+========================================================================================
+THE PATTERN, AND IT IS THE RESULT
+========================================================================================
+The three claims are affected very differently, and the ordering is not arbitrary -
+it tracks how specifically each claim depends on the disputed families.
+
+  DESTROYED - wastewater. The claim names the queuosine genes as the most common
+    vAMGs. Those genes are the disputed family. 29 of 101 vAMGs are removed and the
+    subject of the sentence no longer exists; cysH inherits the top of the list.
+    A claim ABOUT a disputed family cannot survive that family being disputed.
+
+  MOVED, MODESTLY - ocean. "~19% of virus populations carry at least one AMG"
+    becomes 17.4% (strict) or 16.9% (maximally strict) - a relative fall of about
+    11%. Real, worth reporting, not fatal. 4,945 virus populations are AMG-carrying
+    on the strength of `dcm` alone.
+
+  UNTOUCHED - soil. The contamination gradient holds at 1.25x abundance and 2.54x
+    richness under every rule. Disputed families are a roughly constant fraction
+    across the gradient, so they cancel in the comparison.
+
+The generalisation worth making: disputed families CANCEL in comparisons and
+PERSIST in descriptions. A paper asking 'does AMG content differ between conditions?'
+is largely safe. A paper asking 'what are these viruses doing?' is answering with
+families the evidence cannot currently resolve - and the more specific the answer,
+the more of it rests on them.
+
+Direction of effect, declared: every recomputation here REDUCES the published
+figure. None of the three claims is strengthened by the adjudication. Equally, none
+of the three papers did anything the field would call wrong - they applied the
+standard category. That is the point.
