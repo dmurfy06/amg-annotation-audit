@@ -1,0 +1,84 @@
+CHUNK 5 SENSITIVITY - dependence of the adjudicated headline on single families
+======================================================================================
+Seal opened after both pre-registered gates passed:
+  - concordance: 12/12 verdicts, 12/12 confidence, 11/12 tier (one disagreement, `rfbC`)
+  - controls:    psbA/psbD -> COUNTS, xtmA/xtmB/dcm -> DOES NOT COUNT, all correct
+
+Verdict tally, 35 families: 28 COUNTS / 4 DOES NOT COUNT / 3 UNRESOLVABLE
+
+======================================================================================
+HEADLINE - excluded share of the KO-assigned AMG record, four pre-registered rules
+======================================================================================
+rule                             Ocean, curated                   Soil           Wastewater
+--------------------------------------------------------------------------------------------
+Inclusive                0.00% [ 0.00- 0.01] n=0       0.00% [ 0.00- 0.33] n=0       0.00% [ 0.00- 4.75] n=0    
+Strict                  18.31% [17.89-18.74] n=5818    0.87% [ 0.47- 1.59] n=10      0.00% [ 0.00- 4.75] n=0    
+Maximally strict        28.47% [27.98-28.97] n=9046   11.90% [10.16-13.90] n=137    37.66% [27.67-48.83] n=29   
+Confidence-limited      18.31% [17.89-18.74] n=5818    0.87% [ 0.47- 1.59] n=10      0.00% [ 0.00- 4.75] n=0    
+
+NOTE: 'Confidence-limited' is identical to 'Strict' because all four DOES NOT COUNT
+verdicts were recorded at high confidence. The rule is degenerate in this run. It is
+reported rather than dropped - it was pre-registered, and its degeneracy is a fact
+about the evidence base, not a reason to hide the row.
+
+======================================================================================
+CONCENTRATION - what actually carries each exclusion
+======================================================================================
+
+Strict:
+  Ocean, curated       5818 calls: dcm 5797 (99.6%) | glycoside_hydrolase 21 (0.4%)
+  Soil                 10 calls: glycoside_hydrolase 4 (40.0%) | xtmA 3 (30.0%) | dcm 2 (20.0%) | xtmB 1 (10.0%)
+  Wastewater           no calls excluded
+
+Maximally strict:
+  Ocean, curated       9046 calls: dcm 5797 (64.1%) | queuosine 2156 (23.8%) | folate 1063 (11.8%) | glycoside_hydrolase 21 (0.2%) | dsrC_tusE 9 (0.1%)
+  Soil                 137 calls: queuosine 77 (56.2%) | folate 50 (36.5%) | glycoside_hydrolase 4 (2.9%) | xtmA 3 (2.2%) | dcm 2 (1.5%) | xtmB 1 (0.7%)
+  Wastewater           29 calls: queuosine 20 (69.0%) | folate 9 (31.0%)
+
+The ocean strict result is `dcm` and essentially nothing else. `dcm` is also one of
+the protocol's PRE-SPECIFIED worked examples - its verdict was fixed when the rules
+were written, not when the evidence was weighed. So the ocean strict figure is not
+an output of the adjudication in the way the maximally-strict figure is.
+
+======================================================================================
+LEAVE-ONE-OUT - every family, both sensitivities, ocean curated
+======================================================================================
+Only families that change a figure are listed; the other 28 move nothing by
+construction, because COUNTS families are never in the numerator.
+
+Strict - baseline 18.31%
+  family held/dropped     verdict-> presence->      swing   pre-specified?
+  dcm                         0.07%      0.08%     18.25 pp   YES
+  glycoside_hydrolase        18.25%     18.26%      0.07 pp   -
+  xtmB                       18.31%     18.31%      0.00 pp   YES
+  xtmA                       18.31%     18.31%      0.00 pp   YES
+
+Maximally strict - baseline 28.47%
+  family held/dropped     verdict-> presence->      swing   pre-specified?
+  dcm                        10.23%     12.51%     18.25 pp   YES
+  queuosine                  21.69%     23.26%      6.79 pp   -
+  folate                     25.13%     26.00%      3.35 pp   -
+  glycoside_hydrolase        28.41%     28.42%      0.07 pp   -
+  dsrC_tusE                  28.44%     28.45%      0.03 pp   -
+  xtmB                       28.47%     28.47%      0.00 pp   YES
+  xtmA                       28.47%     28.47%      0.00 pp   YES
+
+======================================================================================
+WHAT THIS MEANS FOR THE WRITE-UP
+======================================================================================
+1. Strict exclusion in the ocean catalogue is 18.31% with `dcm` and 0.07% without it.
+   The strict rule is, for practical purposes, a statement about one gene family.
+
+2. The cross-environment claim survives only under the maximally-strict rule, where
+   `folate` and `queuosine` - both UNRESOLVABLE, both genuinely contested - do the
+   work. That is the defensible headline, and it should be stated as resting on
+   unresolved families rather than on ruled-out ones.
+
+3. Wastewater has zero strict exclusion. Its 37.66%% maximally-strict figure is
+   entirely `folate` + `queuosine` on a denominator of 77 calls, CI [27.7-48.8].
+   Report the interval every time; the point estimate alone overstates the precision.
+
+4. Only 4 of 35 families were ruled out, and 3 of those 4 are protocol controls or
+   near-zero in abundance. The adjudication's main finding is not that the record is
+   full of miscounted families - it is that most families cannot be ruled out on
+   current evidence, and that the disputed mass sits in three unresolvable ones.

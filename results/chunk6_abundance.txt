@@ -1,0 +1,92 @@
+CHUNK 6 - ABUNDANCE-WEIGHTED vs CALL-WEIGHTED DISPUTED SHARE
+========================================================================================
+Call-weighted asks how much of the RECORD is disputed.
+Abundance-weighted asks how much of the COMMUNITY that disputed record describes.
+
+!! OCEAN CANNOT BE WEIGHTED. The curated ocean catalogue (Microbiome 2024) publishes
+   annotations without a per-sample abundance table - 88,729 of 93,413 calls, and the
+   catalogue carrying the entire strict-rule result. Nothing below extrapolates to it.
+
+Abundance is published PER VIRUS in both catalogues that have it, so the naive sum
+over calls double-counts gene-dense genomes. All three weightings are shown; the
+per-call column is included only to expose the size of that bias.
+
+========================================================================================
+SOIL (ISME J 2022) - relative abundance (%), 9 samples
+========================================================================================
+1151 KO-assigned AMG calls on 539 distinct viruses (2.14 AMGs per virus); 3432 AMG rows
+carry no KO and are out of scope for a KO-defined adjudication.
+
+Strict - call-weighted 0.87% [0.47-1.59] (10/1151 calls)
+    per-call    mean  0.50%  range  0.01- 3.59  ratio 0.58x
+    fractional  mean  0.86%  range  0.03- 5.75  ratio 0.99x
+    binary      mean  0.88%  range  0.03- 5.88  ratio 1.01x
+
+Maximally strict - call-weighted 11.90% [10.16-13.90] (137/1151 calls)
+    per-call    mean  6.77%  range  4.13- 9.54  ratio 0.57x
+    fractional  mean  5.64%  range  3.03-10.83  ratio 0.47x
+    binary      mean  5.81%  range  3.17-11.12  ratio 0.49x
+
+========================================================================================
+WASTEWATER (ES&T 2023) - RPKM per viral genome
+========================================================================================
+77 KO-assigned calls on 48 distinct genomes (1.60 vAMGs per genome); unmatched 0
+
+Strict - call-weighted 0.00% [0.00-4.75]
+    per-call     0.00%   ratio n/a
+    fractional   0.00%   ratio n/a
+    binary       0.00%   ratio n/a
+
+Maximally strict - call-weighted 37.66% [27.67-48.83]
+    per-call    25.05%   ratio 0.67x
+    fractional  13.53%   ratio 0.36x
+    binary      13.86%   ratio 0.37x
+
+========================================================================================
+IS THE AGGREGATE RATIO A PROPERTY OF THE FAMILIES, OR OF THE ABUNDANCE SKEW?
+========================================================================================
+An aggregate ratio below 1.0 can mean disputed families sit on rarer viruses - or
+merely that a few very abundant viruses happen to fall outside them. The direct
+test is the median abundance of the viruses actually carrying each family.
+
+Soil, one value per virus (mean across the 9 samples):
+  carrying a disputed-family AMG   n=57   median 0.00010   mean 0.00025
+  all other AMG viruses            n=482  median 0.00014   mean 0.00040
+  ratio of medians 0.70x   ratio of means 0.63x
+
+  mean/median ratio: disputed 2.6x, other 2.9x - both distributions are heavily
+  right-skewed, which is what makes the aggregate share unstable.
+
+  Per-family median abundance of carrier viruses, against the overall median:
+    dcm                  n=2    median 0.00074   5.35x
+    folate               n=39   median 0.00013   0.92x
+    glycoside_hydrolase  n=4    median 0.00004   0.28x
+    queuosine            n=33   median 0.00012   0.90x
+    xtmA                 n=3    median 0.00004   0.26x
+    xtmB                 n=1    median 0.00011   0.77x
+
+========================================================================================
+WHAT THIS ACTUALLY SHOWS
+========================================================================================
+1. The strict-rule 'depletion' is an artefact. Naive per-call summing gives 0.58x;
+   counting each virus once gives 0.99-1.01x. There is no effect. Any figure
+   computed by summing per-virus abundance across calls is wrong in this data.
+
+2. Under the maximally-strict rule the abundance-weighted share IS lower than the
+   call-weighted share, in both catalogues and under both correct weightings
+   (soil 0.47-0.49x, wastewater 0.36-0.37x).
+
+3. But that is NOT because folate- and queuosine-carrying viruses are rare. Their
+   carrier viruses sit at 0.90x and 0.92x of the overall median - which is to say,
+   typical. The aggregate gap is driven by the right skew of the abundance
+   distribution: a small number of very abundant viruses carry no disputed AMG, and
+   with 57 disputed viruses out of 539 that is not a stable property of the record.
+
+   The defensible statement is therefore the narrow one: in these two small
+   catalogues, abundance weighting LOWERS the disputed share, but the families
+   driving the dispute are carried by viruses of ordinary abundance. Claiming that
+   disputed genes sit on rare viruses would over-read the data.
+
+4. Direction of effect, declared: this cuts AGAINST the project's hypothesis. The
+   abundance-weighted numbers are smaller than the call-weighted ones, so the
+   headline is weaker under the weighting the pre-registration committed to.
