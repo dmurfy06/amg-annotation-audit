@@ -47,34 +47,75 @@ the standard category. The problem is in the category.
 
 ## 1. Introduction
 
-*[TODO — expand. Skeleton and all load-bearing citations below.]*
+Bacteriophages carry genes with unmistakable homology to bacterial metabolic enzymes. The
+canonical example is `psbA`, the photosystem II reaction centre protein, carried and
+expressed by marine cyanophages during infection [CITE: Mann 2003 / Lindell 2005 — verify].
+Such genes are interpreted as **auxiliary metabolic genes**: virus-encoded functions that
+sustain or redirect host metabolism through infection, with consequences that scale to
+biogeochemical cycling.
 
-Bacteriophages carry genes with clear homology to bacterial metabolic enzymes. Since the
-identification of phage-encoded `psbA` in marine cyanophages, such genes have been
-interpreted as auxiliary metabolic genes: virus-encoded functions that sustain or redirect
-host metabolism during infection, with consequences for biogeochemical cycling.
+For `psbA` the interpretation is well supported. A phage that keeps photosynthesis running
+in a cell it is consuming is doing something the host would recognise as its own metabolism,
+and the fitness rationale — maintaining the energy supply the phage is drawing on — is clear.
 
-The inference has become routine. Annotation pipelines (DRAM-v, VIBRANT) assign AMG status
-semi-automatically, catalogues are published at scale, and the resulting counts support
-claims about viral contributions to carbon, nitrogen, sulfur and phosphorus cycling.
+The inference has since been generalised well beyond that case. Annotation pipelines assign
+AMG status semi-automatically; catalogues are published at the scale of tens of thousands of
+calls; and those counts underwrite claims about viral contributions to carbon, nitrogen,
+sulfur and phosphorus cycling across every sampled environment. The category has become
+infrastructure.
 
 Martin *et al.* (2025, *Nature Microbiology*, doi:10.1038/s41564-025-02095-4) argue that a
-substantial part of this record is misread. Genes such as DNA cytosine methyltransferases,
-queuosine biosynthesis enzymes, glycoside hydrolases and folate pathway enzymes have direct
-viral functions — restriction–modification evasion, genome modification, cell-wall breach
-during entry, nucleotide provisioning for phage replication. Reading them as evidence of
-host metabolic reprogramming, they argue, inflates the record.
+substantial part of what the infrastructure has accumulated is misread. Several of the most
+frequently counted families have direct, well-documented viral functions:
 
-They name the suspects. They do not count them. A 2021 standards paper raised the same
-concern and explicitly declined to catalogue it. **How much of the AMG record rests on
-contested families has never been measured**, and that is the gap this paper fills.
+- **DNA cytosine methyltransferases** (`dcm`) modify the phage's own genome, evading host
+  restriction — genome protection, not host metabolism.
+- **Queuosine biosynthesis** enzymes make 7-deazaguanine derivatives that have been detected
+  *in phage DNA*, where the attributed function is protection from host endonucleases
+  (Thiaville *et al.* 2016, doi:10.1073/pnas.1518570113; Hutinet *et al.* 2016,
+  doi:10.1080/15476286.2016.1265200).
+- **Glycoside hydrolases** include virion-associated lysins that breach the cell wall during
+  entry; one was found bound to the phage baseplate and proposed to facilitate genome
+  injection (Yuan & Gao 2016, doi:10.3389/fmicb.2016.00745).
+- **Folate and one-carbon** enzymes feed nucleotide biosynthesis, which during infection is
+  supplying the phage genome.
 
-Three questions follow, and we answer them in order:
+The general form of the objection is that a gene can act on a host molecule and still be
+performing a discrete step of the viral lifecycle rather than sustaining host metabolism —
+and that the AMG category, as applied, does not distinguish the two.
 
-1. **How much of the published record sits in contested families?** (§3.1)
-2. **Do the catalogues apply their own stated inclusion criteria?** (§3.2)
-3. **On the published evidence, which families actually withstand scrutiny — and does
-   removing the rest change anything anyone has claimed?** (§3.3–3.6)
+Martin *et al.* name the suspects. They do not count them, and a 2021 standards paper raising
+the same concern explicitly declined to catalogue it [CITE: PeerJ 2021 — verify]. **How much
+of the AMG record actually rests on contested families has never been measured.**
+
+That is the gap. It matters because the answer is not obvious in either direction: the
+contested families could be a rounding error, or they could be most of the record, and the
+published literature is compatible with both. It also matters that the question is answerable
+without new experiments — the catalogues, the annotations and the primary phage literature
+are all public.
+
+This study asks three questions in order:
+
+1. **How much of the published record sits in contested families?** We harmonise three
+   independent catalogues and match families by database accession rather than free text
+   (§2.2, §3.1).
+2. **Do the catalogues apply their own stated inclusion criteria?** This is deliberately
+   independent of Martin *et al.*'s rubric, and so cannot be dismissed as choosing a
+   convenient standard (§3.2).
+3. **Which families withstand scrutiny on the published evidence, and does removing the rest
+   change anything anyone has claimed?** (§3.3–3.6).
+
+The third question is the one that determines whether any of this matters. A labelling
+problem that changes no published conclusion is a curiosity; one that changes conclusions
+selectively, in a predictable direction, is a methodological finding. We find the latter.
+
+> **A note on what this study is and is not.** Every verdict here is a judgement about the
+> most parsimonious reading of a gene *family* on currently published evidence. It is
+> defeasible, it is not a claim about any individual gene call, and it is not a claim that
+> anyone's annotation is incorrect. The protocol was pre-registered, deliberately biased
+> against the hypothesis motivating the study, and its abundance data sealed before any
+> verdict existed, precisely because the author had an obvious interest in a particular
+> answer.
 
 ---
 
