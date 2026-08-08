@@ -448,30 +448,135 @@ Every recomputation reduces the published figure. None of the three claims is st
 
 ## 4. Discussion
 
-*[TODO — expand.]*
+### 4.1 The record is not broken, but it is unevenly load-bearing
 
-**What we are not claiming.** Not that the annotations are wrong: these sequences really do
-encode glycosyltransferases and methyltransferases. We challenge the **inference drawn from
-the annotation**, not the identification. Not that the authors were careless — §3.2 shows the
-ocean team applying their own exclusions almost perfectly. Not anything about any individual
-gene call: these are claims about the most parsimonious reading of a gene *family*, applied to
-every call within it. And emphatically not that AMGs do not exist. `psbA` is real.
+Twenty-eight of 35 families survive adjudication under a protocol explicitly designed to make
+exclusion difficult. Anyone expecting this study to show that the AMG literature is largely
+artefact should read that as the primary result. At the level of families, the field's
+assignments mostly hold.
 
-**What the field could do about it.** Three things follow directly:
+What does not hold is the assumption that the record is uniformly reliable. Its exposure is
+concentrated in a small number of families that happen to be very abundant, and — importantly —
+those families are mostly **unresolvable rather than refuted**. `folate` and `queuosine` carry
+the maximally-strict result in every catalogue. Neither can currently be assigned in either
+direction: the queuosine pathway demonstrably serves tRNA modification *and* has been detected
+modifying phage DNA, and the same enzymes do both. `folE` sits at the branch point feeding both
+pathways, and which branch it feeds moves the wastewater result by 18 percentage points.
+
+This is a different and more tractable problem than "the record is wrong". It localises the
+uncertainty to a handful of specific, nameable biochemical questions.
+
+### 4.2 Why the effect is claim-dependent, and how to use that
+
+The most useful generalisation this study supports is structural rather than numerical:
+
+> **Disputed families cancel in comparisons and persist in descriptions.**
+
+The mechanism is straightforward. Contested families occur at a roughly constant rate across
+the conditions a study compares, so they appear in both numerator and denominator of a ratio
+and largely drop out. The soil contamination gradient is unchanged to two decimal places under
+every rule. But those same families remain in any statement about what the record *is* — what
+the most common vAMG is, what fraction of viruses carry one, which pathways viruses target —
+because there is no second term for them to cancel against.
+
+This gives readers a usable heuristic. A study comparing AMG content between treatments, sites,
+depths or timepoints is largely robust to everything in this paper. A study describing what
+viruses in an environment are doing is not, and the more specific the description, the less
+robust it is. The wastewater case is the limiting example: a claim naming the queuosine genes
+as the most common vAMGs cannot survive those genes being contested, because the claim's
+subject and the contested family are the same object.
+
+### 4.3 The criteria problem is upstream of the counting problem
+
+Section 3.2 is, on reflection, the more uncomfortable result. Of three catalogues, one states a
+mechanical exclusion and enforces it almost perfectly; one states an exclusion that **cannot be
+applied deterministically**, because in the authors' own annotation database the same gene
+simultaneously satisfies and violates it depending on which KEGG category one reads; and one
+states its criterion in ordinary English, which cannot be checked at all without importing the
+checker's judgement.
+
+A rule that does not decide is not being enforced — it is being interpreted, case by case,
+invisibly, and no reader can reconstruct which reading was applied to which gene. This is not
+a failure of care by any author. It is a convention that has never required inclusion criteria
+to be machine-checkable, and the drift documented in this paper is what that convention
+produces at scale.
+
+We think this is the finding with the clearest remedy, and it does not depend on accepting a
+single one of our verdicts.
+
+### 4.4 Eight families, no evidence
+
+Eight of 35 families have **no phage-specific experimental evidence of any kind**. Not weak
+evidence: none. Nobody has tested what the phage copy of those genes does, in any system, and
+published claims rest on them anyway.
+
+Under our protocol these families default to COUNTS, because a family with no evidence is
+*unresearched*, not unresolvable, and we refuse to let absence of evidence inflate the disputed
+share. That is the conservative choice and it works against our own hypothesis. But it should
+not obscure what the number means: for roughly a quarter of the families examined, the
+question this entire literature turns on has never been asked experimentally.
+
+Each unresolvable verdict in this study names the specific experiment that would settle it
+(Appendix A). We suggest that list is the most immediately actionable output here.
+
+### 4.5 What we are not claiming
+
+Not that the annotations are wrong: these sequences really do encode glycosyltransferases and
+methyltransferases. We challenge the **inference drawn from the annotation**, not the
+identification — the misannotation is not in the database, it is in the sentence written
+afterwards.
+
+Not that any author was careless. Section 3.2 shows one team applying its own stated exclusions
+to 99.993%. People following reasonable rules can still produce a record that overstates,
+because the rules underdetermine.
+
+Not anything about any individual gene call. We cannot know what one phage in one water sample
+was doing with its copy of `galE`. These are claims about the most parsimonious reading of a
+family, applied to every call in it.
+
+And emphatically not that AMGs are not real. `psbA` is real, `phoH`'s distribution (present in
+~40% of marine phage genomes and 4% of non-marine ones; Goldsmith *et al.* 2011,
+doi:10.1128/AEM.05531-11) is about as good as ecological evidence gets, and transaldolase
+measurably doubles the host NADPH/NADP ratio (Thompson *et al.* 2011,
+doi:10.1073/pnas.1102164108). The question is only how much of the record rests on families
+that do not support the claim drawn from them.
+
+### 4.6 On `dcm`, and on reporting one's own fragilities
+
+That a single family supplies 99.6% of the ocean strict-rule result is a fragility, and we
+report it as one rather than leaving it for a reviewer. It is also informative in two ways.
+First, `dcm` is the least contested case in the whole record — a restriction–modification
+function nobody seriously argues is host metabolism — so the exposure is concentrated in the
+clearest case rather than a marginal one. Second, `dcm`'s verdict was fixed by the protocol as
+a worked example *before* any evidence was weighed, which means the ocean strict figure is
+substantially a restatement of the protocol rather than a finding produced by applying it. We
+therefore rest nothing on it.
+
+### 4.7 What the field could do
 
 1. **Report AMG counts under more than one rule.** The spread between inclusive and maximally
-   strict is 0–28.5% in the same catalogue. A single number conceals a choice.
-2. **State inclusion criteria mechanically enough to be checked.** Two of three catalogues here
-   state rules that cannot be applied deterministically, which is not a failure of care but of
-   convention.
-3. **Do the eight experiments.** Eight families support published claims with no phage-specific
-   evidence whatsoever. Each unresolvable verdict in this study names the experiment that would
-   settle it.
+   strict reaches 28.5 percentage points within a single catalogue. A single number conceals a
+   choice that a reader cannot see or reverse.
+2. **State inclusion criteria mechanically enough to be checked.** If a criterion cannot be
+   applied deterministically using the annotation database the study itself used, it is not
+   functioning as a criterion.
+3. **Report the namespace and the unit.** KEGG and Pfam disagree by up to threefold on the same
+   catalogue, and in opposite directions in different environments; genes and calls are not
+   interchangeable.
+4. **Do the named experiments.** Three unresolvable families, three specified experiments, and
+   eight families with no phage-specific evidence at all.
 
-**On `dcm`.** That a single family carries the ocean strict result is a fragility, and we
-report it as one. It is also informative: `dcm` is the clearest case in the entire record, a
-restriction–modification function that is not seriously contested as viral, and it is the
-single most abundant contested family. The record's exposure is concentrated, not diffuse.
+### 4.8 A note on method
+
+Three headline numbers in this study were killed by checks built into it beforehand: a family
+that turned out to be 99.4% a protein *fold* rather than an activity; an apparent abundance
+depletion that was per-virus values summed over per-gene rows; and an inter-rater agreement
+figure whose independence could not be verified. Each was caught by something set up in
+advance — a frozen accession list with a status column, a pre-registered commitment to report
+both weightings, a sealed counts file, a routine text comparison.
+
+We report them because a study arguing that a field's conventions permit undetected drift is
+obliged to demonstrate that its own conventions detect it.
 
 ## 5. Limitations
 
