@@ -115,6 +115,13 @@ while (i < md.length) {
 
   if (t === "" ) { i++; continue; }
 
+  // HTML comments are build markers (e.g. the Appendix A injection points) and must
+  // never reach the page.
+  if (/^<!--/.test(t)) {
+    while (i < md.length && !/-->/.test(md[i])) i++;
+    i++; continue;
+  }
+
   // inline figure:  ![Figure N](figures/xxx.png)
   const im = /^!\[[^\]]*\]\(([^)]+)\)$/.exec(t);
   if (im) { addImage(im[1]); i++; continue; }
