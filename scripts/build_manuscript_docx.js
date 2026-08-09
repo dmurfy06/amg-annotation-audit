@@ -85,19 +85,16 @@ function buildTable(lines) {
 const md = fs.readFileSync(SRC, "utf8").split(/\r?\n/);
 const children = [];
 let i = 0;
-let inFigures = false;
+let figuresPlaced = 0;
 
-// figure caption -> file, in document order
-const FIGFILES = {
-  fig1_four_rule_spread: "fig1_four_rule_spread.png",
-  fig2_leave_one_out: "fig2_leave_one_out.png",
-  fig3_published_claims: "fig3_published_claims.png",
-  fig4_evidence_tiers: "fig4_evidence_tiers.png",
-};
-
-function addImage(key) {
-  const file = path.join(FIGDIR, FIGFILES[key]);
-  if (!fs.existsSync(file)) { console.warn("MISSING FIGURE", file); return; }
+function addImage(relPath) {
+  const file = path.resolve(path.dirname(SRC), relPath);
+  if (!fs.existsSync(file)) {
+    console.error("MISSING FIGURE:", file);
+    process.exitCode = 1;
+    return;
+  }
+  figuresPlaced++;
   const { w, h } = pngSize(file);
   const width = USABLE_PX;
   const height = Math.round((h / w) * width);
@@ -117,6 +114,10 @@ while (i < md.length) {
   const t = line.trim();
 
   if (t === "" ) { i++; continue; }
+
+  // inline figure:  ![Figure N](figures/xxx.png)
+  const im = /^!\[[^\]]*\]\(([^)]+)\)$/.exec(t);
+  if (im) { addImage(im[1]); i++; continue; }
 
   if (t === "---") {                      // horizontal rule -> bottom-bordered paragraph
     children.push(new Paragraph({
@@ -205,18 +206,14 @@ while (i < md.length) {
     parts.push(md[i].trim()); i++;
   }
   const text = parts.join(" ");
+  // Figure captions are set smaller and kept with the image above them.
+  const isCaption = /^\*\*Figure \d+ —/.test(text);
   children.push(new Paragraph({
-    spacing: { before: 60, after: 120 },
+    spacing: { before: isCaption ? 0 : 60, after: isCaption ? 240 : 120 },
     alignment: AlignmentType.LEFT,
-    children: inline(text),
+    indent: isCaption ? { left: 240, right: 240 } : undefined,
+    children: inline(text, isCaption ? { size: 18 } : {}),
   }));
-
-  // in the Figures section, drop the image right after its caption block
-  if (inFigures) {
-    for (const key of Object.keys(FIGFILES)) {
-      if (text.includes(key)) { addImage(key); break; }
-    }
-  }
 }
 
 const doc = new Document({
@@ -257,7 +254,20 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then((buf) => {
-  fs.writeFileSync(OUT, buf);
+  try {
+    fs.writeFileSync(OUT, buf);
+  } catch (e) {
+    if (e.code === "EBUSY") {
+      console.error("\nCANNOT WRITE: " + OUT);
+      console.error("The file is open in Word. Close it and re-run.\n");
+      process.exit(2);
+    }
+    throw e;
+  }
   console.log("wrote", OUT, (buf.length / 1024).toFixed(0) + " KB");
-  console.log("blocks:", children.length);
+  console.log("blocks:", children.length, "| figures placed:", figuresPlaced);
+  if (figuresPlaced !== 4) {
+    console.error("EXPECTED 4 FIGURES, PLACED " + figuresPlaced);
+    process.exitCode = 1;
+  }
 });

@@ -399,6 +399,14 @@ has tested what the phage version of those genes does, in any system. Published 
 on them regardless. This is independent of any verdict and, we suggest, the most immediately
 actionable result here: it is a research agenda, not a criticism.
 
+![Figure 1](figures/fig1_evidence_tiers.png)
+
+**Figure 1 — Half the adjudicated families rest on chemical plausibility alone.** Highest tier
+of phage-specific evidence found for each of the 35 families, stacked by verdict. Seventeen
+families reach only Tier 6, where the protocol forbids ruling a family out, so they default to
+counting. Eight have no phage-specific evidence of any kind. Tiers are from the first-pass
+record; the second pass disagreed on one family (`rfbC`, Tier 2 vs 6; §2.5).
+
 `dsrC_tusE` deserves specific mention because it is an annotation failure rather than a
 biological one. KEGG merges two functionally distinct proteins into one orthology group
 literally named `tusE, dsrC` — one feeds tRNA thiolation, the other dissimilatory sulfite
@@ -415,6 +423,14 @@ notation.
 | **Maximally strict** | **28.47% [27.98–28.97]** | 11.90% [10.16–13.90] | **37.66% [27.67–48.83]** |
 | Confidence-limited | 18.31% | 0.87% | 0.00% |
 
+![Figure 2](figures/fig2_four_rule_spread.png)
+
+**Figure 2 — Excluded share depends on which pre-registered rule is applied.** Excluded share
+of the KO-assigned AMG record under three of the four pre-registered rules, for each catalogue,
+with Wilson 95% intervals. The confidence-limited rule is identical to strict — all four DOES
+NOT COUNT verdicts were recorded at high confidence — and is not plotted separately. *The
+spread between rules is the result; no single bar is the headline.*
+
 Two features of this table matter more than the point estimates.
 
 **The confidence-limited rule is degenerate.** All four DOES NOT COUNT verdicts were recorded
@@ -429,6 +445,15 @@ calls (99.6%)**. Leave-one-out across all 35 families:
 | `dcm` | **0.07%** | **18.25 pp** |
 | `glycoside_hydrolase` | 18.25% | 0.07 pp |
 | `xtmA`, `xtmB` | 18.31% | 0.00 pp |
+
+![Figure 3](figures/fig3_leave_one_out.png)
+
+**Figure 3 — One family carries the strict result; the maximally-strict result is distributed.**
+Leave-one-out for the ocean catalogue: each bar is the excluded share when that family alone is
+held at COUNTS, against the dashed baseline. Under the strict rule, removing `dcm` collapses the
+result from 18.31% to 0.07%. Under the maximally-strict rule the load is distributed across
+`dcm`, `queuosine` and `folate`. `dcm` is highlighted because it is also a protocol worked
+example, so its verdict was fixed before evidence was weighed.
 
 Removing `dcm` collapses the strict result from 18.31% to 0.07%. Moreover, `dcm` is one of the
 protocol's pre-specified worked examples: its verdict was fixed when the rules were written,
@@ -498,6 +523,15 @@ increased along with the severity of pesticide contamination" holds under every 
 | As published | 1.25× | 2.54× |
 | Strict | 1.25× | 2.54× |
 | Maximally strict | 1.25× | 2.55× |
+
+![Figure 4](figures/fig4_published_claims.png)
+
+**Figure 4 — Disputed families cancel in comparisons and persist in descriptions.** One claim
+from each catalogue's own abstract, all three fixed before any was recomputed. *Left:* the
+wastewater catalogue's 101 vAMGs, with the queuosine-pathway genes its abstract names as most
+common highlighted — under the maximally-strict rule those genes disappear and 29 vAMGs go with
+them. *Centre:* the ocean prevalence estimate falls from 19% to 16.9%. *Right:* the soil
+contamination gradient is unchanged under every rule, for both abundance and richness.
 
 **The pattern is the result.** Disputed families are a roughly constant fraction across a
 gradient, so they **cancel in comparisons** and **persist in descriptions**. A study asking
@@ -796,39 +830,9 @@ the named resolving experiment for each unresolvable verdict. Generated directly
 adjudication record by `scripts/build_appendix_a.py` rather than transcribed, so it cannot
 drift from the underlying verdicts.
 
-## Figures
+## Figure sources
 
-Built by `scripts/build_figures.py` from the sealed counts and the adjudication record
-(Figures 1, 2, 4) and from the chunk 7 outputs (Figure 3), so no value is transcribed by hand.
-PNG and vector PDF in `manuscript/figures/`. Palette is Okabe–Ito and legible in greyscale.
-
-**Figure 1 — Excluded share depends on which pre-registered rule is applied.**
-`fig1_four_rule_spread` · cited in §3.4
-Excluded share of the KO-assigned AMG record under three of the four pre-registered rules, for
-each catalogue, with Wilson 95% intervals. The confidence-limited rule is identical to strict —
-all four DOES NOT COUNT verdicts were recorded at high confidence — and is not plotted
-separately. *The spread between rules is the result; no single bar is the headline.*
-
-**Figure 2 — One family carries the strict result; the maximally-strict result is distributed.**
-`fig2_leave_one_out` · cited in §3.4
-Leave-one-out for the ocean catalogue: each bar is the excluded share when that family alone is
-held at COUNTS, against the dashed baseline. Under the strict rule, removing `dcm` collapses the
-result from 18.31% to 0.07%. Under the maximally-strict rule the load is distributed across
-`dcm`, `queuosine` and `folate`. `dcm` is highlighted because it is also a protocol worked
-example, so its verdict was fixed before evidence was weighed.
-
-**Figure 3 — Disputed families cancel in comparisons and persist in descriptions.**
-`fig3_published_claims` · cited in §3.6 · **the paper's key figure**
-One claim from each catalogue's own abstract, all three fixed before any was recomputed.
-*Left:* the wastewater catalogue's 101 vAMGs, with the queuosine-pathway genes its abstract
-names as most common highlighted — under the maximally-strict rule those genes disappear and
-29 vAMGs go with them. *Centre:* the ocean prevalence estimate falls from 19% to 16.9%.
-*Right:* the soil contamination gradient is unchanged under every rule, for both abundance and
-richness.
-
-**Figure 4 — Half the adjudicated families rest on chemical plausibility alone.**
-`fig4_evidence_tiers` · cited in §3.3
-Highest tier of phage-specific evidence found for each of the 35 families, stacked by verdict.
-Seventeen families reach only Tier 6, where the protocol forbids ruling a family out, so they
-default to counting. Eight have no phage-specific evidence of any kind. Tiers are from the
-first-pass record; the second pass disagreed on one family (`rfbC`, Tier 2 vs 6; §2.5).
+All four figures appear inline in the Results. They are built by `scripts/build_figures.py`;
+Figures 1–3 are computed directly from the sealed counts and the adjudication record, and
+Figure 4 from the chunk 7 outputs, so no plotted value is transcribed by hand. PNG and vector
+PDF are in `manuscript/figures/`. The palette is Okabe–Ito and legible in greyscale.

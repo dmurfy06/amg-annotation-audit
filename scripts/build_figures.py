@@ -111,7 +111,7 @@ def fig1(cts):
                       "strict (all four\nDOES NOT COUNT verdicts were high confidence) and "
                       "is not plotted separately.",
             transform=ax.transAxes, fontsize=7, color=GREY, va="top")
-    save(fig, "fig1_four_rule_spread")
+    save(fig, "fig2_four_rule_spread")
 
 
 # ---------------------------------------------------------------- figure 2
@@ -154,7 +154,7 @@ def fig2(cts):
                           "18.31% to 0.07%; `dcm` is also a protocol worked example, so its "
                           "verdict was fixed before evidence was weighed (§3.4).",
              fontsize=7, color=GREY, va="top", wrap=True)
-    save(fig, "fig2_leave_one_out")
+    save(fig, "fig3_leave_one_out")
 
 
 # ---------------------------------------------------------------- figure 3
@@ -223,7 +223,7 @@ def fig3():
                           "disputed family, so the claim's subject and the contested set are "
                           "the same object.",
              fontsize=7, color=GREY, va="top", wrap=True)
-    save(fig, "fig3_published_claims")
+    save(fig, "fig4_published_claims")
 
 
 # ---------------------------------------------------------------- figure 4
@@ -274,7 +274,7 @@ def fig4():
                       "17 families default to\ncounting. Eight of the 35 have no "
                       "phage-specific evidence of any kind (§3.3).",
             transform=ax.transAxes, fontsize=7, color=GREY, va="top")
-    save(fig, "fig4_evidence_tiers")
+    save(fig, "fig1_evidence_tiers")
     return fams
 
 
