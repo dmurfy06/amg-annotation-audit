@@ -2,8 +2,7 @@
 
 **Daniel Murphy**
 
-*[AFFILIATION — decide before submitting: your university department, or "Independent
-researcher, United Kingdom". Delete this note.]*
+*Independent researcher, United Kingdom*
 
 Correspondence: daniel.s.murphy@outlook.com
 
