@@ -823,11 +823,106 @@ judgement, verdicts, and all decisions about what to report are the author's.
 
 ## Appendix A — the 35 adjudicated families
 
-**Complete: `manuscript/appendix_a_families.md`.** Verdict, evidence tier, confidence,
-per-catalogue counts, basis for inclusion and full accession list for all 35 families, plus
-the named resolving experiment for each unresolvable verdict. Generated directly from the
-adjudication record by `scripts/build_appendix_a.py` rather than transcribed, so it cannot
-drift from the underlying verdicts.
+<!-- APPENDIX_A_START -->
+
+Verdicts, evidence tiers and per-catalogue call counts for every adjudicated
+family. Generated directly from the adjudication record by
+`scripts/build_appendix_a.py`, not transcribed, so it cannot drift from the
+verdicts it reports.
+
+**Marks.** `2P` — re-rated in the second pass (§2.5). `C` — protocol control,
+verdict fixed in advance. **Basis codes.** A — met the abundance threshold;
+M — named by Martin *et al.*; C — control. Tier and confidence are given without
+the prose qualifiers recorded in the worksheet; the full text is in
+`results/chunk5_worksheet_pass1_completed.md`.
+
+| # | Family | Verdict | Tier | Conf. | Ocean | Soil | WW | Basis |
+|---|---|---|---|---|---|---|---|---|
+| 1 | `asnB` | counts | 6 | low | 23 | 57 | 1 | A |
+| 2 | `cgeB` | counts | 6 | low | 0 | 24 | 0 | A |
+| 3 | `dcm` | **does not count** | 2 | high | 5797 | 2 | 0 | A M |
+| 4 | `dsrC_tusE` 2P | **unresolvable** | 3–4 | high | 9 | 0 | 0 | M |
+| 5 | `dut` 2P | counts | 4 | low | 1760 | 0 | 0 | A |
+| 6 | `folate` 2P | **unresolvable** | 2 | high | 1063 | 50 | 9 | A M |
+| 7 | `galE` | counts | 6 | low | 636 | 227 | 0 | A |
+| 8 | `glmS` | counts | 6 | high | 0 | 39 | 0 | A |
+| 9 | `glycoside_hydrolase` 2P | **does not count** | 1-2 | high | 21 | 4 | 0 | M |
+| 10 | `glycosyltransferase` 2P | counts | 2 | low | 2 | 29 | 0 | A M |
+| 11 | `gmd` | counts | 6 | low | 338 | 37 | 2 | A |
+| 12 | `hisF` | counts | 6 | low | 4 | 13 | 0 | A |
+| 13 | `HMGCL` | counts | 6 | low | 330 | 0 | 0 | A |
+| 14 | `IMPDH` | counts | 6 | low | 496 | 6 | 0 | A |
+| 15 | `iscU` | counts | 6 | low | 722 | 0 | 0 | A |
+| 16 | `K07336` | counts | 6 | low | 2175 | 8 | 0 | A |
+| 17 | `manB` | counts | 6 | low | 494 | 0 | 0 | A |
+| 18 | `NAMPT` 2P | counts | 1–2 | low | 1 | 36 | 4 | A |
+| 19 | `nodU` | counts | 6 | low | 1577 | 0 | 0 | A |
+| 20 | `nrdH` 2P | counts | 4-5 | low | 0 | 23 | 0 | A |
+| 21 | `P4HA` | counts | 5 | low | 370 | 0 | 1 | A |
+| 22 | `phoH` 2P | counts | 4-5 | moderate | 2957 | 0 | 4 | A |
+| 23 | `psbA` C | counts | 1-2 | high | 128 | 0 | 0 | C |
+| 24 | `psbD` C | counts | 2 | high | 29 | 0 | 0 | C |
+| 25 | `pseB` | counts | 6 | low | 1 | 16 | 0 | A |
+| 26 | `queuosine` 2P | **unresolvable** | 2 | high | 2156 | 77 | 20 | A M |
+| 27 | `raxST` | counts | 6 | low | 502 | 0 | 0 | A |
+| 28 | `rfbB` | counts | 6 | low | 239 | 53 | 0 | A |
+| 29 | `rfbC` 2P | counts | 2 | low | 0 | 55 | 0 | A |
+| 30 | `speD` 2P | counts | 5-6 | low | 327 | 1 | 0 | A |
+| 31 | `tagD` | counts | 6 | low | 340 | 0 | 0 | A |
+| 32 | `TALDO1` 2P | counts | 1-2 | moderate | 548 | 0 | 0 | A |
+| 33 | `UGDH` | counts | 6 | low | 948 | 76 | 0 | A |
+| 34 | `xtmA` C | **does not count** | 1-2 | high | 0 | 3 | 0 | C |
+| 35 | `xtmB` C | **does not count** | 1–2 | high | 0 | 1 | 0 | C |
+
+**Resolving experiments for the three unresolvable families.** Each unresolvable
+verdict must name the experiment that would settle it, or the family is
+*unresearched* rather than unresolvable and defaults to COUNTS (§2.3).
+
+- **`dsrC_tusE`** — phylogenetic or HMM separation of DsrC from TusE, then re-annotation of the calls
+- **`folate`** — Metabolic flux from folE in infected cells: does the pterin output go to tetrahydrofolate or to 7-deazaguanine?
+- **`queuosine`** — Systematic detection of 7-deazaguanine derivatives in the DNA of phages carrying these genes versus those lacking them. Done for a single phage; never done systematically
+
+**Accessions.** Family membership is by accession, never by text match (§2.2).
+
+| Family | KEGG accessions |
+|---|---|
+| `asnB` | K01953 |
+| `cgeB` | K06320 |
+| `dcm` | K00558, K17398 |
+| `dsrC_tusE` | K11179 |
+| `dut` | K01520 |
+| `folate` | K00287, K00548, K01433, K01491, K01495, K01633, K09007, K13938, K13998, K19645 |
+| `galE` | K01784 |
+| `glmS` | K00820 |
+| `glycoside_hydrolase` | K01179, K01185, K01187, K01190, K01199, K03791 |
+| `glycosyltransferase` | K00754, K03669, K03814, K07270, K15521 |
+| `gmd` | K01711 |
+| `hisF` | K02500 |
+| `HMGCL` | K01640 |
+| `IMPDH` | K00088 |
+| `iscU` | K04488 |
+| `K07336` | K07336 |
+| `manB` | K01840 |
+| `NAMPT` | K03462 |
+| `nodU` | K00612 |
+| `nrdH` | K06191 |
+| `P4HA` | K00472 |
+| `phoH` | K06217 |
+| `psbA` | K02703 |
+| `psbD` | K02706 |
+| `pseB` | K15894 |
+| `queuosine` | K01737, K06879, K06920, K09457, K10026 |
+| `raxST` | K13472 |
+| `rfbB` | K01710 |
+| `rfbC` | K20444 |
+| `speD` | K01611 |
+| `tagD` | K00980 |
+| `TALDO1` | K00616 |
+| `UGDH` | K00012 |
+| `xtmA` | K07474 |
+| `xtmB` | K06909 |
+
+<!-- APPENDIX_A_END -->
 
 ## Figure sources
 
