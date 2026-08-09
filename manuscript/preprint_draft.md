@@ -12,10 +12,11 @@ All analysis code and intermediate results: https://github.com/dmurfy06/amg-anno
 
 Viruses of bacteria carry genes that resemble host metabolic enzymes. These are routinely
 catalogued as auxiliary metabolic genes (AMGs) and read as evidence that viruses reprogram
-host metabolism. A 2025 commentary argued that several of the most frequently counted
-categories are more plausibly performing viral functions — genome protection, nucleotide
-provisioning, receptor modification — and named specific suspects without quantifying them.
-We quantify them.
+host metabolism. A 2025 *Nature Microbiology* review argued that several of the most frequently
+counted categories are more plausibly performing viral functions — genome protection,
+nucleotide provisioning, receptor modification — named specific suspects without quantifying
+them, and proposed retiring "AMG" in favour of the broader "auxiliary viral gene" (AVG). We
+quantify the suspects.
 
 We harmonised three published AMG catalogues spanning ocean, soil and wastewater
 (93,413 calls, three annotation pipelines, three independent research groups), matched gene
@@ -40,8 +41,16 @@ most common are the disputed family. An ocean prevalence estimate moves modestly
 claims are largely robust; the more specific a descriptive claim, the more of it rests on
 families the current evidence cannot adjudicate.
 
+Two limitations are stated rather than buried. Abundance weighting is impossible for 95% of
+the record, because the ocean catalogue publishes no abundance table. And every family carrying
+the headline was, by the protocol's own advance declaration, adjudicated with its abundance
+already publicly known: over the 30 families that entered genuinely blind, **the adjudication
+ruled out none**. That bounds the problem usefully — the record's exposure is concentrated in a
+small, already-named set rather than diffuse and awaiting discovery.
+
 None of the three catalogues did anything the field would regard as incorrect. They applied
-the standard category. The problem is in the category.
+the standard category. The problem is in the category — which is an argument for Martin
+*et al.*'s proposed reframing, on narrower grounds than they give for it.
 
 ---
 
@@ -92,7 +101,14 @@ The general form of the objection is that a gene can act on a host molecule and 
 performing a discrete step of the viral lifecycle rather than sustaining host metabolism —
 and that the AMG category, as applied, does not distinguish the two.
 
-Martin *et al.* name the suspects. They do not count them.
+Their proposed remedy is terminological: retire "auxiliary metabolic gene" in favour of
+**"auxiliary viral gene" (AVG)**, an expanded category covering all genes auxiliary to core
+viral functions, together with an eco-evolutionary framework for the analyses needed to support
+claims made about them. The rename is motivated by the misannotation problem, but its scope is
+the whole category.
+
+Martin *et al.* name the suspects. They do not count them — so how much of the record the
+rename is needed *for* is unknown, and that is a question their own argument cannot answer.
 
 The concern is not new. Pratama *et al.* (2021, doi:10.7717/peerj.11447) benchmarked viromics
 workflows, showed that fragmented assemblies lead to **erroneous identification of AMGs**, and
@@ -148,6 +164,14 @@ research group:
 The ocean catalogue is additionally available pre-curation (255,859 calls), which permits a
 direct test of whether curation enriches or depletes contested families.
 
+> **Reconciliation with the published count.** Tian *et al.* report **86,913** AMGs; our
+> harmonised table holds **88,729 ocean rows**. These agree exactly: the table carries
+> **86,913 distinct gene identifiers**, and the 1,816 surplus rows are genes bearing more than
+> one annotation. We count *calls* (rows) by default because that is what a catalogue's
+> composition is made of, and report per-gene figures alongside wherever the two differ
+> materially. Recovering the published figure to the digit is the check that the harmonisation
+> is faithful.
+
 ### 2.2 Accession-based family matching (Amendment 1)
 
 Gene families were initially identified by text-matching annotation descriptions. **This was
@@ -168,9 +192,11 @@ hand and carries a status:
 The two exclusions matter enough to state explicitly:
 
 - **`PF13385`** — "Concanavalin A-like lectin/glucanases superfamily" — is a **structural
-  fold, not an activity**. Concanavalin A binds sugars; it does not hydrolyse them. This
-  accession alone was 21,567 of the glycoside hydrolase family's 21,690 calls (99.4%), matched
-  solely on the substring "glucanases".
+  fold, not an activity**. Concanavalin A binds sugars; it does not hydrolyse them. It was
+  matched solely on the substring "glucanases", and it was **9,237 of the 9,258 glycoside
+  hydrolase calls in the curated ocean catalogue (99.8%)** — 21,567 of 21,690 (99.4%) if the
+  pre-curation ocean release is counted alongside the curated one, as the frozen accession
+  table does.
 - **`K14652`** (`ribBA`) is GTP cyclohydrolase **II** — riboflavin biosynthesis. Folate and
   queuosine use GTP cyclohydrolase **I**. Matched on the shared string "GTP cyclohydrolase".
 
@@ -212,15 +238,26 @@ calls *and* ≥10 calls in any catalogue, or was named by Martin *et al.* The �
 wastewater catalogue; it removes 18 families accounting for 3.1 percentage points, which are
 counted in aggregate as COUNTS. No control was removed by this amendment.
 
-**Controls.** `psbA`/`psbD` must return COUNTS; `xtmA`/`xtmB`/`dcm` must return DOES NOT
-COUNT. All five returned correctly. **These controls are not blind** — the protocol names
-them — so they test whether the rule, faithfully applied, reproduces distinctions the field
-already accepts. They do not test rater impartiality, and we do not claim they do.
+**Controls.** Four families are designated controls: `psbA`/`psbD` (positive) must return
+COUNTS, and `xtmA`/`xtmB` (negative) must return DOES NOT COUNT. All four returned correctly.
+`dcm` is not a control but a **worked example** — the protocol's own table of the rule's
+behaviour states its verdict in advance — so its result is also pre-specified, and we treat it
+as such throughout. **None of these are blind**: the protocol names them all. They test whether
+the rule, faithfully applied, reproduces distinctions the field already accepts. They do not
+test rater impartiality, and we do not claim they do.
 
-**Sealed counts.** Per-family abundance was computed and committed to
-`data/adjudication_counts_SEALED.tsv` *before any verdict existed*, and opened only after all
-35 verdicts were recorded and the controls checked. No verdict can have been fitted to the
-counts it would move.
+**Sealed counts, and what the seal does not cover.** Per-family abundance was computed and
+committed to `data/adjudication_counts_SEALED.tsv` before any verdict existed, and opened only
+after all 35 verdicts were recorded and the controls checked.
+
+The seal is not blanket blinding, and the protocol says so explicitly. **Five families —
+`dcm`, `queuosine`, `glycoside_hydrolase`, `folate` and `dsrC_tusE` — were named by Martin
+*et al.*, so their approximate abundance was public knowledge before this study began and could
+not be unknown.** The protocol labels these *seen*, declares their verdicts "protocol-guided
+but not blind", and commits to reporting the disputed share twice: over all families, and over
+blind-only families. That analysis is §3.7, and it matters more than we expected.
+
+For the 30 blind families, no verdict can have been fitted to counts the rater did not have.
 
 ### 2.4 Reporting rules (pre-registered)
 
@@ -461,6 +498,44 @@ cannot resolve — and the more specific the answer, the more of it rests on the
 
 Every recomputation reduces the published figure. None of the three claims is strengthened.
 
+### 3.7 The pre-registered blind-only analysis, and what it shows
+
+The protocol commits to reporting the disputed share twice — over all families, and over the
+30 families that entered blind — because five families (`dcm`, `queuosine`,
+`glycoside_hydrolase`, `folate`, `dsrC_tusE`) had publicly known abundance before this study
+started, having been named by Martin *et al.* (§2.3).
+
+| Rule | Family set | Ocean | Soil | Wastewater |
+|---|---|---|---|---|
+| Strict | all 35 | 18.31% | 0.87% | 0.00% |
+| Strict | **blind-only (30)** | **0.00%** | **0.35% [0.14–0.89]** | **0.00%** |
+| Maximally strict | all 35 | 28.47% | 11.90% | 37.66% |
+| Maximally strict | **blind-only (30)** | **0.00%** | **0.35% [0.14–0.89]** | **0.00%** |
+
+**Every family carrying the headline was adjudicated non-blind.** Of the seven families that
+leave the record under either rule, five are the seen set and the remaining two are the
+negative controls `xtmA`/`xtmB` (4 soil calls between them). The blind-only disputed share is
+indistinguishable from zero in two of three catalogues.
+
+This requires care to interpret, in both directions.
+
+**It is not evidence that the verdicts are biased.** The seen families are seen *because Martin
+et al. named them*; their abundance was public before this project existed and could not have
+been unknown by any design. The declaration was made in advance precisely so this could be
+checked rather than discovered later.
+
+**But the honest reading is a real constraint on the result.** Every quantitative claim in
+§3.4 rests on verdicts made with the counts already known. A reader who distrusts those five
+verdicts is left with essentially no disputed share at all, and we would rather state that
+plainly than have it inferred.
+
+**And there is a genuine positive finding here that we did not anticipate.** Thirty families
+entered blind, and **the adjudication ruled out none of them.** No contested family was
+discovered beyond those the field had already flagged. That bounds the problem usefully: the
+AMG record's exposure is not diffuse contamination awaiting discovery, it is concentrated in a
+small, already-named set. The default-COUNTS rule did what it was designed to do — on genuinely
+blind families, it almost never fired.
+
 ---
 
 ## 4. Discussion
@@ -569,7 +644,29 @@ a worked example *before* any evidence was weighed, which means the ocean strict
 substantially a restatement of the protocol rather than a finding produced by applying it. We
 therefore rest nothing on it.
 
-### 4.7 What the field could do
+### 4.7 On the proposed rename to "auxiliary viral genes"
+
+Martin *et al.* propose replacing AMG with the broader AVG. Our data bear on the *scope* of that
+proposal, and support it on narrower grounds than they give.
+
+The case for a category-wide rename is strongest if misannotation is diffuse. It is not. Of 35
+families, 28 survive adjudication; of the 30 that entered blind, **none** was ruled out; and the
+entire disputed mass sits in a handful of families the field had already identified. A rename
+justified by "many AMGs are not what they appear" is justified by less than that phrase implies.
+
+But there is a better argument for it in our §3.2 result, which is not about misannotation at
+all. The problem is not principally that genes are wrongly identified — the sequences really do
+encode what the databases say. It is that **the category's inclusion criteria are mostly not
+checkable**: two of three catalogues state rules that cannot be applied deterministically. A
+term whose boundary cannot be enforced will drift regardless of how good the annotations are,
+and "auxiliary viral gene" is a wider boundary requiring a weaker commitment — which is exactly
+why it is more defensible.
+
+So: we support the reframing, for the criteria reason rather than the misannotation reason, and
+we note that adopting it should not be taken to imply that a large fraction of published AMG
+calls are wrong. On the evidence here, most are not.
+
+### 4.8 What the field could do
 
 1. **Report AMG counts under more than one rule.** The spread between inclusive and maximally
    strict reaches 28.5 percentage points within a single catalogue. A single number conceals a
@@ -583,7 +680,7 @@ therefore rest nothing on it.
 4. **Do the named experiments.** Three unresolvable families, three specified experiments, and
    eight families with no phage-specific evidence at all.
 
-### 4.8 A note on method
+### 4.9 A note on method
 
 Three headline numbers in this study were killed by checks built into it beforehand: a family
 that turned out to be 99.4% a protein *fold* rather than an activity; an apparent abundance
@@ -597,15 +694,20 @@ obliged to demonstrate that its own conventions detect it.
 
 ## 5. Limitations
 
-1. **Independence of the second adjudication pass is unverified** (§2.5). No inter-rater
+1. **Every family carrying the headline was adjudicated non-blind** (§2.3, §3.7). The five
+   families driving the result had publicly known abundance because Martin *et al.* named them.
+   This was declared in the protocol in advance and the blind-only analysis is reported, but it
+   is the single largest constraint on how much weight §3.4 can bear.
+2. **Independence of the second adjudication pass is unverified** (§2.5). No inter-rater
    reliability statistic is claimed.
-2. **No control in this study is blind.** The protocol names all five.
-3. **Abundance weighting covers 5% of the record** (§3.5).
-4. **35 families, not all families.** 18 further families were removed by Amendment 2 and
+3. **No control in this study is blind.** The protocol names all four, plus the `dcm` worked
+   example.
+4. **Abundance weighting covers 5% of the record** (§3.5).
+5. **35 families, not all families.** 18 further families were removed by Amendment 2 and
    counted in aggregate as COUNTS, accounting for 3.1 percentage points.
-5. **Family-level verdicts are applied to every call in the family.** No claim is made about
+6. **Family-level verdicts are applied to every call in the family.** No claim is made about
    any individual gene call, which cannot be adjudicated from catalogue data.
-6. **Adjudication is defeasible.** Verdicts reflect the best reading of current evidence, not
+7. **Adjudication is defeasible.** Verdicts reflect the best reading of current evidence, not
    settled fact — which is why confidence is recorded separately and why Tier 6 alone cannot
    rule a family out.
 
@@ -620,32 +722,54 @@ redistributed here.
 
 ## 7. References
 
-Verified against PubMed. Catalogue sources are cited in §2.1; the primary phage literature
+All entries below were retrieved and verified via PubMed. The primary phage literature
 underpinning individual family verdicts is cited inline in Appendix A and in
-`results/chunk5_evidence_dossiers.md`.
+`results/chunk5_evidence_dossiers.md`, and is not repeated here.
 
-1. Mann NH, Cook A, Millard A, Bailey S, Clokie M (2003). Marine ecosystems: bacterial
-   photosynthesis genes in a virus. *Nature* 424(6950):741.
-   [doi:10.1038/424741a](https://doi.org/10.1038/424741a)
-2. Lindell D, Jaffe JD, Johnson ZI, Church GM, Chisholm SW (2005). Photosynthesis genes in
-   marine viruses yield proteins during host infection. *Nature* 438(7064):86–89.
-   [doi:10.1038/nature04111](https://doi.org/10.1038/nature04111)
-3. Sullivan MB, Lindell D, Lee JA, Thompson LR, Bielawski JP, Chisholm SW (2006). Prevalence
-   and evolution of core photosystem II genes in marine cyanobacterial viruses and their hosts.
-   *PLoS Biology* 4(8):e234.
-   [doi:10.1371/journal.pbio.0040234](https://doi.org/10.1371/journal.pbio.0040234)
-4. Pratama AA, Bolduc B, Zayed AA, Zhong Z-P, Guo J, Vik DR, Gazitúa MC, Wainaina JM, Roux S,
+**The three source catalogues**
+
+1. Tian F, Wainaina JM, Howard-Varona C, Domínguez-Huerta G, Bolduc B, Gazitúa MC, Smith G,
+   Gittrich MR, Zablocki O, Cronin DR, Eveillard D, Hallam SJ, Sullivan MB (2024).
+   Prokaryotic-virus-encoded auxiliary metabolic genes throughout the global oceans.
+   *Microbiome* 12(1):159.
+   [doi:10.1186/s40168-024-01876-z](https://doi.org/10.1186/s40168-024-01876-z)
+2. Zheng X, Jahn MT, Sun M, Friman V-P, Balcazar JL, Wang J, Shi Y, Gong X, Hu F, Zhu Y-G
+   (2022). Organochlorine contamination enriches virus-encoded metabolism and pesticide
+   degradation associated auxiliary genes in soil microbiomes. *ISME J* 16(5):1397–1408.
+   [doi:10.1038/s41396-022-01188-w](https://doi.org/10.1038/s41396-022-01188-w)
+3. Yuan L, Ju F (2023). Potential auxiliary metabolic capabilities and activities reveal
+   biochemical impacts of viruses in municipal wastewater treatment plants. *Environ Sci
+   Technol* 57(13):5485–5498.
+   [doi:10.1021/acs.est.2c07800](https://doi.org/10.1021/acs.est.2c07800)
+
+**The critique and the standards this study responds to**
+
+4. Martin C, Emerson JB, Roux S, Anantharaman K (2025). A call for caution in the biological
+   interpretation of viral auxiliary metabolic genes. *Nature Microbiology* 10(9):2122–2129.
+   [doi:10.1038/s41564-025-02095-4](https://doi.org/10.1038/s41564-025-02095-4)
+5. Pratama AA, Bolduc B, Zayed AA, Zhong Z-P, Guo J, Vik DR, Gazitúa MC, Wainaina JM, Roux S,
    Sullivan MB (2021). Expanding standards in viromics: in silico evaluation of dsDNA viral
    genome identification, classification, and auxiliary metabolic gene curation. *PeerJ*
    9:e11447. [doi:10.7717/peerj.11447](https://doi.org/10.7717/peerj.11447)
-5. Martin C *et al.* (2025). [Caution regarding auxiliary metabolic gene interpretation.]
-   *Nature Microbiology*.
-   [doi:10.1038/s41564-025-02095-4](https://doi.org/10.1038/s41564-025-02095-4)
-   — *title and author list to be completed from the source PDF in `refs/`.*
 
-*Citations 1–4 were retrieved and verified via PubMed. Full citations for the three source
-catalogues (§2.1) and the phage literature cited in the dossiers still need to be compiled into
-this list before submission.*
+**The `psbA` evidence chain (positive controls, §1)**
+
+6. Mann NH, Cook A, Millard A, Bailey S, Clokie M (2003). Marine ecosystems: bacterial
+   photosynthesis genes in a virus. *Nature* 424(6950):741.
+   [doi:10.1038/424741a](https://doi.org/10.1038/424741a)
+7. Lindell D, Jaffe JD, Johnson ZI, Church GM, Chisholm SW (2005). Photosynthesis genes in
+   marine viruses yield proteins during host infection. *Nature* 438(7064):86–89.
+   [doi:10.1038/nature04111](https://doi.org/10.1038/nature04111)
+8. Sullivan MB, Lindell D, Lee JA, Thompson LR, Bielawski JP, Chisholm SW (2006). Prevalence
+   and evolution of core photosystem II genes in marine cyanobacterial viruses and their hosts.
+   *PLoS Biology* 4(8):e234.
+   [doi:10.1371/journal.pbio.0040234](https://doi.org/10.1371/journal.pbio.0040234)
+
+> **A note on overlapping authorship, stated for transparency.** Sullivan is an author on the
+> ocean catalogue (1), the standards paper (5) and the `psbA` prevalence survey (8); Roux is an
+> author on the critique (4) and the standards paper (5). This is a small field. Nothing here
+> is a criticism of any individual, and the analysis in §3.2 was constructed to be independent
+> of whose rubric is applied precisely because that is unavoidable.
 
 ## 8. Acknowledgements
 
