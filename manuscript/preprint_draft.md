@@ -1,10 +1,19 @@
 # Adjudicating the viral auxiliary metabolic gene record: disputed families cancel in comparisons and persist in descriptions
 
 **Daniel Murphy**
-*Undergraduate, Biochemistry. Independent research.*
 
-**Status:** draft, 8 August 2026. Numbers are final; prose is not.
-All analysis code and intermediate results: https://github.com/dmurfy06/amg-annotation-audit
+*[AFFILIATION — decide before submitting: your university department, or "Independent
+researcher, United Kingdom". Delete this note.]*
+
+Correspondence: daniel.s.murphy@outlook.com
+
+**Data and code availability:** all analysis code, intermediate results, the pre-registered
+protocol with amendments, the frozen accession list, the sealed abundance counts with their
+commit history, and both adjudication passes are openly available at
+https://github.com/dmurfy06/amg-annotation-audit
+
+**Competing interests:** none declared.
+**Funding:** this work received no funding.
 
 ---
 
