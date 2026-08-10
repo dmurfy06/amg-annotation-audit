@@ -12,7 +12,17 @@ commit history, and both adjudication passes are openly available at
 https://github.com/dmurfy06/amg-annotation-audit
 
 **Competing interests:** none declared.
+
 **Funding:** this work received no funding.
+
+**Use of generative AI.** A large language model (Claude, Anthropic) was used to write the
+analysis code, to conduct literature searches, and to produce a **first-pass adjudication of
+all 35 gene families**, which the author then re-rated independently for the 12 families where
+evidentiary judgement was required. The AI is not an author and made no decision about what to
+report. All verdicts, all reported figures, and the interpretation are the author's. The
+limitation this creates for the reliability of the adjudication is stated in full in §2.5 and
+in the Limitations, and no inter-rater reliability statistic is claimed. All code and both
+adjudication passes are public.
 
 ---
 
@@ -33,13 +43,23 @@ against a pre-registered two-part rule with a six-tier evidence hierarchy. The r
 deliberately biased against our own hypothesis: families default to counting, and chemical
 plausibility alone can never rule one out.
 
-Twenty-eight of 35 families survive adjudication. Four are ruled out and three are
-unresolvable. **Eight of 35 have no phage-specific experimental evidence of any kind**, yet
-support published claims. Under the strictest pre-registered rule, 28.5% of the curated
-ocean AMG record, 11.9% of soil and 37.7% of wastewater falls in families that do not
-support the inference drawn from them — but this figure is carried almost entirely by
-families that are *unresolvable* rather than refuted, and in the ocean the strict-rule
-result reduces to a single family (`dcm`, 99.6% of excluded calls).
+**Twenty-eight of 35 families survive adjudication**, so the record is not broadly
+miscounted. Four are ruled out and three are unresolvable. **Eight of 35 have no
+phage-specific experimental evidence of any kind**, yet support published claims.
+
+Where the record is exposed, it is exposed narrowly. The families carrying that exposure are
+**unresolvable rather than refuted** — the published evidence cannot decide them in either
+direction — and they are, without exception, families the field had already named. Over the
+30 families that entered this study genuinely blind, **the adjudication ruled out none**.
+Under the strictest pre-registered rule the share of the record resting on families that
+cannot currently be shown to support the inference drawn from them is **28.5% (curated ocean),
+11.9% (soil) and 37.7% (wastewater)**; in the ocean the less strict rule reduces to a single
+family (`dcm`, 99.6% of excluded calls).
+
+One matching error is worth reporting on its own: **99.8% of ocean glycoside hydrolase calls
+matched a Pfam entry describing a structural fold rather than an enzymatic activity**
+(`PF13385`, Concanavalin A-like lectin), an artefact of text-based family assignment that
+accession-based matching removes.
 
 Testing the consequence on published claims, the effect is strongly claim-dependent. A
 wastewater catalogue's headline compositional claim does not survive: the genes it names as
@@ -49,12 +69,13 @@ most common are the disputed family. An ocean prevalence estimate moves modestly
 claims are largely robust; the more specific a descriptive claim, the more of it rests on
 families the current evidence cannot adjudicate.
 
-Two limitations are stated rather than buried. Abundance weighting is impossible for 95% of
-the record, because the ocean catalogue publishes no abundance table. And every family carrying
-the headline was, by the protocol's own advance declaration, adjudicated with its abundance
-already publicly known: over the 30 families that entered genuinely blind, **the adjudication
-ruled out none**. That bounds the problem usefully — the record's exposure is concentrated in a
-small, already-named set rather than diffuse and awaiting discovery.
+Four limitations are stated rather than buried. These are three catalogues chosen by us, of
+which the ocean supplies 95% of the calls, so every aggregate is substantially an ocean figure.
+Abundance weighting is impossible for that same 95%, because the ocean catalogue publishes no
+abundance table. Every family carrying the quantitative result was, by the protocol's advance
+declaration, adjudicated with its abundance already publicly known. And the first adjudication
+pass was AI-assisted, with the independence of the human second pass unverified; no inter-rater
+reliability statistic is claimed.
 
 None of the three catalogues did anything the field would regard as incorrect. They applied
 the standard category. The problem is in the category — which is an argument for Martin
@@ -232,7 +253,7 @@ exists to test:
   rather than test it.
 - **UNRESOLVABLE requires naming the experiment that would settle it.** A family with no
   evidence at all is *unresearched*, not unresolvable, and defaults to COUNTS. Collapsing
-  those two states would inflate the disputed share on the basis of nobody having done an
+  those two states would inflate the excluded share on the basis of nobody having done an
   experiment — the exact information loss this paper criticises.
 
 **Evidence tiers.** 1: gene knocked out of a phage and effect measured. 2: the phage's own
@@ -262,14 +283,14 @@ The seal is not blanket blinding, and the protocol says so explicitly. **Five fa
 `dcm`, `queuosine`, `glycoside_hydrolase`, `folate` and `dsrC_tusE` — were named by Martin
 *et al.*, so their approximate abundance was public knowledge before this study began and could
 not be unknown.** The protocol labels these *seen*, declares their verdicts "protocol-guided
-but not blind", and commits to reporting the disputed share twice: over all families, and over
+but not blind", and commits to reporting the excluded share twice: over all families, and over
 blind-only families. That analysis is §3.7, and it matters more than we expected.
 
 For the 30 blind families, no verdict can have been fitted to counts the rater did not have.
 
 ### 2.4 Reporting rules (pre-registered)
 
-The disputed share is reported under four rules, always together:
+The excluded share is reported under four rules, always together:
 
 | Rule | Treatment |
 |---|---|
@@ -308,7 +329,7 @@ working from the blind materials alone, and we did not obtain one.
 
 ## 3. Results
 
-### 3.1 A DRAM-v flag that looked like a fatal objection, and was not
+### 3.1 Two checks before any adjudication: assembly quality, and which namespace you count in
 
 Pratama *et al.* (2021) showed that fragmented assemblies produce erroneous AMG identifications,
 which makes assembly quality the first thing to check before any of what follows means anything.
@@ -336,6 +357,28 @@ converted a threat into a ruled-out confounder.
 Two further flags are worth reporting: `V` (viral replication/structure category) and `T`
 (transposon) occur **zero times** in the curated catalogue, confirming the published
 exclusions were applied.
+
+**The second check: the answer depends on which naming system you count in, and it flips.**
+Every catalogue here can be matched in two independent namespaces — KEGG orthology (KO) and
+Pfam — because the annotations carry both. They do not agree, and the disagreement is not a
+constant offset:
+
+| Catalogue | KO, per call | Pfam, per call | Ratio |
+|---|---|---|---|
+| Ocean (curated) | **21.35%** [20.90–21.80] | 7.78% [7.60–7.96] | KO **2.7×** higher |
+| Soil | 8.69% [7.20–10.46] | **29.13%** [27.83–30.47] | Pfam **3.4×** higher |
+
+These are the same calls, the same rubric, and the same contested families — counted through
+two databases. **The ocean catalogue looks worst in KEGG and unremarkable in Pfam; soil is the
+exact reverse.** So it is not that one namespace systematically inflates: different environments
+carry different contested families, and each family is better described in a different database.
+Ocean is dominated by `dcm`, which has a strong Pfam signature but an even stronger KO one;
+soil is dominated by glycosyltransferases, which Pfam describes richly and KEGG barely.
+
+The practical consequence is that **a published AMG proportion is uninterpretable without its
+namespace and its unit**, and we have not found a paper that states both. Every figure in this
+study is reported in KO space, per call, with the per-gene figures alongside wherever they
+differ materially (§2.1).
 
 ### 3.2 The catalogues mostly cannot break their own rules
 
@@ -413,7 +456,7 @@ reduction. Nothing in environmental data distinguishes them. The field's stronge
 phage-sulfur paper writes `dsrC/tusE`, with a slash, inheriting the ambiguity in its own
 notation.
 
-### 3.4 The disputed share, and what carries it
+### 3.4 The excluded share, and what carries it
 
 | Rule | Ocean (curated) | Soil | Wastewater |
 |---|---|---|---|
@@ -463,8 +506,9 @@ The defensible headline is the maximally-strict row, where the load is distribut
 18.25 pp, `queuosine` 6.79 pp, `folate` 3.35 pp — and where the families doing the work are
 **unresolvable rather than refuted**. The honest statement of this study's central result is:
 
-> The disputed mass of the AMG record sits in families that the current evidence base cannot
-> adjudicate in either direction.
+> The exposed portion of the AMG record is not material shown to be wrong. It is material the
+> current evidence base cannot adjudicate in either direction — which is a statement about how
+> thin the evidence is, not about how careless the field has been.
 
 ### 3.5 Abundance weighting covers only 5% of the record
 
@@ -490,7 +534,7 @@ wastewater 0.36–0.37×). But the viruses carrying `folate` and `queuosine` sit
 driven by the heavy right skew of viral abundance: a small number of very abundant viruses
 happen to carry nothing disputed, out of 539.
 
-We therefore state only the narrow result: **abundance weighting lowers the disputed share in
+We therefore state only the narrow result: **abundance weighting lowers the excluded share in
 both catalogues where it can be computed, but the families driving the dispute are carried by
 viruses of ordinary abundance.** The stronger and more interesting claim — that disputed genes
 sit preferentially on rare viruses — is not supported.
@@ -542,7 +586,7 @@ Every recomputation reduces the published figure. None of the three claims is st
 
 ### 3.7 The pre-registered blind-only analysis, and what it shows
 
-The protocol commits to reporting the disputed share twice — over all families, and over the
+The protocol commits to reporting the excluded share twice — over all families, and over the
 30 families that entered blind — because five families (`dcm`, `queuosine`,
 `glycoside_hydrolase`, `folate`, `dsrC_tusE`) had publicly known abundance before this study
 started, having been named by Martin *et al.* (§2.3).
@@ -556,7 +600,7 @@ started, having been named by Martin *et al.* (§2.3).
 
 **Every family carrying the headline was adjudicated non-blind.** Of the seven families that
 leave the record under either rule, five are the seen set and the remaining two are the
-negative controls `xtmA`/`xtmB` (4 soil calls between them). The blind-only disputed share is
+negative controls `xtmA`/`xtmB` (4 soil calls between them). The blind-only excluded share is
 indistinguishable from zero in two of three catalogues.
 
 This requires care to interpret, in both directions.
@@ -568,7 +612,7 @@ checked rather than discovered later.
 
 **But the honest reading is a real constraint on the result.** Every quantitative claim in
 §3.4 rests on verdicts made with the counts already known. A reader who distrusts those five
-verdicts is left with essentially no disputed share at all, and we would rather state that
+verdicts is left with essentially no excluded share at all, and we would rather state that
 plainly than have it inferred.
 
 **And there is a genuine positive finding here that we did not anticipate.** Thirty families
@@ -693,7 +737,7 @@ proposal, and support it on narrower grounds than they give.
 
 The case for a category-wide rename is strongest if misannotation is diffuse. It is not. Of 35
 families, 28 survive adjudication; of the 30 that entered blind, **none** was ruled out; and the
-entire disputed mass sits in a handful of families the field had already identified. A rename
+entire unadjudicable mass sits in a handful of families the field had already identified. A rename
 justified by "many AMGs are not what they appear" is justified by less than that phrase implies.
 
 But there is a better argument for it in our §3.2 result, which is not about misannotation at
@@ -716,7 +760,7 @@ calls are wrong. On the evidence here, most are not.
 2. **State inclusion criteria mechanically enough to be checked.** If a criterion cannot be
    applied deterministically using the annotation database the study itself used, it is not
    functioning as a criterion.
-3. **Report the namespace and the unit.** KEGG and Pfam disagree by up to threefold on the same
+3. **Report the namespace and the unit** (§3.1). KEGG and Pfam disagree by up to threefold on the same
    catalogue, and in opposite directions in different environments; genes and calls are not
    interchangeable.
 4. **Do the named experiments.** Three unresolvable families, three specified experiments, and
@@ -736,20 +780,27 @@ obliged to demonstrate that its own conventions detect it.
 
 ## 5. Limitations
 
-1. **Every family carrying the headline was adjudicated non-blind** (§2.3, §3.7). The five
-   families driving the result had publicly known abundance because Martin *et al.* named them.
+1. **Three catalogues, chosen by us, one of which is 95% of the calls.** The environmental
+   spread (ocean, soil, wastewater) and the pipeline spread (DRAM-v, VIBRANT, kofamscan) are
+   real, and the three groups are independent. But n = 3, the selection was ours, and
+   `ocean_conservative` supplies 88,729 of 93,413 calls, so every aggregate figure in this
+   study is substantially an ocean figure. Nothing here should be read as a parameter of "the
+   published record" in general.
+2. **Every family carrying the quantitative result was adjudicated non-blind** (§2.3, §3.7).
+   The five families driving the result had publicly known abundance because Martin *et al.*
+   named them.
    This was declared in the protocol in advance and the blind-only analysis is reported, but it
    is the single largest constraint on how much weight §3.4 can bear.
-2. **Independence of the second adjudication pass is unverified** (§2.5). No inter-rater
+3. **Independence of the second adjudication pass is unverified** (§2.5). No inter-rater
    reliability statistic is claimed.
-3. **No control in this study is blind.** The protocol names all four, plus the `dcm` worked
+4. **No control in this study is blind.** The protocol names all four, plus the `dcm` worked
    example.
-4. **Abundance weighting covers 5% of the record** (§3.5).
-5. **35 families, not all families.** 18 further families were removed by Amendment 2 and
+5. **Abundance weighting covers 5% of the record** (§3.5).
+6. **35 families, not all families.** 18 further families were removed by Amendment 2 and
    counted in aggregate as COUNTS, accounting for 3.1 percentage points.
-6. **Family-level verdicts are applied to every call in the family.** No claim is made about
+7. **Family-level verdicts are applied to every call in the family.** No claim is made about
    any individual gene call, which cannot be adjudicated from catalogue data.
-7. **Adjudication is defeasible.** Verdicts reflect the best reading of current evidence, not
+8. **Adjudication is defeasible.** Verdicts reflect the best reading of current evidence, not
    settled fact — which is why confidence is recorded separately and why Tier 6 alone cannot
    rule a family out.
 
