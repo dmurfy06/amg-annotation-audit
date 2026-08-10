@@ -8,7 +8,8 @@ Correspondence: daniel.s.murphy@outlook.com
 
 **Data and code availability:** all analysis code, intermediate results, the pre-registered
 protocol with amendments, the frozen accession list, the sealed abundance counts with their
-commit history, and both adjudication passes are openly available at
+commit history, and both adjudication passes are openly available. The version underlying this
+manuscript is permanently archived at **doi:10.5281/zenodo.21876444**; development continues at
 https://github.com/dmurfy06/amg-annotation-audit
 
 **Competing interests:** none declared.
@@ -314,16 +315,22 @@ The second pass worked from evidence extracts with all verdicts, tier assessment
 resolving experiments programmatically removed (build script and leak checks:
 `scripts/build_blind_concordance_sheet.py`).
 
-**Agreement: 12/12 verdict, 12/12 confidence, 11/12 evidence tier.**
+The second pass reproduced every verdict of the first, and agreed on confidence throughout. It
+disagreed on the evidence tier for one family, `rfbC`, where the first pass assigned Tier 2 on
+the strength of literature concerning O-antigen *transfer* enzymes and the second assigned
+Tier 6, on the grounds that `rfbC` makes a precursor rather than performing the transfer. The
+second reading is better, and the verdict is unchanged either way.
 
-**Independence could not be verified.** The first-pass file remained accessible to the second
-rater during rating, contrary to protocol. Text-similarity analysis does not indicate
-copying — every content word in the second rater's free text appears in the supplied evidence
-extracts, which is sufficient to explain the overlap, and the single tier disagreement is not
-consistent with transcription. We nonetheless report this as a **rubric-application check
-with independence unverified**, and **do not present κ as an inter-rater reliability
-statistic for this study.** A genuine reliability figure requires a second human rater
-working from the blind materials alone, and we did not obtain one.
+**No agreement statistic is reported, and none should be inferred.** Independence could not be
+verified: the first-pass file remained accessible to the second rater during rating, contrary
+to protocol. Text-similarity analysis does not indicate copying — every content word in the
+second rater's free text appears in the supplied evidence extracts, which is sufficient to
+explain the overlap, and the `rfbC` disagreement is not consistent with transcription. But
+"probably independent" does not support a reliability coefficient, and quoting a proportion
+here would invite exactly the unearned precision this paper criticises elsewhere. A genuine
+inter-rater reliability figure requires a second human rater working from the blind materials
+alone, and we did not obtain one. The full comparison, family by family, is in
+`results/chunk5_concordance.md` for anyone who wants to judge it themselves.
 
 ---
 

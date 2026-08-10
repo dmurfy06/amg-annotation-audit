@@ -28,8 +28,8 @@ keywords:
   - genome annotation
   - reproducibility
 license: MIT
-# Fill these in after the preprint posts and the Zenodo release is minted:
-# doi: '10.5281/zenodo.XXXXXXX'
+doi: '10.5281/zenodo.21876444'
+# Fill in after the preprint posts:
 # preferred-citation:
 #   type: article
 #   doi: '10.1101/2026.XX.XX.XXXXXX'
