@@ -1,0 +1,51 @@
+MIT License
+
+Copyright (c) 2026 Daniel Murphy
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+SCOPE — what this licence does and does not cover.
+
+The MIT licence above covers the ORIGINAL WORK in this repository: the analysis
+code in scripts/, the results in results/, the pre-registered protocol and other
+documentation, the manuscript in manuscript/, and the derived data tables in
+data/ that were produced by this project (family_accessions.tsv,
+adjudication_families.tsv, adjudication_counts_SEALED.tsv, harmonised_calls.tsv).
+
+It does NOT cover, and cannot relicense, third-party material:
+
+  sources/    Supplementary files downloaded from the publishers of the three
+              source catalogues. These remain under their original terms and are
+              redistributed here only to the extent those terms permit. Cite the
+              original papers, not this repository, when using them:
+                Tian et al. 2024, Microbiome    doi:10.1186/s40168-024-01876-z
+                Zheng et al. 2022, ISME J       doi:10.1038/s41396-022-01188-w
+                Yuan & Ju 2023, ES&T            doi:10.1021/acs.est.2c07800
+
+  refs/       Text extracted from published papers for search and quotation.
+              Copyright remains with the respective publishers.
+
+  data/       Reference databases obtained from third parties (KEGG-derived
+              files, Pfam-A.clans.tsv.gz, and similar) remain under the terms of
+              their providers.
+
+If you reuse the analysis, please cite the preprint and the archived Zenodo
+release rather than the mutable GitHub URL.

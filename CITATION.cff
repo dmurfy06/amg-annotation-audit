@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+title: >-
+  Adjudicating the viral auxiliary metabolic gene record: disputed families
+  cancel in comparisons and persist in descriptions
+message: >-
+  If you use this software or the analysis in it, please cite the preprint and
+  the archived Zenodo release rather than the GitHub URL, which is mutable.
+type: software
+authors:
+  - given-names: Daniel
+    family-names: Murphy
+    affiliation: Independent researcher, United Kingdom
+    email: daniel.s.murphy@outlook.com
+    # orcid: 'https://orcid.org/0000-0000-0000-0000'   # add once registered
+repository-code: 'https://github.com/dmurfy06/amg-annotation-audit'
+abstract: >-
+  An audit of three published viral auxiliary metabolic gene (AMG) catalogues
+  spanning ocean, soil and wastewater. 35 gene families were adjudicated against
+  a pre-registered rule with a six-tier evidence hierarchy; 28 survive. The
+  exposed portion of the record sits in families the current evidence base
+  cannot adjudicate in either direction rather than families shown to be wrong,
+  and the effect on published claims is strongly claim-dependent: comparative
+  claims are robust, descriptive claims are not.
+keywords:
+  - bacteriophage
+  - auxiliary metabolic genes
+  - viromics
+  - genome annotation
+  - reproducibility
+license: MIT
+# Fill these in after the preprint posts and the Zenodo release is minted:
+# doi: '10.5281/zenodo.XXXXXXX'
+# preferred-citation:
+#   type: article
+#   doi: '10.1101/2026.XX.XX.XXXXXX'
+#   journal: bioRxiv
+#   year: 2026
